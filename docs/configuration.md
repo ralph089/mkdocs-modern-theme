@@ -19,6 +19,7 @@ theme:
   show_last_updated: true
   announcement: ""
   announcement_dismissible: true
+  announcement_color: ""
   logo: null
 ```
 
@@ -244,6 +245,22 @@ theme:
   name: modern
   announcement: 'New release available!'
   announcement_dismissible: false
+```
+
+### `announcement_color`
+
+Custom background color for the announcement bar. Accepts any CSS color value.
+
+- **Type:** string
+- **Default:** `""` (empty — uses the theme accent color)
+
+When left empty, the bar inherits `--modern-accent`. Set a custom value to override:
+
+```yaml
+theme:
+  name: modern
+  announcement: 'Scheduled maintenance on Friday'
+  announcement_color: '#dc2626'
 ```
 
 ### `logo`

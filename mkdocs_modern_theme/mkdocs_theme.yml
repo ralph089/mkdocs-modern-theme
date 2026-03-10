@@ -12,4 +12,5 @@ show_last_updated: true
 show_feedback: true
 announcement: ""
 announcement_dismissible: true
+announcement_color: ""
 logo: null

@@ -1,6 +1,7 @@
 {% if config.theme.announcement %}
 <div id="modern-announce"
      class="modern-announce fixed top-0 left-0 right-0 z-50 py-2 text-sm text-center"
+     {% if config.theme.announcement_color %}style="background: {{ config.theme.announcement_color }}"{% endif %}
      x-data
      x-show="!$store.announce.dismissed"
      x-cloak
