@@ -11,6 +11,9 @@ build/
 node_modules/
 pnpm-lock.yaml
 
+# Vendored JS (copied from node_modules during build)
+mkdocs_modern_theme/js/mermaid.min.js
+
 # MkDocs
 site/
 tests/site/
@@ -30,6 +33,9 @@ Thumbs.db
 test-results/
 playwright-report/
 playwright/.cache/
+
+# Superpowers
+.superpowers/
 
 # Environment
 .env

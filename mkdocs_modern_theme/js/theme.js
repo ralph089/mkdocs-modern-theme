@@ -45,6 +45,7 @@ document.addEventListener('alpine:init', () => {
       } else {
         document.documentElement.classList.remove('dark');
       }
+      initMermaid();
     }
   });
 
@@ -306,4 +307,70 @@ function copyMarkdown() {
       }
     }
   };
+}
+
+// ================================================
+// Mermaid Diagram Support
+// ================================================
+function initMermaid() {
+  if (typeof mermaid === 'undefined') return;
+  var els = document.querySelectorAll('.mermaid');
+  if (!els.length) return;
+
+  // Save original source on first run so we can re-render on theme change
+  els.forEach(function(el) {
+    if (!el.getAttribute('data-mermaid-source')) {
+      el.setAttribute('data-mermaid-source', el.textContent);
+    }
+  });
+
+  var isDark = document.documentElement.classList.contains('dark');
+  var config = {
+    startOnLoad: false,
+    theme: isDark ? 'dark' : 'default',
+    fontFamily: 'var(--modern-font-sans)',
+  };
+  if (isDark) {
+    config.themeVariables = {
+      background: '#1a1a1a',
+      primaryColor: '#2d333b',
+      primaryTextColor: '#ededed',
+      primaryBorderColor: '#444c56',
+      secondaryColor: '#2a2e34',
+      secondaryTextColor: '#ededed',
+      secondaryBorderColor: '#444c56',
+      tertiaryColor: '#1e2228',
+      tertiaryTextColor: '#ededed',
+      lineColor: '#a3a3a3',
+      textColor: '#ededed',
+      mainBkg: '#2d333b',
+      nodeBorder: '#444c56',
+      clusterBkg: '#22272e',
+      clusterBorder: '#444c56',
+      titleColor: '#ededed',
+      actorTextColor: '#ededed',
+      actorLineColor: '#a3a3a3',
+      signalColor: '#a3a3a3',
+      signalTextColor: '#ededed',
+      labelBoxBkgColor: '#2d333b',
+      labelBoxBorderColor: '#444c56',
+      labelTextColor: '#ededed',
+      loopTextColor: '#ededed',
+      noteBkgColor: '#2a2e34',
+      noteTextColor: '#ededed',
+      noteBorderColor: '#444c56',
+    };
+  }
+
+  // Restore original source text before re-rendering
+  els.forEach(function(el) {
+    var source = el.getAttribute('data-mermaid-source');
+    if (source && el.querySelector('svg')) {
+      el.removeAttribute('data-processed');
+      el.innerHTML = source;
+    }
+  });
+
+  mermaid.initialize(config);
+  mermaid.run({ querySelector: '.mermaid' });
 }

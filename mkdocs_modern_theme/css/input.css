@@ -938,6 +938,29 @@
   }
 
   /* ========================================
+     Mermaid Diagrams
+     ======================================== */
+  .modern-content pre.mermaid {
+    text-align: center;
+    padding: 24px 16px;
+    margin-bottom: 1.25rem;
+    border-radius: var(--modern-radius-md);
+    background: var(--modern-code-bg);
+    border: 1px solid var(--modern-border);
+    box-shadow: var(--modern-shadow-sm);
+    overflow-x: auto;
+    /* Hide raw source until mermaid.js processes it */
+    visibility: hidden;
+  }
+  .modern-content pre.mermaid:has(svg) {
+    visibility: visible;
+  }
+  .modern-content pre.mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ========================================
      Copy Markdown Button
      ======================================== */
   .modern-copy-btn {

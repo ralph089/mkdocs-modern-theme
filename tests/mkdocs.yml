@@ -26,6 +26,7 @@ nav:
     - Writing Docs: guide/writing-docs.md
     - Admonitions: guide/admonitions.md
     - Code Blocks: guide/code-blocks.md
+    - Mermaid Diagrams: guide/mermaid.md
     - Components: guide/components.md
   - Reference:
     - API: reference/api.md
@@ -37,7 +38,11 @@ markdown_extensions:
   - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mkdocs_modern_theme.mermaid.fence_mermaid
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details

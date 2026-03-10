@@ -1,6 +1,16 @@
 {# Theme JS — must load before Alpine #}
 <script src="{{ 'js/theme.js' | url }}"></script>
 
+{# Mermaid — loaded only when diagrams are present #}
+<script>
+if (document.querySelector('.mermaid')) {
+  var s = document.createElement('script');
+  s.src = '{{ "js/mermaid.min.js" | url }}';
+  s.onload = function() { initMermaid(); };
+  document.head.appendChild(s);
+}
+</script>
+
 {# Lunr search engine #}
 <script src="{{ 'js/lunr.min.js' | url }}"></script>
 
