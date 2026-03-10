@@ -280,7 +280,7 @@ document.addEventListener('alpine:init', () => {
       } catch (e) {
         // If lunr throws, try simpler query
         try {
-          const raw = this._index.search(query.replace(/[^\w\s]/g, ''));
+          const raw = this._index.search(query.replace(/[*:^~]/g, ''));
           this.results = mapResults(raw);
         } catch (_) {
           this.results = [];
