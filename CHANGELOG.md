@@ -2,6 +2,24 @@
 
 <!-- version list -->
 
+## v1.1.3 (2026-03-10)
+
+### Bug Fixes
+
+- Symlink docs changelog to auto-generated CHANGELOG.md
+  ([`dee7085`](https://github.com/ralph089/mkdocs-modern-theme/commit/dee7085c6bb3dba9f7a5177467a1c1baf7c01962))
+
+### Chores
+
+- Remove copyright from test site config
+  ([`96f8a4e`](https://github.com/ralph089/mkdocs-modern-theme/commit/96f8a4e3f8e0fe1f80c15b1139aecdee157ededb))
+
+### Documentation
+
+- Update installation instructions to install from git
+  ([`0889947`](https://github.com/ralph089/mkdocs-modern-theme/commit/08899478d59c15be3060dadf0bb9135315aa86d0))
+
+
 ## v1.1.2 (2026-03-10)
 
 ### Bug Fixes
