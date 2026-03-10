@@ -14,16 +14,61 @@ theme:
 
 Available presets:
 
-| Preset | Accent | Surface | Character |
-|---|---|---|---|
-| `default` | Blue | Neutral gray | Clean, familiar |
-| `ocean` | Teal | Cool blue-gray | Technical, calm |
-| `purple` | Violet | Warm lavender | Creative, modern |
-| `rose` | Pink | Warm rose-gray | Bold, editorial |
-| `emerald` | Green | Cool sage | Natural, fresh |
-| `amber` | Gold | Warm cream | Warm, approachable |
-| `slate` | Gray | Cool blue-slate | Minimal, understated |
-| `ruby` | Red | Neutral | Strong, high-contrast |
+### default
+
+Clean, familiar — blue accent with neutral gray surfaces.
+
+![Default light](../assets/themes/default-light.png)
+![Default dark](../assets/themes/default-dark.png)
+
+### ocean
+
+Technical, calm — teal accent with cool blue-gray surfaces.
+
+![Ocean light](../assets/themes/ocean-light.png)
+![Ocean dark](../assets/themes/ocean-dark.png)
+
+### purple
+
+Creative, modern — violet accent with warm lavender surfaces.
+
+![Purple light](../assets/themes/purple-light.png)
+![Purple dark](../assets/themes/purple-dark.png)
+
+### rose
+
+Bold, editorial — pink accent with warm rose-gray surfaces.
+
+![Rose light](../assets/themes/rose-light.png)
+![Rose dark](../assets/themes/rose-dark.png)
+
+### emerald
+
+Natural, fresh — green accent with cool sage surfaces.
+
+![Emerald light](../assets/themes/emerald-light.png)
+![Emerald dark](../assets/themes/emerald-dark.png)
+
+### amber
+
+Warm, approachable — gold accent with warm cream surfaces.
+
+![Amber light](../assets/themes/amber-light.png)
+![Amber dark](../assets/themes/amber-dark.png)
+
+### slate
+
+Minimal, understated — gray accent with cool blue-slate surfaces.
+
+![Slate light](../assets/themes/slate-light.png)
+![Slate dark](../assets/themes/slate-dark.png)
+
+### ruby
+
+Strong, high-contrast — red accent with neutral surfaces.
+
+![Ruby light](../assets/themes/ruby-light.png)
+![Ruby dark](../assets/themes/ruby-dark.png)
 
 Each preset provides light and dark mode variants automatically. The dark/light toggle continues to work as usual.
 
