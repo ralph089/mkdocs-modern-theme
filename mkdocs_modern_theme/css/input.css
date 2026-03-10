@@ -57,7 +57,7 @@
   --modern-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
   /* Radius */
-  --modern-radius-sm: 6px;
+  --modern-radius-sm: 4px;
   --modern-radius-md: 8px;
   --modern-radius-lg: 12px;
 
@@ -158,6 +158,11 @@
     font-family: var(--modern-font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Default transition easing — snappy deceleration */
+  *, *::before, *::after {
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   /* Focus ring */
@@ -385,6 +390,7 @@
     border-collapse: collapse;
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
   }
   .modern-content thead th {
     text-align: left;
@@ -445,7 +451,7 @@
      ======================================== */
   .modern-content .admonition {
     margin-bottom: 1.25rem;
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.5rem;
     border-left: 3px solid var(--modern-note);
     border-radius: var(--modern-radius-md);
     background: color-mix(in srgb, var(--modern-note) 5%, var(--modern-surface));
@@ -658,7 +664,7 @@
     overflow-x: auto;
   }
   .modern-content .tabbed-labels > label {
-    padding: 0.625rem 1rem;
+    padding: 0.75rem 1rem;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--modern-text-secondary);

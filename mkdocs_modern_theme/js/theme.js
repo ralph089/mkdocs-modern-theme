@@ -213,13 +213,26 @@ document.addEventListener('alpine:init', () => {
     nextResult() {
       if (this.selectedIndex < this.results.length - 1) {
         this.selectedIndex++;
+        this._scrollToSelected();
       }
     },
 
     prevResult() {
       if (this.selectedIndex > 0) {
         this.selectedIndex--;
+        this._scrollToSelected();
       }
+    },
+
+    _scrollToSelected() {
+      requestAnimationFrame(() => {
+        var list = document.querySelector('[data-search-results]');
+        if (!list) return;
+        var items = list.querySelectorAll('li');
+        if (items[this.selectedIndex]) {
+          items[this.selectedIndex].scrollIntoView({ block: 'nearest' });
+        }
+      });
     },
 
     goToResult() {

@@ -157,12 +157,12 @@
 
 .modern-content .highlighttable td.linenos .linenodiv pre {
   margin: 0;
-  padding: 14px 12px 14px 16px;
+  padding: 1rem 12px 1rem 16px;
   background: transparent;
   border: none;
   text-align: right;
   color: color-mix(in srgb, var(--modern-text-secondary) 60%, transparent);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 
@@ -181,23 +181,17 @@
    Overrides layered .hll rules from theme.css (unlayered CSS wins over @layer).
    -------------------------------------------------------------------------- */
 
-.modern-content .highlight pre code > span {
-  display: block;
-  border-left: 2px solid transparent;
-  margin-left: -16px;
-  margin-right: -16px;
-  padding-left: 14px;
-  padding-right: 16px;
-}
-
+/* Highlighted lines: each .hll wraps one line of code.
+   Use display:block to fill the width, but avoid negative margins
+   that would cause overflow. The left border acts as the accent indicator. */
 .modern-content .highlight .hll {
   display: block;
   background: color-mix(in srgb, var(--modern-accent) 8%, transparent);
   border-left: 2px solid color-mix(in srgb, var(--modern-accent) 50%, transparent);
-  margin-left: -16px;
-  margin-right: -16px;
-  padding-left: 14px;
-  padding-right: 16px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: calc(1rem - 2px);
+  padding-right: 1rem;
 }
 
 /* --------------------------------------------------------------------------
