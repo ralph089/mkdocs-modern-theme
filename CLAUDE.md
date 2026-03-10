@@ -43,6 +43,18 @@ pnpm exec playwright test tests/e2e/mermaid.spec.ts --config tests/e2e/playwrigh
 make screenshots
 ```
 
+## Documentation
+
+Always update the docs (`docs/`) when making changes. This is a documentation theme — almost every feature change, config addition, or behavioral update affects the user-facing docs. Key files:
+
+- `docs/index.md` — features table and overview
+- `docs/configuration.md` — all theme options and plugin setup
+- `docs/customization/layout.md` — sidebar, header, TOC, responsive behavior
+- `docs/customization/colors.md` — color theme presets and CSS tokens
+- `docs/customization/theming.md` — CSS custom properties
+- `docs/extensions.md` — Markdown extensions
+- `docs-mkdocs.yml` — docs site config (nav, plugins, extensions)
+
 ### Before running tests
 
 Tests require a full build first. `make test` handles this automatically. If running individual test files, build first:
