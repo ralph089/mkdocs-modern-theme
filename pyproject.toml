@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mkdocs-modern-theme"
-version = "1.4.0"
+version = "1.5.0"
 description = "A modern, minimal MkDocs theme inspired by Nextra"
 license = "MIT"
 requires-python = ">=3.9"

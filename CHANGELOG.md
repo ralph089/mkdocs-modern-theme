@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2026-03-10)
+
+### Features
+
+- Add configurable announcement_color option and update screenshots
+  ([`d27bb7f`](https://github.com/ralph089/mkdocs-modern-theme/commit/d27bb7f3843c2741d749896dcf9ddcf9c390642a))
+
+
 ## v1.4.0 (2026-03-10)
 
 ### Documentation
