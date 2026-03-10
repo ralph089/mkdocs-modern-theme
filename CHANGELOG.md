@@ -2,6 +2,24 @@
 
 <!-- version list -->
 
+## v1.3.0 (2026-03-10)
+
+### Documentation
+
+- Add screenshots for each color theme preset
+  ([`7fcdcc1`](https://github.com/ralph089/mkdocs-modern-theme/commit/7fcdcc1d8b6a53ad62c71faff103eda13ad7389c))
+
+### Features
+
+- Add glightbox plugin for image lightbox support
+  ([`5156908`](https://github.com/ralph089/mkdocs-modern-theme/commit/515690840416fc2126722201bfa4f83673e51ca0))
+
+### Testing
+
+- Update visual regression snapshots for color theme presets
+  ([`fd12d92`](https://github.com/ralph089/mkdocs-modern-theme/commit/fd12d92d15eebf672cef3bf344ee769a83b2c881))
+
+
 ## v1.2.0 (2026-03-10)
 
 ### Features
