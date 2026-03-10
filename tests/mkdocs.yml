@@ -30,6 +30,8 @@ nav:
     - Mermaid Diagrams: guide/mermaid.md
     - pymdownx Extensions: guide/pymdownx.md
     - Components: guide/components.md
+  - Customization:
+    - Colors: customization/colors.md
   - Reference:
     - API: reference/api.md
     - Changelog: reference/changelog.md
