@@ -10,9 +10,6 @@ build/
 # Node
 node_modules/
 
-# Vendored JS (copied from node_modules during build)
-mkdocs_modern_theme/js/mermaid.min.js
-
 # MkDocs
 site/
 tests/site/
