@@ -1,0 +1,276 @@
+/* ==========================================================================
+   pymdownx Extension Styles
+   Loaded after theme.css — overrides .hll highlight colors.
+   Uses --modern-* CSS custom properties for automatic dark mode.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Code Block Titles
+   -------------------------------------------------------------------------- */
+
+.modern-content .highlight > .filename {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  font-family: var(--modern-font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--modern-text-secondary);
+  background: var(--modern-surface-alt);
+  border-bottom: 1px solid var(--modern-border);
+}
+
+.modern-content .highlight > .filename::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: var(--modern-text-tertiary);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.modern-content .highlight:has(> .filename) {
+  border-radius: var(--modern-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--modern-border);
+}
+
+.modern-content .highlight:has(> .filename) > pre {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.modern-content .highlighttable th.filename {
+  text-align: left;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--modern-text-secondary);
+  background: var(--modern-surface-alt);
+  border-bottom: 1px solid var(--modern-border);
+  padding: 0 16px;
+  height: 38px;
+}
+
+.modern-content .highlighttable th.filename .filename {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-content .highlighttable th.filename .filename::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: var(--modern-text-tertiary);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Line Numbers
+   -------------------------------------------------------------------------- */
+
+.modern-content .highlighttable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--modern-border);
+  border-radius: var(--modern-radius-md);
+  overflow: hidden;
+}
+
+.modern-content .highlighttable td {
+  padding: 0;
+  vertical-align: top;
+}
+
+.modern-content .highlighttable td.linenos {
+  width: auto;
+  user-select: none;
+  border-right: 1px solid var(--modern-border);
+  background: var(--modern-code-bg);
+}
+
+.modern-content .highlighttable td.linenos .linenodiv pre {
+  margin: 0;
+  padding: 14px 12px 14px 16px;
+  background: transparent;
+  border: none;
+  text-align: right;
+  color: color-mix(in srgb, var(--modern-text-secondary) 60%, transparent);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.modern-content .highlighttable td.code {
+  width: 100%;
+}
+
+.modern-content .highlighttable td.code > div > pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Line Highlighting
+   Overrides layered .hll rules from theme.css (unlayered CSS wins over @layer).
+   -------------------------------------------------------------------------- */
+
+.modern-content .highlight pre code > span {
+  display: block;
+  border-left: 2px solid transparent;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 14px;
+  padding-right: 16px;
+}
+
+.modern-content .highlight .hll {
+  display: block;
+  background: color-mix(in srgb, var(--modern-accent) 8%, transparent);
+  border-left: 2px solid color-mix(in srgb, var(--modern-accent) 50%, transparent);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 14px;
+  padding-right: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Task List Checkboxes
+   -------------------------------------------------------------------------- */
+
+.modern-content .task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modern-content .task-list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  list-style: none;
+}
+
+.modern-content .task-list-control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  cursor: default;
+}
+
+.modern-content .task-list-control input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 1.5px solid var(--modern-border-strong);
+  border-radius: 4px;
+  background: transparent;
+  cursor: default;
+  position: relative;
+}
+
+.modern-content .task-list-control input[type="checkbox"]:checked {
+  background: var(--modern-accent);
+  border-color: var(--modern-accent);
+}
+
+.modern-content .task-list-control input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.modern-content .task-list-indicator {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Critic Markup
+   -------------------------------------------------------------------------- */
+
+.modern-content ins.critic {
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803d;
+  text-decoration: none;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.modern-content del.critic {
+  background: rgba(220, 38, 38, 0.08);
+  color: #b91c1c;
+  text-decoration: line-through;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.modern-content mark.critic {
+  background: rgba(234, 179, 8, 0.15);
+  color: inherit;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.modern-content span.critic.comment {
+  background: var(--modern-surface-alt);
+  color: var(--modern-text-tertiary);
+  font-style: italic;
+  font-size: 0.875em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--modern-border);
+}
+
+.dark .modern-content ins.critic {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+.dark .modern-content del.critic {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+}
+
+.dark .modern-content mark.critic {
+  background: rgba(250, 204, 21, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Math (Arithmatex) Compatibility
+   -------------------------------------------------------------------------- */
+
+.modern-content div.arithmatex {
+  display: block;
+  margin: 1.5em 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.modern-content span.arithmatex {
+  font-size: inherit;
+  line-height: inherit;
+}
