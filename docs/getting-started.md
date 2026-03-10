@@ -2,29 +2,73 @@
 
 This page covers installing the theme, creating a minimal project, and running a local preview.
 
-## Installation
+<div class="steps" markdown>
 
-The theme is not yet published on PyPI. Install directly from GitHub.
+1. **Install the theme**
 
-!!! warning "Always pin a version"
+    The theme is not yet published on PyPI. Install directly from GitHub.
 
-    Install a specific release tag instead of `main`. The `main` branch may contain unreleased breaking changes. Check the [releases page](https://github.com/ralph089/mkdocs-modern-theme/releases) for the latest version.
+    === "uv (recommended)"
 
-### Using uv (recommended)
+        ```bash
+        uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
+        ```
 
-```bash
-uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
-```
+    === "pip"
 
-### Using pip
+        ```bash
+        pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
+        ```
 
-```bash
-pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
-```
+    Replace `v{version}` with the version you want. Check the [releases page](https://github.com/ralph089/mkdocs-modern-theme/releases) for all available versions.
 
-Replace `v{version}` with the version you want. Check the [releases page](https://github.com/ralph089/mkdocs-modern-theme/releases) for all available versions.
+    !!! warning "Always pin a version"
 
-### Upgrading
+        Install a specific release tag instead of `main`. The `main` branch may contain unreleased breaking changes.
+
+2. **Configure mkdocs.yml**
+
+    Create an `mkdocs.yml` at the root of your project:
+
+    ```yaml
+    site_name: My Documentation
+    theme:
+      name: modern
+    ```
+
+    That is the only required configuration. Every theme option has a sensible default.
+
+3. **Add your first page**
+
+    Create a `docs/` directory and an `index.md` inside it:
+
+    ```markdown
+    # Welcome
+
+    This is your documentation home page.
+    ```
+
+4. **Serve locally**
+
+    Start the development server:
+
+    ```bash
+    mkdocs serve
+    ```
+
+    Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. MkDocs watches for file changes and reloads automatically.
+
+5. **Build for production**
+
+    ```bash
+    mkdocs build
+    ```
+
+    The static site is written to the `site/` directory by default. Deploy it to any static hosting provider — GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a plain web server.
+
+</div>
+
+## Upgrading
 
 To upgrade to a newer version, change the tag and re-run the install command:
 
@@ -40,7 +84,7 @@ To upgrade to a newer version, change the tag and re-run the install command:
     pip install --upgrade git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
     ```
 
-### Dependencies
+## Dependencies
 
 Both methods pull in the required dependencies automatically:
 
@@ -48,7 +92,7 @@ Both methods pull in the required dependencies automatically:
 - `pymdown-extensions >= 10.0`
 - `pygments >= 2.16`
 
-### From source (development)
+## Installing from source
 
 Clone the repository and install in editable mode:
 
@@ -57,46 +101,6 @@ git clone https://github.com/ralph089/mkdocs-modern-theme.git
 cd mkdocs-modern-theme
 pip install -e .
 ```
-
-## Minimal configuration
-
-Create an `mkdocs.yml` at the root of your project:
-
-```yaml
-site_name: My Documentation
-theme:
-  name: modern
-```
-
-That is the only required configuration. Every theme option has a sensible default.
-
-## Add your first page
-
-Create a `docs/` directory and an `index.md` inside it:
-
-```markdown
-# Welcome
-
-This is your documentation home page.
-```
-
-## Serve locally
-
-Start the development server:
-
-```bash
-mkdocs serve
-```
-
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. MkDocs watches for file changes and reloads automatically.
-
-## Build for production
-
-```bash
-mkdocs build
-```
-
-The static site is written to the `site/` directory by default. Deploy it to any static hosting provider -- GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a plain web server.
 
 ## Recommended project structure
 
@@ -150,6 +154,6 @@ See the [Extensions](extensions.md) page for a full breakdown of what each exten
 
 ## Next steps
 
-- [Configuration](configuration.md) -- all theme options explained
-- [Customization](customization/theming.md) -- override colors, fonts, and layout
-- [Content](content/admonitions.md) -- admonitions, code blocks, tabs, and tables
+- [Configuration](configuration.md) — all theme options explained
+- [Customization](customization/theming.md) — override colors, fonts, and layout
+- [Content](content/admonitions.md) — admonitions, code blocks, tabs, and tables
