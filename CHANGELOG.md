@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.1 (2026-03-10)
+
+### Bug Fixes
+
+- Track pnpm-lock.yaml for CI reproducibility
+  ([`43616a8`](https://github.com/ralph089/mkdocs-modern-theme/commit/43616a8c05c144096bcb0383c445f16135b4c273))
+
+
 ## v1.1.0 (2026-03-10)
 
 ### Features
