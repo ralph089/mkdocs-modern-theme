@@ -156,3 +156,8 @@ Override the admonition color tokens in your custom CSS:
 ```
 
 Each admonition's background is generated automatically using `color-mix(in srgb, <color> 5%, var(--modern-surface))`, so you only need to set the primary color.
+
+## See also
+
+- [Extensions](../extensions.md) — enabling `admonition` and `pymdownx.details`
+- [Colors](../customization/colors.md) — customizing admonition color tokens

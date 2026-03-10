@@ -1,8 +1,8 @@
 site_name: MkDocs Modern Theme
-site_url: https://example.com/mkdocs-modern-theme/
+site_url: https://ralph089.github.io/mkdocs-modern-theme/
 site_dir: docs-site
 docs_dir: docs
-repo_url: https://github.com/example/mkdocs-modern-theme
+repo_url: https://github.com/ralph089/mkdocs-modern-theme
 
 theme:
   name: modern
@@ -10,8 +10,11 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Configuration: configuration.md
+  - Getting Started:
+    - Installation: getting-started.md
+    - Configuration: configuration.md
+    - Extensions: extensions.md
+    - Deployment: deployment.md
   - Customization:
     - Theming: customization/theming.md
     - Colors: customization/colors.md
@@ -25,7 +28,7 @@ nav:
     - Cards: content/cards.md
     - Steps: content/steps.md
     - File Tree: content/file-tree.md
-  - Extensions: extensions.md
+    - Mermaid Diagrams: content/mermaid.md
 
 markdown_extensions:
   - admonition
@@ -33,7 +36,11 @@ markdown_extensions:
   - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mkdocs_modern_theme.mermaid.fence_mermaid
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details

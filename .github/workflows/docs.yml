@@ -45,12 +45,12 @@ jobs:
         run: |
           pnpm run copy:mermaid
           pnpm run css:build
-          uv run mkdocs build -f tests/mkdocs.yml -d ../site
+          uv run mkdocs build -f docs-mkdocs.yml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: docs-site
 
   deploy:
     needs: build

@@ -143,3 +143,9 @@ Here is a complete override file that rebrands the theme with a purple accent an
 ## Scoping overrides
 
 You can scope overrides to specific pages by adding a class to the page via the `extra` metadata in your Markdown front matter, then targeting that class in CSS. The theme applies styles through the `.modern-content` wrapper, so all content rules can be further qualified.
+
+## See also
+
+- [Colors](colors.md) — detailed color token reference
+- [Typography](typography.md) — font stacks and sizing
+- [Layout](layout.md) — sidebar, header, and content dimensions

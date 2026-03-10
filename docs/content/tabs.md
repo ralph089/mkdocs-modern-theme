@@ -161,3 +161,8 @@ You can have multiple independent tab sets on the same page. Each set maintains 
     ```bash
     mkdocs build --strict
     ```
+
+## See also
+
+- [Extensions](../extensions.md) — configuring `pymdownx.tabbed`
+- [Code Blocks](code-blocks.md) — syntax highlighting inside tabs

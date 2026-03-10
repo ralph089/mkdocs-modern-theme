@@ -1,6 +1,6 @@
 # Tables
 
-Modern styles Markdown tables with clean borders, hover highlighting, and a design that works in both light and dark modes.
+Tables are the best way to present structured data like option references, comparison matrices, and feature lists. Modern styles Markdown tables with clean borders, hover highlighting, and a design that works in both light and dark modes.
 
 ## Requirements
 
@@ -116,3 +116,7 @@ Renders as:
 
 `navigation_depth`
 :   Maximum sidebar nesting depth. Default: `3`.
+
+## See also
+
+- [Extensions](../extensions.md) — enabling `tables` and `def_list`

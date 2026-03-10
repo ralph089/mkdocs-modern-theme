@@ -13,6 +13,8 @@ theme:
   show_breadcrumbs: true
   show_prev_next: true
   show_edit_link: false
+  show_copy_markdown: true
+  show_last_updated: true
   logo: null
 ```
 
@@ -114,6 +116,43 @@ theme:
   show_edit_link: true
 ```
 
+### `show_copy_markdown`
+
+Whether to show a button that copies the page's Markdown source to the clipboard.
+
+- **Type:** boolean
+- **Default:** `true`
+
+This adds a small copy icon alongside the edit link area. Visitors can click it to copy the raw Markdown of the current page.
+
+```yaml
+theme:
+  name: modern
+  show_copy_markdown: false
+```
+
+### `show_last_updated`
+
+Whether to show a "Last updated" date below the page content.
+
+- **Type:** boolean
+- **Default:** `true`
+
+The date is pulled from git history. For this to work, you need the `git-revision-date-localized` plugin:
+
+```yaml
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+```
+
+```yaml
+theme:
+  name: modern
+  show_last_updated: false
+```
+
 ### `logo`
 
 Path to a custom logo image displayed in the header. When set to `null` (the default), the site name is displayed as text.
@@ -154,3 +193,9 @@ The search plugin generates a `search_index.json` that the theme's Cmd+K search 
 
 !!! tip "No extra plugins required"
     Modern does not require any third-party MkDocs plugins. The search modal, dark mode toggle, scroll spy, and mobile menu are all built into the theme itself.
+
+## See also
+
+- [Getting Started](getting-started.md) — installation and first build
+- [Theming](customization/theming.md) — CSS custom properties for visual customization
+- [Extensions](extensions.md) — Markdown extensions that unlock additional features

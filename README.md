@@ -61,7 +61,7 @@ extra_css:
 }
 ```
 
-See the full list of custom properties in the [API reference](https://ralph089.github.io/mkdocs-modern-theme/reference/api/).
+See the full list of custom properties in the [Theming guide](https://ralph089.github.io/mkdocs-modern-theme/customization/theming/).
 
 ## Development
 

@@ -59,3 +59,8 @@ markdown_extensions:
   - attr_list
   - md_in_html
 ```
+
+## See also
+
+- [Steps](steps.md) — sequential step-by-step layouts
+- [File Tree](file-tree.md) — directory structure displays

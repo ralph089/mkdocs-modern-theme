@@ -155,6 +155,85 @@ echo "Done."
 }
 ```
 
+## Code block titles
+
+Add a title to any code block with the `title` attribute. This is useful for showing filenames:
+
+````markdown
+```python title="main.py"
+def main():
+    print("Hello, world!")
+```
+````
+
+Renders as:
+
+```python title="main.py"
+def main():
+    print("Hello, world!")
+```
+
+## Line numbers
+
+Enable line numbers with `linenums="1"` (the number sets the starting line):
+
+````markdown
+```python linenums="1"
+import os
+import sys
+
+def main():
+    print("Running...")
+```
+````
+
+Renders as:
+
+```python linenums="1"
+import os
+import sys
+
+def main():
+    print("Running...")
+```
+
+## Line highlighting
+
+Highlight specific lines with `hl_lines` to draw attention to key parts of a code block:
+
+````markdown
+```python hl_lines="2 3"
+def connect():
+    host = "localhost"
+    port = 8080
+    return create_connection(host, port)
+```
+````
+
+Renders as:
+
+```python hl_lines="2 3"
+def connect():
+    host = "localhost"
+    port = 8080
+    return create_connection(host, port)
+```
+
+You can combine all three — titles, line numbers, and highlighting work together:
+
+```python title="config.py" linenums="1" hl_lines="3 4"
+import yaml
+
+with open("mkdocs.yml") as f:
+    config = yaml.safe_load(f)
+
+print(config["site_name"])
+```
+
+## Copy button
+
+Every code block includes a copy-to-clipboard button that appears on hover in the top-right corner. Clicking it copies the entire code block content. No configuration is needed — this is built into the theme.
+
 ## Inline code
 
 Wrap text in single backticks for inline code: `--modern-accent` renders with a subtle background tint and the monospace font.
@@ -194,3 +273,8 @@ Override the background tokens in your custom CSS:
 The theme includes two complete Pygments color schemes (light and dark) that are applied automatically based on the current color mode. The light scheme uses GitHub-style colors. The dark scheme uses GitHub Dark-style colors.
 
 The syntax colors are defined in the theme's CSS and are not exposed as custom properties. To fully replace them, add your own Pygments-compatible styles targeting `.modern-content .highlight` selectors.
+
+## See also
+
+- [Extensions](../extensions.md) — configuring `pymdownx.highlight` and `pymdownx.superfences`
+- [Mermaid Diagrams](mermaid.md) — code blocks that render as diagrams

@@ -1,6 +1,6 @@
 # Extensions
 
-Modern works with standard MkDocs and PyMdown Extensions. This page lists the recommended extensions and explains what each one enables.
+Modern works with standard MkDocs and PyMdown Extensions. Enabling the right extensions unlocks admonitions, tabbed content, syntax highlighting, and other features that make documentation more engaging and readable. This page lists the recommended extensions and explains what each one enables.
 
 ## Recommended configuration
 
@@ -193,9 +193,12 @@ Use emoji shortcodes in your Markdown.
 
 ```yaml
 - pymdownx.emoji:
-    emoji_index: !!python/name:material.extensions.emoji.twemoji
-    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    emoji_index: !!python/name:pymdownx.emoji.twemoji
+    emoji_generator: !!python/name:pymdownx.emoji.to_svg
 ```
+
+!!! warning "Don't use Material paths"
+    Some guides reference `material.extensions.emoji.twemoji` and `material.extensions.emoji.to_svg`. Those paths require `mkdocs-material` as a dependency. Use the `pymdownx.emoji` paths shown above instead.
 
 ### attr_list
 
@@ -211,6 +214,56 @@ Add footnotes with `[^1]` syntax.
 
 ```yaml
 - footnotes
+```
+
+### pymdownx.tasklist
+
+Renders GitHub-style task list checkboxes.
+
+```yaml
+- pymdownx.tasklist:
+    custom_checkbox: true
+```
+
+The `custom_checkbox: true` option produces styled checkboxes. The theme provides custom checkbox styling that matches the overall design.
+
+```markdown
+- [x] Completed task
+- [ ] Incomplete task
+```
+
+### pymdownx.arithmatex
+
+Render LaTeX math expressions.
+
+```yaml
+- pymdownx.arithmatex:
+    generic: true
+```
+
+The `generic: true` option outputs math in a format compatible with both KaTeX and MathJax. You also need to include one of them via `extra_javascript`:
+
+```yaml
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
+```
+
+### pymdownx.caret
+
+Insert text with `^^insert^^` and superscript with `^sup^`.
+
+```yaml
+- pymdownx.caret
+```
+
+### pymdownx.tilde
+
+Strikethrough text with `~~delete~~` and subscript with `~sub~`.
+
+```yaml
+- pymdownx.tilde
 ```
 
 ## Installation

@@ -70,3 +70,8 @@ stateDiagram-v2
 ## Dark Mode
 
 Diagrams automatically switch between mermaid's `default` and `dark` themes when you toggle the site's color mode. No additional configuration is needed.
+
+## See also
+
+- [Extensions](../extensions.md) — configuring `pymdownx.superfences` with `custom_fences`
+- [Code Blocks](code-blocks.md) — standard syntax-highlighted code blocks

@@ -47,6 +47,16 @@ test.describe('Search', () => {
     await expect(page.locator('input[placeholder="Search documentation..."]')).not.toBeVisible();
   });
 
+  test('header search input has darker background than header', async ({ page }) => {
+    await page.goto('/');
+    const searchBtn = page.locator('header .search-input-bg');
+    await expect(searchBtn).toBeVisible();
+    const bg = await searchBtn.evaluate(el => getComputedStyle(el).backgroundColor);
+    // Should not be transparent — color-mix should produce a visible tint
+    expect(bg).not.toBe('rgba(0, 0, 0, 0)');
+    expect(bg).not.toBe('transparent');
+  });
+
   test('shows "No results" for unmatched query', async ({ page }) => {
     await page.goto('/');
     await page.keyboard.press('Control+k');

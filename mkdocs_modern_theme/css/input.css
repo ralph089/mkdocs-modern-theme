@@ -134,6 +134,11 @@
   --modern-card-bg: var(--modern-surface-raised);
 }
 
+/* Search input background — slightly darker than modal surface */
+.search-input-bg {
+  background: color-mix(in srgb, var(--modern-text-primary) 3%, var(--modern-surface));
+}
+
 /* ============================================================
    Base Layer
    ============================================================ */
