@@ -50,6 +50,28 @@ document.addEventListener('alpine:init', () => {
   });
 
   // ================================================
+  // Sidebar Store — collapsible desktop sidebar
+  // ================================================
+  Alpine.store('sidebar', {
+    collapsed: localStorage.getItem('modern-sidebar-collapsed') === 'true',
+
+    toggle() {
+      this.collapsed = !this.collapsed;
+      localStorage.setItem('modern-sidebar-collapsed', this.collapsed);
+    },
+
+    expand() {
+      this.collapsed = false;
+      localStorage.setItem('modern-sidebar-collapsed', 'false');
+    },
+
+    collapse() {
+      this.collapsed = true;
+      localStorage.setItem('modern-sidebar-collapsed', 'true');
+    }
+  });
+
+  // ================================================
   // Mobile Menu Store
   // ================================================
   Alpine.store('mobile', {
