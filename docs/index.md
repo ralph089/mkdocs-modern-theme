@@ -1,6 +1,6 @@
 # MkDocs Modern Theme
 
-A clean, fast, Nextra-inspired theme for MkDocs. Built with Tailwind CSS v4, Alpine.js, and the Geist font family.
+A clean, fast, Nextra- and Fumadocs-inspired theme for MkDocs. Built with Tailwind CSS v4, Alpine.js, and the Geist font family.
 
 ---
 
