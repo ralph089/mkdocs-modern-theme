@@ -61,17 +61,19 @@ theme:
 
 With a depth of `2`, only top-level items and their immediate children appear. Deeper items are still accessible via their parent pages.
 
-### Hiding the sidebar
+### Collapsing the sidebar
 
-There is no built-in toggle to hide the sidebar entirely, but you can collapse it with CSS:
+The sidebar has a built-in collapse button at its bottom edge. Clicking it slides the sidebar off-screen, giving the content area the full width. The collapsed state is saved in `localStorage` (key: `modern-sidebar-collapsed`) so it persists across page loads and sessions.
+
+When collapsed, a small expand button appears at the left edge of the page to restore it.
+
+To hide the sidebar entirely via CSS (for example, on specific pages), you can still override the width:
 
 ```css
 :root {
   --modern-sidebar-width: 0px;
 }
 ```
-
-Or hide it on specific pages using front-matter metadata and a custom CSS class.
 
 ## Table of contents
 

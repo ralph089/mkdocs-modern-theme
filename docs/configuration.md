@@ -8,6 +8,7 @@ All theme options live under the `theme:` key in your `mkdocs.yml`. Every option
 theme:
   name: modern
   color_mode: system
+  color_theme: default
   navigation_depth: 3
   show_toc: true
   show_breadcrumbs: true
@@ -37,6 +38,22 @@ theme:
   name: modern
   color_mode: dark
 ```
+
+### `color_theme`
+
+Selects a color theme preset that sets the accent and surface colors for both light and dark mode.
+
+- **Type:** string
+- **Default:** `default`
+- **Options:** `default`, `ocean`, `purple`, `rose`, `emerald`, `amber`, `slate`, `ruby`
+
+```yaml
+theme:
+  name: modern
+  color_theme: ocean
+```
+
+Each preset provides both light and dark variants automatically. You can further customize individual tokens on top of a preset using `extra_css`. See [Colors](customization/colors.md) for screenshots and details of each preset.
 
 ### `navigation_depth`
 
@@ -182,20 +199,24 @@ edit_uri: edit/main/docs/       # Path template for edit links
 
 ## Plugins
 
-The theme works with the built-in search plugin out of the box:
+The theme works with the built-in search plugin out of the box. It also ships with [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) as a dependency for image lightbox support.
 
 ```yaml
 plugins:
   - search
+  - glightbox
 ```
 
 The search plugin generates a `search_index.json` that the theme's Cmd+K search modal consumes via lunr.js.
 
-!!! tip "No extra plugins required"
-    Modern does not require any third-party MkDocs plugins. The search modal, dark mode toggle, scroll spy, and mobile menu are all built into the theme itself.
+The glightbox plugin adds lightbox functionality to images — clicking any image opens it in a fullscreen overlay. The plugin is installed automatically with the theme; just add `- glightbox` to your `plugins` list to enable it.
+
+!!! tip "Recommended plugins"
+    Add `glightbox` to your plugins list for the best experience. The search modal, dark mode toggle, scroll spy, and mobile menu are all built into the theme itself.
 
 ## See also
 
 - [Getting Started](getting-started.md) — installation and first build
+- [Colors](customization/colors.md) — color theme presets and palette customization
 - [Theming](customization/theming.md) — CSS custom properties for visual customization
 - [Extensions](extensions.md) — Markdown extensions that unlock additional features

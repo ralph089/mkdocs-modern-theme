@@ -20,7 +20,9 @@ Most MkDocs themes are either dated in appearance or heavy with features you nev
 |---|---|
 | Dark / light / system mode | Three-way toggle, remembers preference in `localStorage` |
 | Geist font family | Variable-weight sans and mono fonts, bundled and self-hosted |
-| Responsive sidebar | Collapsible on mobile, sticky on desktop, configurable depth |
+| Color theme presets | 8 palettes — ocean, purple, rose, emerald, amber, slate, ruby, default |
+| Responsive sidebar | Collapsible on desktop and mobile, sticky, configurable depth |
+| Image lightbox | Click any image to open fullscreen (powered by glightbox) |
 | Table of contents | Scroll-spy highlights the current section, smooth-scroll on click |
 | Search modal | Cmd+K / Ctrl+K, keyboard-navigable results, lazy-loaded index |
 | Breadcrumbs | Auto-generated from the nav tree |
