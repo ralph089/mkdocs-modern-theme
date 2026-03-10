@@ -1,0 +1,27 @@
+{# Recursive nav item for sidebar #}
+{% if nav_item.children %}
+  {# Section with children #}
+  <div x-data="{ open: {{ 'true' if nav_item.active else 'false' }} }" class="mb-1">
+    <button @click="open = !open"
+            class="flex items-center justify-between w-full px-3 py-1.5 rounded-[var(--modern-radius-sm)] text-left font-medium text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150">
+      <span>{{ nav_item.title }}</span>
+      <svg class="w-4 h-4 shrink-0 transition-transform duration-200" :class="open && 'rotate-90'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+    <div x-show="open" x-collapse class="ml-3 mt-0.5 pl-3 border-l border-[var(--modern-border)]">
+      {% for nav_item in nav_item.children %}
+        {% include "partials/sidebar-nav-item.html" %}
+      {% endfor %}
+    </div>
+  </div>
+{% elif nav_item.is_page %}
+  {# Page link #}
+  <a href="{{ nav_item.url | url }}"
+     class="flex items-center px-3 py-1.5 rounded-[var(--modern-radius-sm)] transition-colors duration-150 mb-0.5
+            {% if nav_item.active %} bg-[var(--modern-accent)]/10 text-[var(--modern-accent)] font-medium
+            {% else %} text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)]
+            {% endif %}">
+    {{ nav_item.title }}
+  </a>
+{% endif %}

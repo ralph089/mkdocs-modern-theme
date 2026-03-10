@@ -1,0 +1,27 @@
+{# Recursive macro to find breadcrumb path to current page #}
+{% macro find_path(items, page, trail=[]) %}
+  {% for item in items %}
+    {% if item.is_page and item == page %}
+      {# Found the page — render the breadcrumb trail #}
+      <nav class="py-4 lg:pl-8 xl:pr-8" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1 text-sm text-[var(--modern-text-tertiary)]">
+          {% for crumb in trail %}
+          <li class="flex items-center gap-1">
+            <span>{{ crumb }}</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </li>
+          {% endfor %}
+          <li class="text-[var(--modern-text-secondary)] font-medium">{{ page.title }}</li>
+        </ol>
+      </nav>
+    {% elif item.children %}
+      {{ find_path(item.children, page, trail + [item.title]) }}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% if config.theme.show_breadcrumbs and page %}
+  {{ find_path(nav, page) }}
+{% endif %}

@@ -1,0 +1,7 @@
+<aside class="hidden lg:block w-[var(--modern-sidebar-width)] shrink-0 pt-[var(--modern-header-height)]">
+  <nav class="sticky top-[var(--modern-header-height)] h-[calc(100vh-var(--modern-header-height))] overflow-y-auto py-6 pr-4 text-sm" aria-label="Navigation">
+    {% for nav_item in nav %}
+      {% include "partials/sidebar-nav-item.html" %}
+    {% endfor %}
+  </nav>
+</aside>

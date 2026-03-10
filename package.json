@@ -1,0 +1,16 @@
+{
+  "name": "mkdocs-modern-theme",
+  "private": true,
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i mkdocs_modern_theme/css/input.css -o mkdocs_modern_theme/css/theme.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i mkdocs_modern_theme/css/input.css -o mkdocs_modern_theme/css/theme.css --watch",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "@playwright/test": "^1.48.0"
+  },
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+}

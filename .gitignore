@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Node
+node_modules/
+pnpm-lock.yaml
+
+# MkDocs
+site/
+tests/site/
+docs-site/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Environment
+.env
+.venv/

@@ -1,0 +1,18 @@
+<article class="modern-content py-8 lg:py-12 lg:pl-8 xl:pr-8">
+  {% if page and page.content %}
+    {{ page.content }}
+  {% endif %}
+
+  {% if config.theme.show_edit_link and page and page.edit_url %}
+  <div class="mt-12 pt-6 border-t border-[var(--modern-border)]">
+    <a href="{{ page.edit_url }}"
+       class="inline-flex items-center gap-1.5 text-sm text-[var(--modern-text-tertiary)] hover:text-[var(--modern-accent)] transition-colors duration-150"
+       target="_blank" rel="noopener">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+      </svg>
+      Edit this page
+    </a>
+  </div>
+  {% endif %}
+</article>

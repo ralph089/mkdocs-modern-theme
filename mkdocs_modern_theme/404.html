@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block toc %}{% endblock %}
+
+{% block content %}
+<article class="py-16 text-center">
+  <h1 class="text-6xl font-bold text-[var(--modern-text-tertiary)] mb-4">404</h1>
+  <p class="text-xl text-[var(--modern-text-secondary)] mb-8">Page not found</p>
+  <a href="{{ config.site_url | default('/') }}"
+     class="inline-flex items-center gap-2 px-4 py-2 rounded-[var(--modern-radius-md)] bg-[var(--modern-accent)] text-white hover:bg-[var(--modern-accent-hover)] transition-colors duration-150">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+    </svg>
+    Back to home
+  </a>
+</article>
+{% endblock %}

@@ -1,0 +1,284 @@
+/**
+ * MkDocs Modern Theme — Alpine.js stores and components
+ */
+
+document.addEventListener('alpine:init', () => {
+
+  // ================================================
+  // Theme Store — dark/light/system toggle
+  // ================================================
+  Alpine.store('theme', {
+    mode: localStorage.getItem('modern-theme-mode') || 'system',
+
+    init() {
+      this._apply();
+      // Listen for system preference changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (this.mode === 'system') this._apply();
+      });
+    },
+
+    get isDark() {
+      if (this.mode === 'dark') return true;
+      if (this.mode === 'light') return false;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    },
+
+    get nextLabel() {
+      if (this.mode === 'system') return 'light';
+      if (this.mode === 'light') return 'dark';
+      return 'system';
+    },
+
+    cycle() {
+      if (this.mode === 'system') this.mode = 'light';
+      else if (this.mode === 'light') this.mode = 'dark';
+      else this.mode = 'system';
+
+      localStorage.setItem('modern-theme-mode', this.mode);
+      this._apply();
+    },
+
+    _apply() {
+      if (this.isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  });
+
+  // ================================================
+  // Mobile Menu Store
+  // ================================================
+  Alpine.store('mobile', {
+    isOpen: false,
+
+    toggle() {
+      this.isOpen = !this.isOpen;
+    },
+
+    open() {
+      this.isOpen = true;
+    },
+
+    close() {
+      this.isOpen = false;
+    },
+
+    init() {
+      // Close on escape
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen) this.close();
+      });
+      // Close on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024 && this.isOpen) this.close();
+      });
+    }
+  });
+
+  // ================================================
+  // Search Store — Ctrl+K modal with lunr.js
+  // ================================================
+  Alpine.store('search', {
+    isOpen: false,
+    query: '',
+    results: [],
+    selectedIndex: 0,
+    loading: false,
+    _index: null,
+    _docs: null,
+    _baseUrl: '',
+
+    init() {
+      // Global keyboard shortcut
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          this.isOpen ? this.close() : this.open();
+        }
+      });
+
+      // Watch query changes
+      Alpine.effect(() => {
+        if (this.query.length > 0) {
+          this._search(this.query);
+        } else {
+          this.results = [];
+          this.selectedIndex = 0;
+        }
+      });
+    },
+
+    open() {
+      this.isOpen = true;
+      this.query = '';
+      this.results = [];
+      this.selectedIndex = 0;
+      // Load index lazily on first open
+      if (!this._index) this._loadIndex();
+      // Focus input after transition
+      setTimeout(() => {
+        const input = document.querySelector('[x-ref="searchInput"]');
+        if (input) input.focus();
+      }, 50);
+    },
+
+    close() {
+      this.isOpen = false;
+      this.query = '';
+      this.results = [];
+    },
+
+    async _loadIndex() {
+      if (this._index || this.loading) return;
+      this.loading = true;
+      try {
+        let searchUrl = 'search/search_index.json';
+        // Determine the base URL from the theme stylesheet path
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        for (const link of links) {
+          const href = link.getAttribute('href');
+          if (href && href.includes('css/theme.css')) {
+            this._baseUrl = href.replace('css/theme.css', '');
+            searchUrl = this._baseUrl + 'search/search_index.json';
+            break;
+          }
+        }
+        const resp = await fetch(searchUrl);
+        const data = await resp.json();
+        this._docs = data.docs;
+        // Build or load lunr index
+        if (data.index) {
+          this._index = lunr.Index.load(data.index);
+        } else {
+          this._index = lunr(function() {
+            this.ref('location');
+            this.field('title', { boost: 10 });
+            this.field('text');
+            data.docs.forEach((doc) => {
+              this.add(doc);
+            });
+          });
+        }
+      } catch (err) {
+        console.error('Failed to load search index:', err);
+      }
+      this.loading = false;
+    },
+
+    _search(query) {
+      if (!this._index || !query) {
+        this.results = [];
+        return;
+      }
+      const base = this._baseUrl;
+      const mapResults = (raw) => raw.slice(0, 20).map((r) => {
+        const doc = this._docs.find(d => d.location === r.ref);
+        return {
+          location: base + (doc ? doc.location : r.ref),
+          title: doc ? doc.title : r.ref,
+          text: doc ? (doc.text || '').substring(0, 150) : ''
+        };
+      });
+      try {
+        // Try exact match first (works with lunr stemming)
+        let raw = this._index.search(query);
+        // Fallback: try wildcard for partial matches
+        if (raw.length === 0) {
+          try { raw = this._index.search(query + '*'); } catch (_) {}
+        }
+        // Fallback: try each word with wildcard
+        if (raw.length === 0) {
+          try {
+            const terms = query.split(/\s+/).map(t => t + '*').join(' ');
+            raw = this._index.search(terms);
+          } catch (_) {}
+        }
+        this.results = mapResults(raw);
+      } catch (e) {
+        // If lunr throws, try simpler query
+        try {
+          const raw = this._index.search(query.replace(/[^\w\s]/g, ''));
+          this.results = mapResults(raw);
+        } catch (_) {
+          this.results = [];
+        }
+      }
+      this.selectedIndex = 0;
+    },
+
+    nextResult() {
+      if (this.selectedIndex < this.results.length - 1) {
+        this.selectedIndex++;
+      }
+    },
+
+    prevResult() {
+      if (this.selectedIndex > 0) {
+        this.selectedIndex--;
+      }
+    },
+
+    goToResult() {
+      if (this.results[this.selectedIndex]) {
+        window.location.href = this.results[this.selectedIndex].location;
+        this.close();
+      }
+    }
+  });
+});
+
+// ================================================
+// TOC Scroll Spy — Alpine.js component
+// ================================================
+function tocSpy() {
+  return {
+    activeId: '',
+    showScrollTop: false,
+    _observer: null,
+
+    init() {
+      const headings = document.querySelectorAll('.modern-content h2[id], .modern-content h3[id]');
+      if (!headings.length) return;
+
+      // Set initial active to first heading
+      this.activeId = headings[0].id;
+
+      // IntersectionObserver for scroll spy
+      this._observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.activeId = entry.target.id;
+            }
+          });
+        },
+        {
+          rootMargin: '-80px 0px -80% 0px',
+          threshold: 0
+        }
+      );
+
+      headings.forEach((h) => this._observer.observe(h));
+
+      // Scroll-to-top visibility
+      window.addEventListener('scroll', () => {
+        this.showScrollTop = window.scrollY > 300;
+      }, { passive: true });
+    },
+
+    scrollTo(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        this.activeId = id;
+      }
+    },
+
+    destroy() {
+      if (this._observer) this._observer.disconnect();
+    }
+  };
+}

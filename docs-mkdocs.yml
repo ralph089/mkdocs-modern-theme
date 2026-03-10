@@ -1,0 +1,46 @@
+site_name: MkDocs Modern Theme
+site_url: https://example.com/mkdocs-modern-theme/
+site_dir: docs-site
+docs_dir: docs
+repo_url: https://github.com/example/mkdocs-modern-theme
+
+theme:
+  name: modern
+  logo: assets/logo.svg
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Configuration: configuration.md
+  - Customization:
+    - Theming: customization/theming.md
+    - Colors: customization/colors.md
+    - Typography: customization/typography.md
+    - Layout: customization/layout.md
+  - Content:
+    - Admonitions: content/admonitions.md
+    - Code Blocks: content/code-blocks.md
+    - Tabs: content/tabs.md
+    - Tables: content/tables.md
+    - Cards: content/cards.md
+    - Steps: content/steps.md
+    - File Tree: content/file-tree.md
+  - Extensions: extensions.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - tables
+  - def_list
+
+plugins:
+  - search

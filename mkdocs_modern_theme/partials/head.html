@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="mkdocs-modern-theme">
+
+<title>{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+
+{% if page and page.meta.description %}
+<meta name="description" content="{{ page.meta.description }}">
+{% elif config.site_description %}
+<meta name="description" content="{{ config.site_description }}">
+{% endif %}
+
+{% if config.site_url %}
+<link rel="canonical" href="{{ page.canonical_url }}">
+{% endif %}
+
+{# Favicon #}
+{% if config.theme.logo %}
+<link rel="icon" href="{{ config.theme.logo | url }}" type="image/svg+xml">
+{% endif %}
+
+{# Preload fonts #}
+<link rel="preload" href="{{ 'fonts/GeistVF.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ 'fonts/GeistMonoVF.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+
+{# Theme CSS #}
+<link rel="stylesheet" href="{{ 'css/theme.css' | url }}">
+
+{# Extra CSS from mkdocs.yml #}
+{% for css_file in config.extra_css %}
+<link rel="stylesheet" href="{{ css_file | url }}">
+{% endfor %}
+
+{# FOUC prevention: apply theme before paint #}
+<script>
+(function() {
+  var mode = localStorage.getItem('modern-theme-mode');
+  if (mode === 'dark' || (!mode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>

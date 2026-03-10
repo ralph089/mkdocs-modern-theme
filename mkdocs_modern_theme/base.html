@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ config.theme.locale.language }}" x-data :class="$store.theme.isDark && 'dark'">
+<head>
+  {% block head %}
+    {% include "partials/head.html" %}
+  {% endblock %}
+</head>
+<body class="bg-[var(--modern-surface)] text-[var(--modern-text-primary)] font-[var(--modern-font-sans)] antialiased">
+  {% block header %}
+    {% include "partials/header.html" %}
+  {% endblock %}
+
+  <div class="mx-auto max-w-[var(--modern-content-max-width)] px-4 sm:px-6">
+    <div class="flex">
+      {% block sidebar %}
+        {% include "partials/sidebar.html" %}
+      {% endblock %}
+
+      <main class="min-w-0 flex-1 pt-[var(--modern-header-height)]">
+        {% block breadcrumbs %}
+          {% include "partials/breadcrumbs.html" %}
+        {% endblock %}
+
+        {% block content %}
+          {% include "partials/content.html" %}
+        {% endblock %}
+
+        {% block footer %}
+          {% include "partials/footer.html" %}
+        {% endblock %}
+      </main>
+
+      {% block toc %}
+        {% include "partials/toc.html" %}
+      {% endblock %}
+    </div>
+  </div>
+
+  {% block search %}
+    {% include "partials/search-modal.html" %}
+  {% endblock %}
+
+  {% block mobile_menu %}
+    {% include "partials/mobile-menu.html" %}
+  {% endblock %}
+
+  {% block scripts %}
+    {% include "partials/scripts.html" %}
+  {% endblock %}
+</body>
+</html>

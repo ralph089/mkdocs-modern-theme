@@ -1,0 +1,48 @@
+site_name: Modern Theme Test
+site_url: http://localhost:8000/
+site_dir: site
+docs_dir: docs
+repo_url: https://github.com/example/mkdocs-modern-theme
+copyright: Copyright &copy; 2024 Modern Theme
+
+theme:
+  name: modern
+  logo: assets/logo.svg
+  color_mode: system
+  navigation_depth: 3
+  show_toc: true
+  show_breadcrumbs: true
+  show_prev_next: true
+  show_edit_link: false
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Configuration: getting-started/configuration.md
+  - Guide:
+    - Writing Docs: guide/writing-docs.md
+    - Admonitions: guide/admonitions.md
+    - Code Blocks: guide/code-blocks.md
+    - Components: guide/components.md
+  - Reference:
+    - API: reference/api.md
+    - Changelog: reference/changelog.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - tables
+  - def_list
+
+plugins:
+  - search

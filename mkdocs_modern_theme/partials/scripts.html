@@ -1,0 +1,13 @@
+{# Theme JS — must load before Alpine #}
+<script src="{{ 'js/theme.js' | url }}"></script>
+
+{# Lunr search engine #}
+<script src="{{ 'js/lunr.min.js' | url }}"></script>
+
+{# Alpine.js (core + collapse + focus plugins) — must be last #}
+<script src="{{ 'js/alpine.min.js' | url }}" defer></script>
+
+{# Extra JS from mkdocs.yml #}
+{% for js_file in config.extra_javascript %}
+<script src="{{ js_file | url }}"></script>
+{% endfor %}
