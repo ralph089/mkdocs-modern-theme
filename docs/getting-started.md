@@ -4,19 +4,43 @@ This page covers installing the theme, creating a minimal project, and running a
 
 ## Installation
 
-The theme is not yet published on PyPI. Install directly from GitHub:
+The theme is not yet published on PyPI. Install directly from GitHub.
+
+!!! warning "Always pin a version"
+
+    Install a specific release tag instead of `main`. The `main` branch may contain unreleased breaking changes. Check the [releases page](https://github.com/ralph089/mkdocs-modern-theme/releases) for the latest version.
 
 ### Using uv (recommended)
 
 ```bash
-uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
 ```
 
 ### Using pip
 
 ```bash
-pip install git+https://github.com/ralph089/mkdocs-modern-theme.git
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
 ```
+
+Replace `v1.5.0` with the version you want. Check the [releases page](https://github.com/ralph089/mkdocs-modern-theme/releases) for all available versions.
+
+### Upgrading
+
+To upgrade to a newer version, change the tag and re-run the install command:
+
+=== "uv"
+
+    ```bash
+    uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
+    ```
+
+=== "pip"
+
+    ```bash
+    pip install --upgrade git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
+    ```
+
+### Dependencies
 
 Both methods pull in the required dependencies automatically:
 

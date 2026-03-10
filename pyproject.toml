@@ -41,6 +41,7 @@ packages = ["mkdocs_modern_theme"]
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 version_variables = ["mkdocs_modern_theme/__init__.py:__version__"]
+build_command = "python3 scripts/update_docs_version.py {version}"
 commit_parser = "conventional"
 major_on_zero = false
 tag_format = "v{version}"
