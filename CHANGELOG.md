@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-03-10)
+
+### Features
+
+- Add collapsible sidebar with localStorage persistence
+  ([`795991e`](https://github.com/ralph089/mkdocs-modern-theme/commit/795991ed551f9edd8feb51ea5d2cd50acce33b9e))
+
+- Add color theme presets (ocean, purple, rose, emerald, amber, slate, ruby)
+  ([`fc63350`](https://github.com/ralph089/mkdocs-modern-theme/commit/fc63350acb86eb5c77cd7e269eb371ada8e70a7f))
+
+
 ## v1.1.4 (2026-03-10)
 
 ### Bug Fixes
