@@ -2,6 +2,7 @@
   "name": "mkdocs-modern-theme",
   "private": true,
   "scripts": {
+    "prepare": "husky",
     "css:build": "npx @tailwindcss/cli -i mkdocs_modern_theme/css/input.css -o mkdocs_modern_theme/css/theme.css --minify",
     "css:watch": "npx @tailwindcss/cli -i mkdocs_modern_theme/css/input.css -o mkdocs_modern_theme/css/theme.css --watch",
     "copy:mermaid": "cp node_modules/mermaid/dist/mermaid.min.js mkdocs_modern_theme/js/mermaid.min.js",
@@ -9,8 +10,11 @@
     "test:ui": "playwright test --ui"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.4.3",
+    "@commitlint/config-conventional": "^20.4.3",
     "@playwright/test": "^1.48.0",
     "@tailwindcss/cli": "^4.0.0",
+    "husky": "^9.1.7",
     "mermaid": "11",
     "tailwindcss": "^4.0.0"
   },

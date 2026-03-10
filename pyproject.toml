@@ -33,3 +33,26 @@ last-updated = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["mkdocs_modern_theme"]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+version_variables = ["mkdocs_modern_theme/__init__.py:__version__"]
+commit_parser = "conventional"
+major_on_zero = false
+tag_format = "v{version}"
+
+[tool.semantic_release.branches.main]
+match = "main"
+
+[tool.semantic_release.commit_parser_options]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+parse_squash_commits = true
+ignore_merge_commits = true
+
+[tool.semantic_release.changelog]
+enabled = true
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+output_format = "md"
