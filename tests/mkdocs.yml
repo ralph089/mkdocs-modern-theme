@@ -1,9 +1,9 @@
-site_name: Modern Theme Test
-site_url: http://localhost:8000/
+site_name: MkDocs Modern Theme
+site_url: https://ralph089.github.io/mkdocs-modern-theme/
 site_dir: site
 docs_dir: docs
-repo_url: https://github.com/example/mkdocs-modern-theme
-copyright: Copyright &copy; 2024 Modern Theme
+repo_url: https://github.com/ralph089/mkdocs-modern-theme
+copyright: Copyright &copy; 2025 Ralph
 
 theme:
   name: modern
@@ -22,6 +22,7 @@ nav:
   - Getting Started:
     - Installation: getting-started/installation.md
     - Configuration: getting-started/configuration.md
+    - Development: getting-started/development.md
   - Guide:
     - Writing Docs: guide/writing-docs.md
     - Admonitions: guide/admonitions.md

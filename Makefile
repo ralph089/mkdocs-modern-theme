@@ -1,7 +1,7 @@
 .PHONY: install dev build test screenshots clean
 
 install:
-	uv sync
+	uv sync --all-extras
 	pnpm install
 	pnpm run copy:mermaid
 

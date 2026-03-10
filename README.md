@@ -1,6 +1,8 @@
 # mkdocs-modern-theme
 
-A minimal MkDocs theme inspired by Nextra. Clean layout, dark mode, full-text search, zero external dependencies.
+A minimal MkDocs theme with a 3-column layout, dark mode, and built-in search. No external dependencies.
+
+**[Documentation](https://ralph089.github.io/mkdocs-modern-theme/)**
 
 ## Install
 
@@ -17,12 +19,12 @@ theme:
 ## Features
 
 - **3-column layout** — sidebar, content, table of contents
-- **Dark mode** — system-aware with manual toggle (light/dark/system cycle)
+- **Dark mode** — system-aware with manual toggle
 - **Search** — Ctrl+K / Cmd+K modal powered by lunr.js
 - **Fully bundled** — Geist fonts, Alpine.js, lunr.js all included. No CDN, no external requests
 - **Themable** — 30+ CSS custom properties (`--modern-*`) for colors, fonts, spacing, layout
-- **Responsive** — mobile sidebar overlay, adaptive breakpoints at 1024px and 1280px
-- **Content** — admonitions, syntax highlighting, tabs, tables, collapsible details, definition lists
+- **Responsive** — mobile sidebar overlay, adaptive breakpoints
+- **Content components** — Steps, Cards, File Tree, tabs, admonitions, mermaid diagrams
 
 ## Theme Options
 
@@ -40,7 +42,7 @@ theme:
 
 ## Customization
 
-Override any design token with a CSS file:
+Override design tokens with a CSS file:
 
 ```yaml
 extra_css:
@@ -55,24 +57,7 @@ extra_css:
 }
 ```
 
-See the full list of custom properties in [`css/input.css`](mkdocs_modern_theme/css/input.css).
-
-## Recommended Extensions
-
-```yaml
-markdown_extensions:
-  - admonition
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.details
-  - toc:
-      permalink: true
-  - tables
-  - def_list
-```
+See the full list of custom properties in the [API reference](https://ralph089.github.io/mkdocs-modern-theme/reference/api/).
 
 ## Development
 
@@ -80,8 +65,8 @@ Requires [uv](https://docs.astral.sh/uv/) and [pnpm](https://pnpm.io/).
 
 ```bash
 make install    # uv sync + pnpm install
-make dev        # CSS watch + mkdocs serve (test site)
-make build      # build CSS + test site
+make dev        # CSS watch + mkdocs serve (localhost:8000)
+make build      # build CSS + site
 make test       # build + Playwright E2E tests
 ```
 

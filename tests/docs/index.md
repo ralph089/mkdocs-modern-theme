@@ -1,15 +1,15 @@
-# Welcome to Modern Theme
+# MkDocs Modern Theme
 
-A clean, minimal MkDocs theme inspired by Nextra's design philosophy.
+A clean, minimal MkDocs theme with a 3-column layout, dark mode, and built-in search. Inspired by Nextra and Fumadocs.
 
 ## Features
 
-- **Modern Design** — Clean, minimal aesthetic with Geist fonts
-- **Dark Mode** — System-aware with manual toggle
-- **Full-text Search** — Instant Ctrl+K search powered by lunr.js
-- **Responsive** — 3-column layout that adapts to any screen
-- **Fully Bundled** — Zero external dependencies, works offline
-- **Themable** — Every color, font, and spacing via CSS custom properties
+- **3-column layout** — sidebar navigation, content area, table of contents
+- **Dark mode** — follows system preference, with manual toggle
+- **Search** — `Ctrl+K` / `Cmd+K` modal powered by lunr.js
+- **Fully bundled** — Geist fonts, Alpine.js, lunr.js included. No CDN, no external requests
+- **Themable** — 30+ CSS custom properties for colors, fonts, spacing, and layout
+- **Content components** — Steps, Cards, File Tree, tabs, admonitions, mermaid diagrams
 
 ## Quick Start
 
@@ -17,13 +17,30 @@ A clean, minimal MkDocs theme inspired by Nextra's design philosophy.
 pip install mkdocs-modern-theme
 ```
 
-Then in your `mkdocs.yml`:
-
 ```yaml
+# mkdocs.yml
 theme:
   name: modern
 ```
 
-## What's Next?
+```bash
+mkdocs serve
+```
 
-Check out the [Installation guide](getting-started/installation.md) to get started, or explore the [Guide](guide/writing-docs.md) for usage examples.
+## Explore
+
+<div class="cards" markdown>
+
+- **[Installation](getting-started/installation.md)**
+  Install the theme and set up your project.
+
+- **[Configuration](getting-started/configuration.md)**
+  Theme options, color modes, and CSS custom properties.
+
+- **[Components](guide/components.md)**
+  Steps, Cards, File Tree, tabs, and more.
+
+- **[Code Blocks](guide/code-blocks.md)**
+  Syntax highlighting, line numbers, and copy buttons.
+
+</div>
