@@ -5,6 +5,56 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   Copy-to-Clipboard Button
+   Ghost button, top-right corner, visible only on hover over code block.
+   -------------------------------------------------------------------------- */
+
+.copy-code-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--modern-radius-sm);
+  background: transparent;
+  color: var(--modern-text-tertiary);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background-color 0.15s, color 0.15s;
+}
+
+/* Show on parent hover — button lives on .highlight or pre's parent */
+.highlight:hover > .copy-code-btn,
+*:has(> pre > code):hover > .copy-code-btn {
+  opacity: 1;
+}
+
+.copy-code-btn:hover {
+  background: var(--modern-surface-alt);
+  color: var(--modern-text-secondary);
+}
+
+.copy-code-btn.copied {
+  color: var(--modern-accent);
+}
+
+/* When title bar is present, offset below it */
+.highlight:has(> .filename) .copy-code-btn {
+  top: 46px;
+}
+
+/* When inside a table (line numbers), position relative to td.code */
+.highlighttable {
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
    Code Block Titles
    -------------------------------------------------------------------------- */
 
