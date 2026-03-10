@@ -2,6 +2,41 @@
 
 <!-- version list -->
 
+## v1.1.4 (2026-03-10)
+
+### Bug Fixes
+
+- Track vendored mermaid.min.js so end users get it on install
+  ([`708add1`](https://github.com/ralph089/mkdocs-modern-theme/commit/708add102ec7b4369a7f12d155c0e46f804d3a47))
+
+### Build System
+
+- **deps**: Bump actions/checkout from 4 to 6
+  ([#1](https://github.com/ralph089/mkdocs-modern-theme/pull/1),
+  [`b1d51d5`](https://github.com/ralph089/mkdocs-modern-theme/commit/b1d51d5ba0c933b37b84ad004a58074058b768f4))
+
+- **deps**: Bump actions/setup-node from 4 to 6
+  ([#5](https://github.com/ralph089/mkdocs-modern-theme/pull/5),
+  [`e32658b`](https://github.com/ralph089/mkdocs-modern-theme/commit/e32658b6dd07e38e2773427c86a618807672a49e))
+
+- **deps**: Bump actions/upload-pages-artifact from 3 to 4
+  ([#2](https://github.com/ralph089/mkdocs-modern-theme/pull/2),
+  [`f46784a`](https://github.com/ralph089/mkdocs-modern-theme/commit/f46784ae19c9a1e1bbf5519b680c4cb7b4208988))
+
+- **deps**: Bump astral-sh/setup-uv from 4 to 7
+  ([#4](https://github.com/ralph089/mkdocs-modern-theme/pull/4),
+  [`3d5c158`](https://github.com/ralph089/mkdocs-modern-theme/commit/3d5c158ba664e49843b28461a893ab6d93037362))
+
+- **deps**: Bump python-semantic-release/python-semantic-release
+  ([#3](https://github.com/ralph089/mkdocs-modern-theme/pull/3),
+  [`19ae32b`](https://github.com/ralph089/mkdocs-modern-theme/commit/19ae32b1b61260711063c0f92c8db22cdd4d271f))
+
+### Documentation
+
+- Overhaul documentation site structure and deploy from docs/
+  ([`f9238c1`](https://github.com/ralph089/mkdocs-modern-theme/commit/f9238c1fa38eb17538bbf0f44181eb81943e6c5b))
+
+
 ## v1.1.3 (2026-03-10)
 
 ### Bug Fixes
