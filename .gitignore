@@ -36,6 +36,7 @@ playwright/.cache/
 
 # Superpowers
 .superpowers/
+docs/superpowers/
 
 # Environment
 .env
