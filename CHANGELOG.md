@@ -2,6 +2,27 @@
 
 <!-- version list -->
 
+## v1.1.2 (2026-03-10)
+
+### Bug Fixes
+
+- Design polish and test infrastructure improvements
+  ([`4cb9240`](https://github.com/ralph089/mkdocs-modern-theme/commit/4cb92409ef3f5c3d3cfb105dea9e00508de30e5d))
+
+### Continuous Integration
+
+- Add dependabot for actions, npm, and pip updates
+  ([`c29e439`](https://github.com/ralph089/mkdocs-modern-theme/commit/c29e4397611e43c69b735fa0facb95788fba2a86))
+
+### Testing
+
+- Add E2E tests for pymdownx extension support
+  ([`27821aa`](https://github.com/ralph089/mkdocs-modern-theme/commit/27821aa17741477492d18627b5c1866bfcce7093))
+
+- Update visual regression snapshots for pymdownx styles
+  ([`7170701`](https://github.com/ralph089/mkdocs-modern-theme/commit/7170701152c800bc095b3c529b48824d550d8b5e))
+
+
 ## v1.1.1 (2026-03-10)
 
 ### Bug Fixes
