@@ -11,6 +11,14 @@ if (document.querySelector('.mermaid')) {
 }
 </script>
 
+<script>
+  if (document.querySelector('pre > code')) {
+    var s = document.createElement('script');
+    s.src = '{{ "js/copy-code.js" | url }}';
+    document.head.appendChild(s);
+  }
+</script>
+
 {# Lunr search engine #}
 <script src="{{ 'js/lunr.min.js' | url }}"></script>
 
