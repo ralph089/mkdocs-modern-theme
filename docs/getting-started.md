@@ -104,17 +104,19 @@ pip install -e .
 
 ## Recommended project structure
 
-```
-my-project/
-  docs/
-    index.md
-    getting-started.md
-    guides/
-      first-guide.md
-    reference/
-      api.md
-  mkdocs.yml
-```
+<div class="file-tree" markdown>
+
+- my-project/
+    - docs/
+        - index.md
+        - getting-started.md
+        - guides/
+            - first-guide.md
+        - reference/
+            - api.md
+    - mkdocs.yml
+
+</div>
 
 ## Adding navigation
 
