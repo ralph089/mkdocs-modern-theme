@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.5.2 (2026-03-10)
+
+### Bug Fixes
+
+- Resolve CodeQL security alerts
+  ([`b56215f`](https://github.com/ralph089/mkdocs-modern-theme/commit/b56215f0d997de1d6573cad9ee2bacae7dc22207))
+
+### Documentation
+
+- Use steps component on getting-started page
+  ([`7afa3cd`](https://github.com/ralph089/mkdocs-modern-theme/commit/7afa3cdf9491caf731361b03f657379bed8420f5))
+
+
 ## v1.5.1 (2026-03-10)
 
 ### Bug Fixes
