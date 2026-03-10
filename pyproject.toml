@@ -21,6 +21,7 @@ dependencies = [
     "mkdocs>=1.5",
     "pymdown-extensions>=10.0",
     "pygments>=2.16",
+    "mkdocs-glightbox>=0.5.2",
 ]
 
 [project.entry-points."mkdocs.themes"]
