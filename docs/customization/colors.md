@@ -2,6 +2,34 @@
 
 Modern uses a token-based color system. Every color in the theme flows through a `--modern-*` CSS custom property, making it straightforward to swap palettes without editing theme internals.
 
+## Color theme presets
+
+The theme ships with 8 ready-made color themes. Set `color_theme` in your `mkdocs.yml`:
+
+```yaml
+theme:
+  name: modern
+  color_theme: ocean
+```
+
+Available presets:
+
+| Preset | Accent | Surface | Character |
+|---|---|---|---|
+| `default` | Blue | Neutral gray | Clean, familiar |
+| `ocean` | Teal | Cool blue-gray | Technical, calm |
+| `purple` | Violet | Warm lavender | Creative, modern |
+| `rose` | Pink | Warm rose-gray | Bold, editorial |
+| `emerald` | Green | Cool sage | Natural, fresh |
+| `amber` | Gold | Warm cream | Warm, approachable |
+| `slate` | Gray | Cool blue-slate | Minimal, understated |
+| `ruby` | Red | Neutral | Strong, high-contrast |
+
+Each preset provides light and dark mode variants automatically. The dark/light toggle continues to work as usual.
+
+!!! tip "Further customization"
+    Presets override accent and surface colors. You can still use `extra_css` to fine-tune individual tokens on top of a preset.
+
 ## How color mode works
 
 The theme supports three modes: **system**, **light**, and **dark**.

@@ -134,6 +134,170 @@
   --modern-card-bg: var(--modern-surface-raised);
 }
 
+/* ============================================================
+   Color Theme Presets
+   Each preset overrides accent + (optionally) surface tokens.
+   Combined with .dark for dark-mode variants.
+   ============================================================ */
+
+/* --- Ocean: teal accent, cool blue-gray surfaces --- */
+.theme-ocean {
+  --modern-accent: #0891b2;
+  --modern-accent-hover: #0e7490;
+  --modern-accent-muted: rgba(8, 145, 178, 0.08);
+  --modern-note: #0891b2;
+  --modern-surface: #f8fafb;
+  --modern-surface-alt: #eef2f5;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f3f6f8;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-ocean.dark {
+  --modern-accent: #22d3ee;
+  --modern-accent-hover: #67e8f9;
+  --modern-accent-muted: rgba(34, 211, 238, 0.1);
+  --modern-note: #22d3ee;
+  --modern-surface: #0f1214;
+  --modern-surface-alt: #171c1f;
+  --modern-surface-raised: #1c2125;
+  --modern-code-bg: #171c1f;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Purple: violet accent, warm lavender surfaces --- */
+.theme-purple {
+  --modern-accent: #7c3aed;
+  --modern-accent-hover: #6d28d9;
+  --modern-accent-muted: rgba(124, 58, 237, 0.08);
+  --modern-note: #7c3aed;
+  --modern-surface: #faf8fc;
+  --modern-surface-alt: #f1edf6;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f5f2f8;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-purple.dark {
+  --modern-accent: #a78bfa;
+  --modern-accent-hover: #c4b5fd;
+  --modern-accent-muted: rgba(167, 139, 250, 0.1);
+  --modern-note: #a78bfa;
+  --modern-surface: #110f15;
+  --modern-surface-alt: #1a171f;
+  --modern-surface-raised: #1f1c24;
+  --modern-code-bg: #1a171f;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Rose: pink accent, warm rose-gray surfaces --- */
+.theme-rose {
+  --modern-accent: #e11d48;
+  --modern-accent-hover: #be123c;
+  --modern-accent-muted: rgba(225, 29, 72, 0.08);
+  --modern-note: #e11d48;
+  --modern-surface: #fcf8f9;
+  --modern-surface-alt: #f5eef0;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f8f3f5;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-rose.dark {
+  --modern-accent: #fb7185;
+  --modern-accent-hover: #fda4af;
+  --modern-accent-muted: rgba(251, 113, 133, 0.1);
+  --modern-note: #fb7185;
+  --modern-surface: #140f11;
+  --modern-surface-alt: #1c1618;
+  --modern-surface-raised: #221b1e;
+  --modern-code-bg: #1c1618;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Emerald: green accent, cool sage surfaces --- */
+.theme-emerald {
+  --modern-accent: #059669;
+  --modern-accent-hover: #047857;
+  --modern-accent-muted: rgba(5, 150, 105, 0.08);
+  --modern-note: #059669;
+  --modern-surface: #f7fbf9;
+  --modern-surface-alt: #ecf4f0;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f2f7f4;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-emerald.dark {
+  --modern-accent: #34d399;
+  --modern-accent-hover: #6ee7b7;
+  --modern-accent-muted: rgba(52, 211, 153, 0.1);
+  --modern-note: #34d399;
+  --modern-surface: #0e1312;
+  --modern-surface-alt: #161d1a;
+  --modern-surface-raised: #1b2320;
+  --modern-code-bg: #161d1a;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Amber: gold accent, warm cream surfaces --- */
+.theme-amber {
+  --modern-accent: #d97706;
+  --modern-accent-hover: #b45309;
+  --modern-accent-muted: rgba(217, 119, 6, 0.08);
+  --modern-note: #d97706;
+  --modern-surface: #fcfaf6;
+  --modern-surface-alt: #f5f0e8;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f8f5ef;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-amber.dark {
+  --modern-accent: #fbbf24;
+  --modern-accent-hover: #fde68a;
+  --modern-accent-muted: rgba(251, 191, 36, 0.1);
+  --modern-note: #fbbf24;
+  --modern-surface: #141210;
+  --modern-surface-alt: #1d1a15;
+  --modern-surface-raised: #23201a;
+  --modern-code-bg: #1d1a15;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Slate: muted gray accent, cool blue-slate surfaces --- */
+.theme-slate {
+  --modern-accent: #475569;
+  --modern-accent-hover: #334155;
+  --modern-accent-muted: rgba(71, 85, 105, 0.08);
+  --modern-note: #475569;
+  --modern-surface: #f8f9fb;
+  --modern-surface-alt: #eef0f4;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f3f4f7;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
+}
+.theme-slate.dark {
+  --modern-accent: #94a3b8;
+  --modern-accent-hover: #cbd5e1;
+  --modern-accent-muted: rgba(148, 163, 184, 0.1);
+  --modern-note: #94a3b8;
+  --modern-surface: #0f1114;
+  --modern-surface-alt: #171a1e;
+  --modern-surface-raised: #1c1f24;
+  --modern-code-bg: #171a1e;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.07);
+}
+
+/* --- Ruby: red accent, neutral surfaces (same as default) --- */
+.theme-ruby {
+  --modern-accent: #dc2626;
+  --modern-accent-hover: #b91c1c;
+  --modern-accent-muted: rgba(220, 38, 38, 0.08);
+  --modern-note: #dc2626;
+}
+.theme-ruby.dark {
+  --modern-accent: #f87171;
+  --modern-accent-hover: #fca5a5;
+  --modern-accent-muted: rgba(248, 113, 113, 0.1);
+  --modern-note: #f87171;
+}
+
 /* Search input background — slightly darker than modal surface */
 .search-input-bg {
   background: color-mix(in srgb, var(--modern-text-primary) 3%, var(--modern-surface));

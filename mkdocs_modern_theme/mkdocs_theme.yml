@@ -1,6 +1,7 @@
 locale: en
 
 color_mode: system
+color_theme: default
 navigation_depth: 3
 show_toc: true
 show_breadcrumbs: true

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config.theme.locale.language }}" x-data :class="$store.theme.isDark && 'dark'">
+<html lang="{{ config.theme.locale.language }}" {% if config.theme.color_theme and config.theme.color_theme != 'default' %}class="theme-{{ config.theme.color_theme }}"{% endif %} x-data :class="$store.theme.isDark && 'dark'">
 <head>
   {% block head %}
     {% include "partials/head.html" %}
