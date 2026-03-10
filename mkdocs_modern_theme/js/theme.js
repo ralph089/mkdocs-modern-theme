@@ -561,7 +561,7 @@ function initMermaid() {
     var source = el.getAttribute('data-mermaid-source');
     if (source && el.querySelector('svg')) {
       el.removeAttribute('data-processed');
-      el.innerHTML = source;
+      el.textContent = source;
     }
   });
 
