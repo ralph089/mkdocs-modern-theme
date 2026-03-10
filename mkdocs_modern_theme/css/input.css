@@ -870,7 +870,7 @@
   .modern-content .tabbed-labels > label:hover {
     color: var(--modern-text-primary);
   }
-  .modern-content .tabbed-set > input:checked + label {
+  .modern-content .tabbed-labels > label.tabbed-label--active {
     color: var(--modern-accent);
     border-bottom-color: var(--modern-accent);
   }
@@ -880,7 +880,7 @@
   .modern-content .tabbed-content > .tabbed-block {
     display: none;
   }
-  .modern-content .tabbed-content > .tabbed-block:first-child {
+  .modern-content .tabbed-content > .tabbed-block.tabbed-block--active {
     display: block;
   }
 

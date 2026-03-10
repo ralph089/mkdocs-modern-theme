@@ -460,6 +460,50 @@ function pageFeedback() {
 }
 
 // ================================================
+// Tabbed Content (pymdownx.tabbed alternate style)
+// ================================================
+(function() {
+  function initTabs() {
+    document.querySelectorAll('.tabbed-set').forEach(function(tabSet) {
+      var inputs = tabSet.querySelectorAll(':scope > input');
+      var labels = tabSet.querySelectorAll('.tabbed-labels > label');
+      var blocks = tabSet.querySelectorAll('.tabbed-content > .tabbed-block');
+
+      function update() {
+        inputs.forEach(function(input, i) {
+          if (labels[i]) {
+            if (input.checked) {
+              labels[i].classList.add('tabbed-label--active');
+            } else {
+              labels[i].classList.remove('tabbed-label--active');
+            }
+          }
+          if (blocks[i]) {
+            if (input.checked) {
+              blocks[i].classList.add('tabbed-block--active');
+            } else {
+              blocks[i].classList.remove('tabbed-block--active');
+            }
+          }
+        });
+      }
+
+      inputs.forEach(function(input) {
+        input.addEventListener('change', update);
+      });
+
+      update();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTabs);
+  } else {
+    initTabs();
+  }
+})();
+
+// ================================================
 // Mermaid Diagram Support
 // ================================================
 function initMermaid() {
