@@ -14,6 +14,7 @@ import sys
 DOCS_FILES = [
     "docs/getting-started.md",
     "docs/index.md",
+    "README.md",
 ]
 
 PATTERNS = [
@@ -34,12 +35,14 @@ def main() -> None:
     version = sys.argv[1]
 
     for path in DOCS_FILES:
-        text = open(path).read()
+        with open(path) as f:
+            text = f.read()
         new_text = text
         for pattern, template in PATTERNS:
             new_text = pattern.sub(template.format(version=version), new_text)
         if text != new_text:
-            open(path, "w").write(new_text)
+            with open(path, "w") as f:
+                f.write(new_text)
             print(f"Updated {path} → v{version}")
         else:
             print(f"No changes in {path}")

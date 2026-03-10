@@ -1,17 +1,24 @@
 # mkdocs-modern-theme
 
-A minimal MkDocs theme with a 3-column layout, dark mode, and built-in search. No external dependencies.
+[![Release](https://img.shields.io/github/v/release/ralph089/mkdocs-modern-theme?style=flat-square&color=blue)](https://github.com/ralph089/mkdocs-modern-theme/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/ralph089/mkdocs-modern-theme/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-%3E%3D3.9-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![MkDocs](https://img.shields.io/badge/mkdocs-%3E%3D1.5-blue?style=flat-square)](https://www.mkdocs.org/)
+[![Docs](https://img.shields.io/github/actions/workflow/status/ralph089/mkdocs-modern-theme/docs.yml?style=flat-square&label=docs)](https://ralph089.github.io/mkdocs-modern-theme/)
+[![Conventional Commits](https://img.shields.io/badge/commits-conventional-blue?style=flat-square)](https://www.conventionalcommits.org/)
 
-**[Documentation](https://ralph089.github.io/mkdocs-modern-theme/)**
+A modern, fully-bundled MkDocs theme with a 3-column layout, dark mode, and built-in search. No CDN, no external requests.
+
+**[Documentation](https://ralph089.github.io/mkdocs-modern-theme/)** | **[Getting Started](https://ralph089.github.io/mkdocs-modern-theme/getting-started/)** | **[Configuration](https://ralph089.github.io/mkdocs-modern-theme/configuration/)**
 
 ## Install
 
 ```bash
 # uv (recommended)
-uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.3
 
 # pip
-pip install git+https://github.com/ralph089/mkdocs-modern-theme.git
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.3
 ```
 
 ```yaml
@@ -23,25 +30,42 @@ theme:
 ## Features
 
 - **3-column layout** — sidebar, content, table of contents
-- **Dark mode** — system-aware with manual toggle
+- **Dark / light / system mode** — three-way toggle with system detection
 - **Search** — Ctrl+K / Cmd+K modal powered by lunr.js
 - **Fully bundled** — Geist fonts, Alpine.js, lunr.js all included. No CDN, no external requests
-- **Themable** — 30+ CSS custom properties (`--modern-*`) for colors, fonts, spacing, layout
+- **8 color presets** — ocean, purple, rose, emerald, amber, slate, ruby, default
+- **30+ CSS custom properties** — full control over colors, fonts, spacing, layout
 - **Responsive** — mobile sidebar overlay, adaptive breakpoints
-- **Content components** — Steps, Cards, File Tree, tabs, admonitions, mermaid diagrams
+- **Content components** — steps, cards, file tree, tabs, admonitions, mermaid diagrams, code blocks
+- **Image lightbox** — powered by glightbox
+- **Announcement bar** — dismissible, customizable color
+- **Breadcrumbs** — auto-generated from nav tree
+- **Previous / Next navigation** — automatic page links
+- **Page feedback** — "Was this helpful?" widget
+- **i18n** — built-in translations for de, es, fr, ja, zh_CN
+- **Print styles** — hides chrome, expands links
+- **Accessible** — focus rings, reduced-motion support, semantic HTML
 
 ## Theme Options
 
 ```yaml
 theme:
   name: modern
-  color_mode: system        # system | light | dark
-  navigation_depth: 3       # sidebar nesting depth
-  show_toc: true
-  show_breadcrumbs: true
-  show_prev_next: true
-  show_edit_link: false
-  logo: null                # path to logo image
+  color_mode: system              # system | light | dark
+  color_theme: default            # default | ocean | purple | rose | emerald | amber | slate | ruby
+  navigation_depth: 3             # sidebar nesting depth
+  show_toc: true                  # table of contents panel
+  show_breadcrumbs: true          # breadcrumb navigation
+  show_prev_next: true            # previous/next page links
+  show_edit_link: false           # edit on repository link
+  show_copy_markdown: true        # copy markdown source button
+  show_last_updated: true         # last updated date
+  show_feedback: true             # page feedback widget
+  announcement: ""                # banner message (HTML allowed)
+  announcement_dismissible: true  # allow dismissing announcement
+  announcement_color: ""          # custom announcement bar color
+  logo: null                      # path to logo image
+  locale: en                      # en | de | es | fr | ja | zh_CN
 ```
 
 ## Customization
