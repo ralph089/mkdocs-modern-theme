@@ -15,10 +15,10 @@ A modern, fully-bundled MkDocs theme with a 3-column layout, dark mode, and buil
 
 ```bash
 # uv (recommended)
-uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.3
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
 
 # pip
-pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.3
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
 ```
 
 ```yaml

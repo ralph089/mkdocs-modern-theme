@@ -1,3 +1,3 @@
 """MkDocs Modern Theme — A minimal, Nextra-inspired theme for MkDocs."""
 
-__version__ = "1.5.3"
+__version__ = "1.5.4"

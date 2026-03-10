@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v1.5.4 (2026-03-10)
+
+### Bug Fixes
+
+- Enable last-updated plugin, escape mermaid source, and narrow lunr sanitization
+  ([`479ccdc`](https://github.com/ralph089/mkdocs-modern-theme/commit/479ccdcb8a762b1014e3d08222a79ae4c942cb10))
+
+### Documentation
+
+- Update README with badges, full feature list, and version pins
+  ([`e3c673a`](https://github.com/ralph089/mkdocs-modern-theme/commit/e3c673a8da9364622e4ee586a1a81a6bce1bff77))
+
+- Use file-tree component for project structure
+  ([`0091aae`](https://github.com/ralph089/mkdocs-modern-theme/commit/0091aaec4cadad875b1e8cf877fab9e64e958d8b))
+
+
 ## v1.5.3 (2026-03-10)
 
 ### Bug Fixes
