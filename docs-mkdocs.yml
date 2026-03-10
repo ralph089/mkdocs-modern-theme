@@ -11,7 +11,8 @@ theme:
   show_edit_link: true
 
 nav:
-  - Home: index.md
+  - Overview: index.md
+  - Changelog: changelog.md
   - Getting Started:
     - Installation: getting-started.md
     - Configuration: configuration.md
