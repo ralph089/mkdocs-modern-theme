@@ -340,7 +340,7 @@ wheels = [
 
 [[package]]
 name = "mkdocs-modern-theme"
-version = "1.2.0"
+version = "1.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "mkdocs" },
@@ -350,6 +350,9 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+i18n = [
+    { name = "babel" },
+]
 last-updated = [
     { name = "mkdocs-git-revision-date-localized-plugin", version = "1.5.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "mkdocs-git-revision-date-localized-plugin", version = "1.5.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
@@ -357,13 +360,14 @@ last-updated = [
 
 [package.metadata]
 requires-dist = [
+    { name = "babel", marker = "extra == 'i18n'", specifier = ">=2.12" },
     { name = "mkdocs", specifier = ">=1.5" },
     { name = "mkdocs-git-revision-date-localized-plugin", marker = "extra == 'last-updated'", specifier = ">=1.5.0" },
     { name = "mkdocs-glightbox", specifier = ">=0.5.2" },
     { name = "pygments", specifier = ">=2.16" },
     { name = "pymdown-extensions", specifier = ">=10.0" },
 ]
-provides-extras = ["last-updated"]
+provides-extras = ["last-updated", "i18n"]
 
 [[package]]
 name = "packaging"

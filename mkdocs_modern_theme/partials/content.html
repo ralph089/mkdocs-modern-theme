@@ -24,7 +24,7 @@
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/>
             <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
           </svg>
-          Copy Markdown
+          {% trans %}Copy Markdown{% endtrans %}
         </span>
       </template>
       <template x-if="copied">
@@ -32,7 +32,7 @@
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
-          Copied!
+          {% trans %}Copied!{% endtrans %}
         </span>
       </template>
     </button>
@@ -44,7 +44,7 @@
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
         </svg>
-        Edit
+        {% trans %}Edit{% endtrans %}
       </span>
     </a>
     {% endif %}
@@ -62,7 +62,44 @@
 {% if config.theme.show_last_updated and page and page.meta.git_revision_date_localized %}
 <div class="modern-last-updated lg:pl-8 xl:pr-8 pb-4">
   <p class="text-xs text-[var(--modern-text-tertiary)]">
-    Last updated on {{ page.meta.git_revision_date_localized }}
+    {% trans date=page.meta.git_revision_date_localized %}Last updated on {{ date }}{% endtrans %}
   </p>
+</div>
+{% endif %}
+
+{% if config.theme.show_feedback and page %}
+<div class="modern-feedback lg:pl-8 xl:pr-8 py-3" x-data="pageFeedback()" data-page-url="{{ page.url }}">
+  <div class="modern-feedback-row">
+    <p class="modern-feedback-label">{% trans %}How is this guide?{% endtrans %}</p>
+    <button class="modern-feedback-btn" :class="rating === 'yes' && 'active'" @click="vote('yes')" :disabled="state === 'thanks'" aria-label="{% trans %}Good{% endtrans %}">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/>
+      </svg>
+      {% trans %}Good{% endtrans %}
+    </button>
+    <button class="modern-feedback-btn" :class="rating === 'no' && 'active'" @click="vote('no')" :disabled="state === 'thanks'" aria-label="{% trans %}Bad{% endtrans %}">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3H10z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 2h3a2 2 0 012 2v7a2 2 0 01-2 2h-3"/>
+      </svg>
+      {% trans %}Bad{% endtrans %}
+    </button>
+  </div>
+
+  <div class="modern-feedback-comment" x-show="state === 'comment'" x-cloak
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 -translate-y-2"
+       x-transition:enter-end="opacity-100 translate-y-0">
+    <textarea class="modern-feedback-textarea" x-model="comment" placeholder="{% trans %}Leave your feedback...{% endtrans %}" @keydown.enter.prevent="submitComment()"></textarea>
+    <button class="modern-feedback-submit" @click="submitComment()">{% trans %}Submit{% endtrans %}</button>
+  </div>
+
+  <div class="modern-feedback-thanks" x-show="state === 'thanks'" x-cloak x-transition.opacity>
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+    </svg>
+    <p>{% trans %}Thank you for your feedback!{% endtrans %}</p>
+  </div>
 </div>
 {% endif %}

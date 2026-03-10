@@ -7,6 +7,7 @@ All theme options live under the `theme:` key in your `mkdocs.yml`. Every option
 ```yaml
 theme:
   name: modern
+  locale: en
   color_mode: system
   color_theme: default
   navigation_depth: 3
@@ -16,10 +17,37 @@ theme:
   show_edit_link: false
   show_copy_markdown: true
   show_last_updated: true
+  announcement: ""
+  announcement_dismissible: true
   logo: null
 ```
 
 ## Option reference
+
+### `locale`
+
+Sets the language for all UI strings (navigation labels, search placeholder, button text, etc.).
+
+- **Type:** string
+- **Default:** `en`
+- **Supported:** `en`, `de`, `es`, `fr`, `ja`, `zh_CN`
+
+When set to a supported language, all built-in theme strings are translated automatically. Page content is not affected — only the theme's UI chrome.
+
+```yaml
+theme:
+  name: modern
+  locale: de
+```
+
+To add a new language, install the optional `babel` dependency and use the i18n Makefile targets:
+
+```bash
+pip install mkdocs-modern-theme[i18n]
+make i18n-init LANG=pt_BR
+# Edit mkdocs_modern_theme/locales/pt_BR/LC_MESSAGES/messages.po
+make i18n-compile
+```
 
 ### `color_mode`
 
@@ -168,6 +196,54 @@ plugins:
 theme:
   name: modern
   show_last_updated: false
+```
+
+### `show_feedback`
+
+Whether to show a "Was this page helpful?" feedback widget at the bottom of each page. Readers can vote thumbs up or thumbs down, and optionally leave a comment after a negative vote.
+
+- **Type:** boolean
+- **Default:** `true`
+
+The widget dispatches a `modern-feedback` custom event on `window` with `{ page, rating, comment }` in the detail. If Google Analytics 4 is loaded (`gtag` is available), it also fires a `page_feedback` GA4 event automatically.
+
+Votes are stored in `localStorage` per page URL to prevent duplicate submissions.
+
+```yaml
+theme:
+  name: modern
+  show_feedback: false
+```
+
+### `announcement`
+
+HTML string displayed in a banner bar above the header. Useful for version releases, breaking changes, or important notices.
+
+- **Type:** string
+- **Default:** `""` (empty — no bar shown)
+
+The bar uses the theme's accent color as its background with white text. HTML is supported, so you can include links.
+
+```yaml
+theme:
+  name: modern
+  announcement: 'v2.0 is out! <a href="/changelog/">See what changed</a>'
+```
+
+### `announcement_dismissible`
+
+Whether visitors can dismiss the announcement bar by clicking an X button.
+
+- **Type:** boolean
+- **Default:** `true`
+
+Dismissal is persisted in `localStorage` using a hash of the announcement text. When you change the announcement text, the bar automatically reappears for all visitors — even those who dismissed the previous one.
+
+```yaml
+theme:
+  name: modern
+  announcement: 'New release available!'
+  announcement_dismissible: false
 ```
 
 ### `logo`

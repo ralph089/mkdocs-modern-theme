@@ -23,6 +23,21 @@ Override them in your custom CSS:
 }
 ```
 
+## Announcement bar
+
+An optional banner that sits above the header. Use it for version releases, deprecation notices, or any site-wide message.
+
+```yaml
+theme:
+  name: modern
+  announcement: 'v2.0 is here! <a href="/changelog/">Read the changelog</a>'
+  announcement_dismissible: true
+```
+
+The bar uses the theme's accent color (`--modern-accent`) as its background. When dismissed, a hash of the announcement text is stored in `localStorage`. Changing the text automatically resets the dismissal for all visitors.
+
+The announcement bar shifts the header and all layout elements down by its measured height using the `--modern-announce-height` CSS variable. When dismissed, the layout snaps back smoothly via a 150ms transition.
+
 ## Header
 
 The header is fixed at the top of the viewport with a height of `--modern-header-height`. It contains:

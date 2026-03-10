@@ -37,7 +37,7 @@
                @keydown.arrow-up.prevent="$store.search.prevResult()"
                @keydown.enter.prevent="$store.search.goToResult()"
                type="text"
-               placeholder="Search documentation..."
+               placeholder="{% trans %}Search documentation...{% endtrans %}"
                class="flex-1 py-3.5 bg-transparent text-[var(--modern-text-primary)] placeholder-[var(--modern-text-tertiary)] outline-none text-base">
         <kbd class="hidden sm:inline-flex px-1.5 py-0.5 text-xs font-mono rounded border border-[var(--modern-border)] bg-[var(--modern-surface-alt)] text-[var(--modern-text-tertiary)]">
           ESC
@@ -48,13 +48,13 @@
       <div class="max-h-[60vh] overflow-y-auto overscroll-contain">
         <template x-if="$store.search.query.length > 0 && $store.search.results.length === 0 && !$store.search.loading">
           <div class="px-4 py-8 text-center text-[var(--modern-text-tertiary)]">
-            No results found
+            {% trans %}No results found{% endtrans %}
           </div>
         </template>
 
         <template x-if="$store.search.loading">
           <div class="px-4 py-8 text-center text-[var(--modern-text-tertiary)]">
-            Loading search index...
+            {% trans %}Loading search index...{% endtrans %}
           </div>
         </template>
 
@@ -79,15 +79,15 @@
         <span class="flex items-center gap-1">
           <kbd class="px-1 py-0.5 rounded border border-[var(--modern-border)] bg-[var(--modern-surface-alt)]">&uarr;</kbd>
           <kbd class="px-1 py-0.5 rounded border border-[var(--modern-border)] bg-[var(--modern-surface-alt)]">&darr;</kbd>
-          navigate
+          {% trans %}navigate{% endtrans %}
         </span>
         <span class="flex items-center gap-1">
           <kbd class="px-1 py-0.5 rounded border border-[var(--modern-border)] bg-[var(--modern-surface-alt)]">&crarr;</kbd>
-          open
+          {% trans %}open{% endtrans %}
         </span>
         <span class="flex items-center gap-1">
           <kbd class="px-1 py-0.5 rounded border border-[var(--modern-border)] bg-[var(--modern-surface-alt)]">esc</kbd>
-          close
+          {% trans %}close{% endtrans %}
         </span>
       </div>
     </div>

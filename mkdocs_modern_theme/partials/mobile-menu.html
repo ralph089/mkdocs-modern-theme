@@ -28,7 +28,7 @@
         <span class="font-semibold text-[var(--modern-text-primary)]">{{ config.site_name }}</span>
         <button @click="$store.mobile.close()"
                 class="p-1.5 rounded-[var(--modern-radius-sm)] text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150"
-                aria-label="Close navigation">
+                aria-label="{% trans %}Close navigation{% endtrans %}">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -36,7 +36,7 @@
       </div>
 
       {# Nav items #}
-      <nav class="py-4 px-2 text-sm" aria-label="Mobile navigation">
+      <nav class="py-4 px-2 text-sm" aria-label="{% trans %}Mobile navigation{% endtrans %}">
         {% for nav_item in nav %}
           {% include "partials/sidebar-nav-item.html" %}
         {% endfor %}

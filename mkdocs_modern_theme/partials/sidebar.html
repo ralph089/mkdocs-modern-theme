@@ -1,11 +1,11 @@
 {# Collapsed sidebar expand button — only visible on desktop when sidebar is collapsed #}
-<div class="hidden lg:flex items-start pt-[var(--modern-header-height)]"
+<div class="hidden lg:flex items-start pt-[var(--modern-offset-top)]"
      x-show="$store.sidebar.collapsed"
      x-cloak>
-  <div class="sticky top-[var(--modern-header-height)] pt-4 pl-1">
+  <div class="sticky top-[var(--modern-offset-top)] pt-4 pl-1">
     <button @click="$store.sidebar.expand()"
             class="p-1.5 rounded-[var(--modern-radius-sm)] text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150"
-            aria-label="Expand sidebar">
+            aria-label="{% trans %}Expand sidebar{% endtrans %}">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M13 17l5-5-5-5"/>
         <path d="M6 17l5-5-5-5"/>
@@ -15,9 +15,9 @@
 </div>
 
 {# Main sidebar #}
-<aside class="hidden lg:block shrink-0 pt-[var(--modern-header-height)] transition-[width] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] overflow-clip"
+<aside class="hidden lg:block shrink-0 pt-[var(--modern-offset-top)] transition-[width] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] overflow-clip"
        :class="$store.sidebar.collapsed ? 'w-0' : 'w-[var(--modern-sidebar-width)]'">
-  <nav class="sticky top-[var(--modern-header-height)] h-[calc(100vh-var(--modern-header-height))] overflow-y-auto py-6 pr-4 text-sm w-[var(--modern-sidebar-width)] flex flex-col" aria-label="Navigation">
+  <nav class="sticky top-[var(--modern-offset-top)] h-[calc(100vh-var(--modern-offset-top))] overflow-y-auto py-6 pr-4 text-sm w-[var(--modern-sidebar-width)] flex flex-col" aria-label="{% trans %}Navigation{% endtrans %}">
     <div class="flex-1 min-h-0 overflow-y-auto">
       {% for nav_item in nav %}
         {% include "partials/sidebar-nav-item.html" %}
@@ -28,12 +28,12 @@
     <div class="pt-3 mt-3 border-t border-[var(--modern-border)]">
       <button @click="$store.sidebar.collapse()"
               class="flex items-center gap-2 w-full px-2 py-1.5 rounded-[var(--modern-radius-sm)] text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150 text-xs"
-              aria-label="Collapse sidebar">
+              aria-label="{% trans %}Collapse sidebar{% endtrans %}">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M11 17l-5-5 5-5"/>
           <path d="M18 17l-5-5 5-5"/>
         </svg>
-        <span>Collapse</span>
+        <span>{% trans %}Collapse{% endtrans %}</span>
       </button>
     </div>
   </nav>

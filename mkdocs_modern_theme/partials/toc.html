@@ -1,7 +1,7 @@
 {% if config.theme.show_toc and page and page.toc %}
-<aside class="hidden xl:block w-[var(--modern-toc-width)] shrink-0 pt-[var(--modern-header-height)]" x-data="tocSpy()">
-  <nav class="sticky top-[var(--modern-header-height)] h-[calc(100vh-var(--modern-header-height))] overflow-y-auto py-8 pl-4 text-sm" aria-label="Table of contents">
-    <h4 class="font-medium text-[var(--modern-text-primary)] mb-3">On this page</h4>
+<aside class="hidden xl:block w-[var(--modern-toc-width)] shrink-0 pt-[var(--modern-offset-top)]" x-data="tocSpy()">
+  <nav class="sticky top-[var(--modern-offset-top)] h-[calc(100vh-var(--modern-offset-top))] overflow-y-auto py-8 pl-4 text-sm" aria-label="{% trans %}Table of contents{% endtrans %}">
+    <h4 class="font-medium text-[var(--modern-text-primary)] mb-3">{% trans %}On this page{% endtrans %}</h4>
     <ul class="space-y-1.5">
       {% for toc_item in page.toc %}
       <li>
@@ -36,7 +36,7 @@
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
       </svg>
-      Scroll to top
+      {% trans %}Scroll to top{% endtrans %}
     </button>
   </nav>
 </aside>

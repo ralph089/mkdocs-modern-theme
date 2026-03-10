@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ config.theme.locale.language }}" {% if config.theme.color_theme and config.theme.color_theme != 'default' %}class="theme-{{ config.theme.color_theme }}"{% endif %} x-data :class="$store.theme.isDark && 'dark'">
+<html lang="{{ config.theme.locale.language }}"
+      {% if config.theme.color_theme and config.theme.color_theme != 'default' %}class="theme-{{ config.theme.color_theme }}"{% endif %}
+      x-data :class="$store.theme.isDark && 'dark'"
+      data-lang-light="{% trans %}light{% endtrans %}"
+      data-lang-dark="{% trans %}dark{% endtrans %}"
+      data-lang-system="{% trans %}system{% endtrans %}"
+      data-lang-copy-code="{% trans %}Copy code{% endtrans %}">
 <head>
   {% block head %}
     {% include "partials/head.html" %}
   {% endblock %}
 </head>
 <body class="bg-[var(--modern-surface)] text-[var(--modern-text-primary)] font-[var(--modern-font-sans)] antialiased">
+  {% block announcement %}
+    {% include "partials/announcement.html" %}
+  {% endblock %}
+
   {% block header %}
     {% include "partials/header.html" %}
   {% endblock %}
@@ -16,7 +26,7 @@
         {% include "partials/sidebar.html" %}
       {% endblock %}
 
-      <main class="min-w-0 flex-1 pt-[var(--modern-header-height)]">
+      <main class="min-w-0 flex-1 pt-[var(--modern-offset-top)]">
         {% block breadcrumbs %}
           {% include "partials/breadcrumbs.html" %}
         {% endblock %}

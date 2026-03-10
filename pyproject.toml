@@ -31,6 +31,9 @@ modern = "mkdocs_modern_theme"
 last-updated = [
     "mkdocs-git-revision-date-localized-plugin>=1.5.0",
 ]
+i18n = [
+    "babel>=2.12",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["mkdocs_modern_theme"]

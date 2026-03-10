@@ -16,6 +16,9 @@ theme:
   show_edit_link: true
   show_copy_markdown: true
   show_last_updated: true
+  show_feedback: true
+  announcement: 'MkDocs Modern Theme is now available — a clean, fast documentation theme built with Tailwind CSS v4. <a href="/getting-started/installation/">Get started</a>'
+  announcement_dismissible: true
 
 nav:
   - Home: index.md

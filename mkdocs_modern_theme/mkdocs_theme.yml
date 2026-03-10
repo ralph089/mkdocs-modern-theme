@@ -9,4 +9,7 @@ show_prev_next: true
 show_edit_link: false
 show_copy_markdown: true
 show_last_updated: true
+show_feedback: true
+announcement: ""
+announcement_dismissible: true
 logo: null

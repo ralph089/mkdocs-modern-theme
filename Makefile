@@ -67,6 +67,34 @@ screenshots: ## Update visual regression snapshots
 	@printf "$(GREEN)$(BOLD)Snapshots updated.$(RESET)\n"
 
 # ──────────────────────────────────────────────────────────────
+# i18n
+# ──────────────────────────────────────────────────────────────
+
+.PHONY: i18n-extract
+i18n-extract: ## Extract translatable strings to .pot
+	@printf "$(CYAN)$(BOLD)Extracting strings...$(RESET)\n"
+	@uv run pybabel extract -F babel.cfg -o mkdocs_modern_theme/locales/messages.pot .
+	@printf "$(GREEN)$(BOLD)Extracted to mkdocs_modern_theme/locales/messages.pot$(RESET)\n"
+
+.PHONY: i18n-init
+i18n-init: ## Initialize a new language (LANG=xx)
+	@test -n "$(LANG)" || (printf "$(RED)Usage: make i18n-init LANG=xx$(RESET)\n" && exit 1)
+	@uv run pybabel init -i mkdocs_modern_theme/locales/messages.pot -d mkdocs_modern_theme/locales -l $(LANG)
+	@printf "$(GREEN)$(BOLD)Initialized locale $(LANG)$(RESET)\n"
+
+.PHONY: i18n-update
+i18n-update: ## Update .po files from .pot
+	@printf "$(CYAN)$(BOLD)Updating .po files...$(RESET)\n"
+	@uv run pybabel update -i mkdocs_modern_theme/locales/messages.pot -d mkdocs_modern_theme/locales
+	@printf "$(GREEN)$(BOLD)Updated.$(RESET)\n"
+
+.PHONY: i18n-compile
+i18n-compile: ## Compile .po to .mo files
+	@printf "$(CYAN)$(BOLD)Compiling translations...$(RESET)\n"
+	@uv run pybabel compile -d mkdocs_modern_theme/locales
+	@printf "$(GREEN)$(BOLD)Compiled.$(RESET)\n"
+
+# ──────────────────────────────────────────────────────────────
 # Maintenance
 # ──────────────────────────────────────────────────────────────
 

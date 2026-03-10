@@ -25,12 +25,15 @@ Most MkDocs themes are either dated in appearance or heavy with features you nev
 | Image lightbox | Click any image to open fullscreen (powered by glightbox) |
 | Table of contents | Scroll-spy highlights the current section, smooth-scroll on click |
 | Search modal | Cmd+K / Ctrl+K, keyboard-navigable results, lazy-loaded index |
+| Announcement bar | Dismissible banner for notices, accent-colored, hash-based persistence |
 | Breadcrumbs | Auto-generated from the nav tree |
 | Prev / Next navigation | Links at the bottom of every page |
+| Page feedback | "Was this page helpful?" with optional comment, GA4 integration |
 | Admonitions | Five color-coded types with SVG icons |
 | Tabbed content | Styled tab sets via `pymdownx.tabbed` |
 | Code highlighting | Light and dark Pygments themes tuned for readability |
 | Print styles | Header and sidebar hidden, links expanded |
+| i18n / Localization | Built-in translations for de, es, fr, ja, zh_CN; extensible via gettext |
 | Accessible | Focus rings, reduced-motion support, semantic HTML |
 
 ## Quick start

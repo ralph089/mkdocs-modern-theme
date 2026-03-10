@@ -1,0 +1,168 @@
+# French translations for MkDocs Modern Theme.
+# Copyright (C) 2026 MkDocs Modern Theme
+# This file is distributed under the same license as the project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mkdocs-modern-theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-10 21:55+0100\n"
+"PO-Revision-Date: 2026-03-10 21:55+0100\n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: mkdocs_modern_theme/404.html:9
+msgid "Page not found"
+msgstr "Page non trouvée"
+
+#: mkdocs_modern_theme/404.html:15
+msgid "Back to home"
+msgstr "Retour à l'accueil"
+
+#: mkdocs_modern_theme/base.html:5
+msgid "light"
+msgstr "clair"
+
+#: mkdocs_modern_theme/base.html:6
+msgid "dark"
+msgstr "sombre"
+
+#: mkdocs_modern_theme/base.html:7
+msgid "system"
+msgstr "système"
+
+#: mkdocs_modern_theme/base.html:8
+msgid "Copy code"
+msgstr "Copier le code"
+
+#: mkdocs_modern_theme/partials/breadcrumbs.html:6
+msgid "Breadcrumb"
+msgstr "Fil d'Ariane"
+
+#: mkdocs_modern_theme/partials/content.html:27
+msgid "Copy Markdown"
+msgstr "Copier le Markdown"
+
+#: mkdocs_modern_theme/partials/content.html:35
+msgid "Copied!"
+msgstr "Copié !"
+
+#: mkdocs_modern_theme/partials/content.html:47
+msgid "Edit"
+msgstr "Modifier"
+
+#: mkdocs_modern_theme/partials/content.html:65
+#, python-format
+msgid "Last updated on %(date)s"
+msgstr "Dernière mise à jour le %(date)s"
+
+#: mkdocs_modern_theme/partials/content.html:73
+msgid "How is this guide?"
+msgstr "Comment trouvez-vous ce guide ?"
+
+#: mkdocs_modern_theme/partials/content.html:74
+#: mkdocs_modern_theme/partials/content.html:79
+msgid "Good"
+msgstr "Bon"
+
+#: mkdocs_modern_theme/partials/content.html:81
+#: mkdocs_modern_theme/partials/content.html:86
+msgid "Bad"
+msgstr "Mauvais"
+
+#: mkdocs_modern_theme/partials/content.html:94
+msgid "Leave your feedback..."
+msgstr "Laissez votre avis..."
+
+#: mkdocs_modern_theme/partials/content.html:95
+msgid "Submit"
+msgstr "Envoyer"
+
+#: mkdocs_modern_theme/partials/content.html:99
+msgid "Thank you for your feedback!"
+msgstr "Merci pour votre retour !"
+
+#: mkdocs_modern_theme/partials/footer.html:11
+msgid "Previous"
+msgstr "Précédent"
+
+#: mkdocs_modern_theme/partials/footer.html:25
+msgid "Next"
+msgstr "Suivant"
+
+#: mkdocs_modern_theme/partials/header.html:6
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+#: mkdocs_modern_theme/partials/header.html:28
+msgid "Search..."
+msgstr "Rechercher..."
+
+#: mkdocs_modern_theme/partials/header.html:52
+msgid "Repository"
+msgstr "Dépôt"
+
+#: mkdocs_modern_theme/partials/mobile-menu.html:31
+msgid "Close navigation"
+msgstr "Fermer la navigation"
+
+#: mkdocs_modern_theme/partials/mobile-menu.html:39
+msgid "Mobile navigation"
+msgstr "Navigation mobile"
+
+#: mkdocs_modern_theme/partials/search-modal.html:40
+msgid "Search documentation..."
+msgstr "Rechercher dans la documentation..."
+
+#: mkdocs_modern_theme/partials/search-modal.html:51
+msgid "No results found"
+msgstr "Aucun résultat trouvé"
+
+#: mkdocs_modern_theme/partials/search-modal.html:57
+msgid "Loading search index..."
+msgstr "Chargement de l'index de recherche..."
+
+#: mkdocs_modern_theme/partials/search-modal.html:82
+msgid "navigate"
+msgstr "naviguer"
+
+#: mkdocs_modern_theme/partials/search-modal.html:86
+msgid "open"
+msgstr "ouvrir"
+
+#: mkdocs_modern_theme/partials/search-modal.html:90
+msgid "close"
+msgstr "fermer"
+
+#: mkdocs_modern_theme/partials/sidebar.html:8
+msgid "Expand sidebar"
+msgstr "Développer la barre latérale"
+
+#: mkdocs_modern_theme/partials/sidebar.html:20
+msgid "Navigation"
+msgstr "Navigation"
+
+#: mkdocs_modern_theme/partials/sidebar.html:31
+msgid "Collapse sidebar"
+msgstr "Réduire la barre latérale"
+
+#: mkdocs_modern_theme/partials/sidebar.html:36
+msgid "Collapse"
+msgstr "Réduire"
+
+#: mkdocs_modern_theme/partials/toc.html:3
+msgid "Table of contents"
+msgstr "Table des matières"
+
+#: mkdocs_modern_theme/partials/toc.html:4
+msgid "On this page"
+msgstr "Sur cette page"
+
+#: mkdocs_modern_theme/partials/toc.html:39
+msgid "Scroll to top"
+msgstr "Retour en haut"

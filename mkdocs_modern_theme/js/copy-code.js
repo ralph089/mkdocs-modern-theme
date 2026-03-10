@@ -21,7 +21,7 @@
     var btn = document.createElement('button');
     btn.className = 'copy-code-btn';
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'Copy code');
+    btn.setAttribute('aria-label', document.documentElement.dataset.langCopyCode || 'Copy code');
     btn.innerHTML = ICON_COPY;
 
     btn.addEventListener('click', function () {

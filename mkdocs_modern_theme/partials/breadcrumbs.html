@@ -3,7 +3,7 @@
   {% for item in items %}
     {% if item.is_page and item == page %}
       {# Found the page — render the breadcrumb trail #}
-      <nav class="py-4 lg:pl-8 xl:pr-8" aria-label="Breadcrumb">
+      <nav class="py-4 lg:pl-8 xl:pr-8" aria-label="{% trans %}Breadcrumb{% endtrans %}">
         <ol class="flex flex-wrap items-center gap-1 text-sm text-[var(--modern-text-tertiary)]">
           {% for crumb in trail %}
           <li class="flex items-center gap-1">

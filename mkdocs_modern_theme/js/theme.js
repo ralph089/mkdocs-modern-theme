@@ -25,9 +25,15 @@ document.addEventListener('alpine:init', () => {
     },
 
     get nextLabel() {
-      if (this.mode === 'system') return 'light';
-      if (this.mode === 'light') return 'dark';
-      return 'system';
+      var el = document.documentElement;
+      var labels = {
+        light: el.dataset.langLight || 'light',
+        dark: el.dataset.langDark || 'dark',
+        system: el.dataset.langSystem || 'system'
+      };
+      if (this.mode === 'system') return labels.light;
+      if (this.mode === 'light') return labels.dark;
+      return labels.system;
     },
 
     cycle() {
@@ -46,6 +52,57 @@ document.addEventListener('alpine:init', () => {
         document.documentElement.classList.remove('dark');
       }
       initMermaid();
+    }
+  });
+
+  // ================================================
+  // Announce Store — dismissible announcement bar
+  // ================================================
+  Alpine.store('announce', {
+    dismissed: false,
+    _hash: '',
+
+    init() {
+      var el = document.getElementById('modern-announce');
+      if (!el) return;
+      var text = el.textContent.trim();
+      if (!text) return;
+      this._hash = this._computeHash(text);
+      var saved = localStorage.getItem('modern-announce-dismissed');
+      if (saved === this._hash) {
+        this.dismissed = true;
+        return;
+      }
+      // Measure and set the height after render
+      requestAnimationFrame(() => {
+        this._updateHeight();
+      });
+      // Re-measure on resize
+      window.addEventListener('resize', () => {
+        if (!this.dismissed) this._updateHeight();
+      });
+    },
+
+    _updateHeight() {
+      var el = document.getElementById('modern-announce');
+      if (!el) return;
+      var h = el.offsetHeight;
+      document.documentElement.style.setProperty('--modern-announce-height', h + 'px');
+    },
+
+    dismiss() {
+      this.dismissed = true;
+      localStorage.setItem('modern-announce-dismissed', this._hash);
+      document.documentElement.style.setProperty('--modern-announce-height', '0px');
+    },
+
+    _computeHash(str) {
+      var hash = 5381;
+      for (var i = 0; i < str.length; i++) {
+        hash = ((hash << 5) + hash) + str.charCodeAt(i);
+        hash = hash & hash; // Convert to 32bit integer
+      }
+      return Math.abs(hash).toString(36);
     }
   });
 
@@ -339,6 +396,64 @@ function copyMarkdown() {
         });
       } catch (e) {
         console.error('Failed to copy markdown:', e);
+      }
+    }
+  };
+}
+
+// ================================================
+// Page Feedback — "Was this page helpful?" widget
+// ================================================
+function pageFeedback() {
+  return {
+    state: 'prompt',
+    rating: null,
+    comment: '',
+    _pageUrl: '',
+
+    init() {
+      this._pageUrl = this.$el.dataset.pageUrl || window.location.pathname;
+      var prev = localStorage.getItem('modern-feedback:' + this._pageUrl);
+      if (prev) {
+        this.rating = prev;
+        this.state = 'thanks';
+      }
+    },
+
+    vote(value) {
+      this.rating = value;
+      if (value === 'yes') {
+        this._save();
+        this._dispatch();
+        this.state = 'thanks';
+      } else {
+        this.state = 'comment';
+      }
+    },
+
+    submitComment() {
+      this._save();
+      this._dispatch();
+      this.state = 'thanks';
+    },
+
+    _save() {
+      localStorage.setItem('modern-feedback:' + this._pageUrl, this.rating);
+    },
+
+    _dispatch() {
+      var detail = {
+        page: this._pageUrl,
+        rating: this.rating,
+        comment: this.comment || null
+      };
+      window.dispatchEvent(new CustomEvent('modern-feedback', { detail: detail }));
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_feedback', {
+          page_url: this._pageUrl,
+          rating: this.rating,
+          comment: this.comment || undefined
+        });
       }
     }
   };
