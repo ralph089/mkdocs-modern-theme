@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.5.1 (2026-03-10)
+
+### Bug Fixes
+
+- Add JS-based tab switching for pymdownx.tabbed alternate style
+  ([`095a798`](https://github.com/ralph089/mkdocs-modern-theme/commit/095a7983d35a32c5b82529ec3811c855b53895ee))
+
+### Documentation
+
+- Add changelog page and rename Home to Overview
+  ([`9283925`](https://github.com/ralph089/mkdocs-modern-theme/commit/9283925a6d8a27345ebf5cb4eb546ea09637c455))
+
+- Pin install commands to specific version tags and auto-update on release
+  ([`a638f34`](https://github.com/ralph089/mkdocs-modern-theme/commit/a638f34561ff2256b6e26bf870d11888495baeaa))
+
+- Update introduction
+  ([`eae8813`](https://github.com/ralph089/mkdocs-modern-theme/commit/eae881365ad77d651918a334db73fba75a3140c6))
+
+
 ## v1.5.0 (2026-03-10)
 
 ### Features

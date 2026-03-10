@@ -42,10 +42,10 @@ Install the theme:
 
 ```bash
 # uv (recommended)
-uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
 
 # pip
-pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v1.5.0
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git@v{version}
 ```
 
 Set it in your `mkdocs.yml`:
