@@ -36,7 +36,11 @@ Most MkDocs themes are either dated in appearance or heavy with features you nev
 Install the theme:
 
 ```bash
-pip install mkdocs-modern-theme
+# uv (recommended)
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git
+
+# pip
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git
 ```
 
 Set it in your `mkdocs.yml`:

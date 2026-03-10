@@ -4,13 +4,21 @@ This page covers installing the theme, creating a minimal project, and running a
 
 ## Installation
 
-### From PyPI
+The theme is not yet published on PyPI. Install directly from GitHub:
+
+### Using uv (recommended)
 
 ```bash
-pip install mkdocs-modern-theme
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git
 ```
 
-This pulls in the required dependencies automatically:
+### Using pip
+
+```bash
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git
+```
+
+Both methods pull in the required dependencies automatically:
 
 - `mkdocs >= 1.5`
 - `pymdown-extensions >= 10.0`
@@ -21,7 +29,7 @@ This pulls in the required dependencies automatically:
 Clone the repository and install in editable mode:
 
 ```bash
-git clone https://github.com/example/mkdocs-modern-theme.git
+git clone https://github.com/ralph089/mkdocs-modern-theme.git
 cd mkdocs-modern-theme
 pip install -e .
 ```

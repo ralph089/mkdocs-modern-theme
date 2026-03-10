@@ -7,7 +7,11 @@ A minimal MkDocs theme with a 3-column layout, dark mode, and built-in search. N
 ## Install
 
 ```bash
-pip install mkdocs-modern-theme
+# uv (recommended)
+uv add mkdocs-modern-theme@git+https://github.com/ralph089/mkdocs-modern-theme.git
+
+# pip
+pip install git+https://github.com/ralph089/mkdocs-modern-theme.git
 ```
 
 ```yaml
