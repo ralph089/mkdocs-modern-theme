@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.3 (2026-03-10)
+
+### Bug Fixes
+
+- Replace version placeholders in docs workflow before build
+  ([`fa341dc`](https://github.com/ralph089/mkdocs-modern-theme/commit/fa341dc9942757ba856bffc07262efa63b2fdfbd))
+
+
 ## v1.5.2 (2026-03-10)
 
 ### Bug Fixes
