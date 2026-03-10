@@ -1,18 +1,68 @@
+{% if page %}
+<div class="modern-page-header lg:pl-8 xl:pr-8 pt-6 lg:pt-10"
+     {% if config.theme.show_copy_markdown and page.markdown %}x-data="copyMarkdown()"{% endif %}>
+  {% if page.parent %}
+  <p class="text-sm font-medium text-[var(--modern-accent)] mb-2">{{ page.parent.title }}</p>
+  {% endif %}
+
+  <h1 class="text-3xl font-bold tracking-tight text-[var(--modern-text-primary)] mb-2 leading-tight">{{ page.title }}</h1>
+
+  {% if page.meta.description %}
+  <p class="text-base text-[var(--modern-text-secondary)] mb-4">{{ page.meta.description }}</p>
+  {% endif %}
+
+  {% set show_copy = config.theme.show_copy_markdown and page.markdown %}
+  {% set show_edit = config.theme.show_edit_link and page.edit_url %}
+  {% if show_copy or show_edit %}
+  <div class="mt-3 flex items-center gap-2">
+    {% if show_copy %}
+    <script type="application/json" x-ref="markdownSource">{{ page.markdown | tojson }}</script>
+    <button @click="copy()" class="modern-copy-btn" :class="copied && 'copied'">
+      <template x-if="!copied">
+        <span class="inline-flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/>
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+          </svg>
+          Copy Markdown
+        </span>
+      </template>
+      <template x-if="copied">
+        <span class="inline-flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          Copied!
+        </span>
+      </template>
+    </button>
+    {% endif %}
+
+    {% if show_edit %}
+    <a href="{{ page.edit_url }}" class="modern-copy-btn" target="_blank" rel="noopener">
+      <span class="inline-flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+        </svg>
+        Edit
+      </span>
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
 <article class="modern-content py-8 lg:py-12 lg:pl-8 xl:pr-8">
   {% if page and page.content %}
     {{ page.content }}
   {% endif %}
-
-  {% if config.theme.show_edit_link and page and page.edit_url %}
-  <div class="mt-12 pt-6 border-t border-[var(--modern-border)]">
-    <a href="{{ page.edit_url }}"
-       class="inline-flex items-center gap-1.5 text-sm text-[var(--modern-text-tertiary)] hover:text-[var(--modern-accent)] transition-colors duration-150"
-       target="_blank" rel="noopener">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-      </svg>
-      Edit this page
-    </a>
-  </div>
-  {% endif %}
 </article>
+
+{% if config.theme.show_last_updated and page and page.meta.git_revision_date_localized %}
+<div class="modern-last-updated lg:pl-8 xl:pr-8 pb-4">
+  <p class="text-xs text-[var(--modern-text-tertiary)]">
+    Last updated on {{ page.meta.git_revision_date_localized }}
+  </p>
+</div>
+{% endif %}

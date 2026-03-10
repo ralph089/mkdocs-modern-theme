@@ -26,5 +26,10 @@ dependencies = [
 [project.entry-points."mkdocs.themes"]
 modern = "mkdocs_modern_theme"
 
+[project.optional-dependencies]
+last-updated = [
+    "mkdocs-git-revision-date-localized-plugin>=1.5.0",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["mkdocs_modern_theme"]

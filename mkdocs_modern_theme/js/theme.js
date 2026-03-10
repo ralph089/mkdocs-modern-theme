@@ -282,3 +282,28 @@ function tocSpy() {
     }
   };
 }
+
+// ================================================
+// Copy Markdown — copies raw page source to clipboard
+// ================================================
+function copyMarkdown() {
+  return {
+    copied: false,
+    _timeout: null,
+
+    copy() {
+      const el = this.$refs.markdownSource;
+      if (!el) return;
+      try {
+        const markdown = JSON.parse(el.textContent);
+        navigator.clipboard.writeText(markdown).then(() => {
+          this.copied = true;
+          clearTimeout(this._timeout);
+          this._timeout = setTimeout(() => { this.copied = false; }, 2000);
+        });
+      } catch (e) {
+        console.error('Failed to copy markdown:', e);
+      }
+    }
+  };
+}
