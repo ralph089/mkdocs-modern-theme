@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.4.0 (2026-03-10)
+
+### Documentation
+
+- Add colors page with theme screenshots to test site
+  ([`e497be6`](https://github.com/ralph089/mkdocs-modern-theme/commit/e497be64ede4f60c16a059b51c9ff6bb1f2f08ab))
+
+- Enable edit page links on docs site
+  ([`4c5f585`](https://github.com/ralph089/mkdocs-modern-theme/commit/4c5f5855c101706126e8fd804a51bb8cd03a6895))
+
+- Update documentation for color themes, glightbox, and collapsible sidebar
+  ([`337b227`](https://github.com/ralph089/mkdocs-modern-theme/commit/337b2278b1bbdf14963c0b7304216ecf2069e842))
+
+### Features
+
+- Add i18n support with 5 language translations
+  ([`15cfc92`](https://github.com/ralph089/mkdocs-modern-theme/commit/15cfc926c4c1cced52be59ca2967f18da7a8855f))
+
+
 ## v1.3.0 (2026-03-10)
 
 ### Documentation
