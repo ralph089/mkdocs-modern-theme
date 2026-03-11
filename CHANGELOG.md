@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.8.0 (2026-03-11)
+
+### Chores
+
+- Update docs theme preview screenshots
+  ([`5c517e0`](https://github.com/ralph089/mkdocs-modern-theme/commit/5c517e023cf94ca33f6d7901b5608b53e28dca97))
+
+### Features
+
+- Add micro-interaction polish and transition refinements
+  ([`026a62c`](https://github.com/ralph089/mkdocs-modern-theme/commit/026a62c9f3245f11059b027b4a25c62e07f39c9f))
+
+
 ## v1.7.0 (2026-03-11)
 
 ### Features
