@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v1.6.2 (2026-03-11)
+
+### Bug Fixes
+
+- Restore copy markdown button broken by djlint formatting
+  ([#8](https://github.com/ralph089/mkdocs-modern-theme/pull/8),
+  [`7381853`](https://github.com/ralph089/mkdocs-modern-theme/commit/73818531739e56e5c58b79ebcaa5111f3bc6adc4))
+
+
 ## v1.6.1 (2026-03-11)
 
 ### Bug Fixes
