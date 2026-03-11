@@ -380,6 +380,13 @@
   [x-cloak] {
     display: none !important;
   }
+
+  /* Pre-Alpine sidebar state — set by the blocking <head> script so the
+     sidebar renders at the correct width before Alpine hydrates, avoiding
+     a layout shift. Alpine's :class binding takes over once ready. */
+  html.sidebar-collapsed [data-sidebar] {
+    width: 0;
+  }
 }
 
 /* ============================================================
