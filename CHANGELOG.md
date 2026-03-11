@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.5.5 (2026-03-11)
+
+### Bug Fixes
+
+- Tokenize hardcoded values, improve dark mode, a11y, and animations
+  ([`e8cf1ac`](https://github.com/ralph089/mkdocs-modern-theme/commit/e8cf1acaafbbac4b188a1587ee39b09094b90521))
+
+### Documentation
+
+- Add announcement banner and GitHub star CTA to README
+  ([`8705ac5`](https://github.com/ralph089/mkdocs-modern-theme/commit/8705ac56c1b037b284ffeb167f1f1591207a3e76))
+
+
 ## v1.5.4 (2026-03-10)
 
 ### Bug Fixes
