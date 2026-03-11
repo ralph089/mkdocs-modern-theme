@@ -9,8 +9,8 @@ theme:
   name: modern
   logo: assets/logo.svg
   show_edit_link: true
-  announcement: '🎉 Introducing mkdocs-modern-theme — a fully-bundled, modern theme for MkDocs'
-  announcement_dismissible: false
+  announcement: 'Introducing mkdocs-modern-theme — a fully-bundled, modern theme for MkDocs'
+  announcement_dismissible: true
 
 nav:
   - Overview: index.md
