@@ -95,6 +95,29 @@ i18n-compile: ## Compile .po to .mo files
 	@printf "$(GREEN)$(BOLD)Compiled.$(RESET)\n"
 
 # ──────────────────────────────────────────────────────────────
+# Code Quality
+# ──────────────────────────────────────────────────────────────
+
+.PHONY: lint
+lint: ## Run all linters (ruff, ty, djlint, mdformat)
+	@printf "$(CYAN)$(BOLD)Running linters...$(RESET)\n"
+	@uv run ruff check .
+	@uv run ruff format --check .
+	@uv run ty check
+	@uv run djlint mkdocs_modern_theme/ --check --extension html
+	@uv run mdformat --check docs/
+	@printf "$(GREEN)$(BOLD)All checks passed.$(RESET)\n"
+
+.PHONY: format
+format: ## Auto-format all files (ruff, djlint, mdformat)
+	@printf "$(CYAN)$(BOLD)Formatting...$(RESET)\n"
+	@uv run ruff check --fix .
+	@uv run ruff format .
+	@uv run djlint mkdocs_modern_theme/ --reformat --extension html
+	@uv run mdformat docs/
+	@printf "$(GREEN)$(BOLD)Formatted.$(RESET)\n"
+
+# ──────────────────────────────────────────────────────────────
 # Maintenance
 # ──────────────────────────────────────────────────────────────
 
