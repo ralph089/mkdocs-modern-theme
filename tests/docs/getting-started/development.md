@@ -19,40 +19,40 @@ This installs Python and Node dependencies and copies vendored JS files.
 
 ## Commands
 
-| Command | What it does |
-|---------|-------------|
-| `make install` | Install all dependencies |
-| `make dev` | Start dev server with CSS watch (localhost:8000) |
-| `make build` | Build CSS and documentation site |
-| `make test` | Build and run Playwright E2E tests |
-| `make screenshots` | Update visual regression snapshots |
-| `make clean` | Remove build artifacts |
+| Command            | What it does                                     |
+| ------------------ | ------------------------------------------------ |
+| `make install`     | Install all dependencies                         |
+| `make dev`         | Start dev server with CSS watch (localhost:8000) |
+| `make build`       | Build CSS and documentation site                 |
+| `make test`        | Build and run Playwright E2E tests               |
+| `make screenshots` | Update visual regression snapshots               |
+| `make clean`       | Remove build artifacts                           |
 
 ## Project Structure
 
 <div class="file-tree" markdown>
 
 - mkdocs_modern_theme/
-  - css/
-    - input.css — Tailwind CSS source
-    - theme.css — Compiled output (generated)
-  - js/
-    - theme.js — Theme logic (search, sidebar, dark mode)
-    - alpine.min.js — Alpine.js (vendored)
-    - lunr.min.js — Lunr.js search (vendored)
-    - mermaid.min.js — Mermaid diagrams (vendored, generated)
-  - partials/
-    - sidebar.html
-    - header.html
-    - footer.html
-    - toc.html
-    - search-modal.html
-  - base.html — Base template
-  - main.html — Main content template
+    - css/
+        - input.css — Tailwind CSS source
+        - theme.css — Compiled output (generated)
+    - js/
+        - theme.js — Theme logic (search, sidebar, dark mode)
+        - alpine.min.js — Alpine.js (vendored)
+        - lunr.min.js — Lunr.js search (vendored)
+        - mermaid.min.js — Mermaid diagrams (vendored, generated)
+    - partials/
+        - sidebar.html
+        - header.html
+        - footer.html
+        - toc.html
+        - search-modal.html
+    - base.html — Base template
+    - main.html — Main content template
 - tests/
-  - docs/ — Documentation source (also used as test fixtures)
-  - e2e/ — Playwright E2E test specs
-  - mkdocs.yml — MkDocs config for the docs site
+    - docs/ — Documentation source (also used as test fixtures)
+    - e2e/ — Playwright E2E test specs
+    - mkdocs.yml — MkDocs config for the docs site
 
 </div>
 

@@ -32,15 +32,15 @@ mkdocs serve
 <div class="cards" markdown>
 
 - **[Installation](getting-started/installation.md)**
-  Install the theme and set up your project.
+    Install the theme and set up your project.
 
 - **[Configuration](getting-started/configuration.md)**
-  Theme options, color modes, and CSS custom properties.
+    Theme options, color modes, and CSS custom properties.
 
 - **[Components](guide/components.md)**
-  Steps, Cards, File Tree, tabs, and more.
+    Steps, Cards, File Tree, tabs, and more.
 
 - **[Code Blocks](guide/code-blocks.md)**
-  Syntax highlighting, line numbers, and copy buttons.
+    Syntax highlighting, line numbers, and copy buttons.
 
 </div>

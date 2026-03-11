@@ -26,16 +26,16 @@ Wrap a Markdown unordered list in a `<div class="cards">` container. Each list i
 <div class="cards" markdown>
 
 - **[Installation](../getting-started.md)**
-  Get up and running in minutes.
+    Get up and running in minutes.
 
 - **[Configuration](../configuration.md)**
-  Customize every aspect of the theme.
+    Customize every aspect of the theme.
 
 - **[Theming](../customization/theming.md)**
-  Make the theme your own with CSS variables.
+    Make the theme your own with CSS variables.
 
 - **[Colors](../customization/colors.md)**
-  Fine-tune the color palette for your brand.
+    Fine-tune the color palette for your brand.
 
 </div>
 

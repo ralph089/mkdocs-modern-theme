@@ -23,8 +23,8 @@ You can use **bold**, *italic*, ~~strikethrough~~, and `inline code`.
 
 - First item
 - Second item
-  - Nested item
-  - Another nested item
+    - Nested item
+    - Another nested item
 - Third item
 
 ### Ordered

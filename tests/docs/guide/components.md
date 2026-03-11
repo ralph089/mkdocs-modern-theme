@@ -24,13 +24,13 @@ The theme supports various content components.
 
 ## Tables
 
-| Feature | Support | Notes |
-|---------|---------|-------|
-| Dark Mode | Yes | System-aware |
-| Search | Yes | Ctrl+K |
-| TOC | Yes | Scroll-spy |
-| Responsive | Yes | 3 breakpoints |
-| Offline | Yes | Fully bundled |
+| Feature    | Support | Notes         |
+| ---------- | ------- | ------------- |
+| Dark Mode  | Yes     | System-aware  |
+| Search     | Yes     | Ctrl+K        |
+| TOC        | Yes     | Scroll-spy    |
+| Responsive | Yes     | 3 breakpoints |
+| Offline    | Yes     | Fully bundled |
 
 ## Details
 
@@ -50,6 +50,7 @@ This content is hidden by default and can be revealed by clicking the summary.
 Here's a combination of elements working together:
 
 !!! tip "Pro Tip"
+
     You can combine **admonitions** with code blocks:
 
     ```python
@@ -84,16 +85,16 @@ Here's a combination of elements working together:
 <div class="cards" markdown>
 
 - **[Installation](../getting-started/installation.md)**
-  Get up and running in minutes.
+    Get up and running in minutes.
 
 - **[Configuration](../getting-started/configuration.md)**
-  Customize every aspect of the theme.
+    Customize every aspect of the theme.
 
 - **[Writing Docs](writing-docs.md)**
-  Learn how to write great documentation.
+    Learn how to write great documentation.
 
 - **[Admonitions](admonitions.md)**
-  Use callout boxes to highlight content.
+    Use callout boxes to highlight content.
 
 </div>
 
@@ -102,12 +103,12 @@ Here's a combination of elements working together:
 <div class="file-tree" markdown>
 
 - docs/
-  - index.md
-  - getting-started/
-    - installation.md
-    - configuration.md
-  - guide/
-    - writing-docs.md
-    - components.md
+    - index.md
+    - getting-started/
+        - installation.md
+        - configuration.md
+    - guide/
+        - writing-docs.md
+        - components.md
 
 </div>

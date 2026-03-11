@@ -54,11 +54,11 @@ make i18n-compile
 
 Controls the default color scheme.
 
-| Value | Behavior |
-|---|---|
+| Value    | Behavior                                                 |
+| -------- | -------------------------------------------------------- |
 | `system` | Follows the user's operating system preference (default) |
-| `light` | Forces light mode |
-| `dark` | Forces dark mode |
+| `light`  | Forces light mode                                        |
+| `dark`   | Forces dark mode                                         |
 
 Regardless of this setting, visitors can cycle through modes using the toggle button in the header. Their choice is saved in `localStorage`.
 
@@ -305,6 +305,7 @@ The search plugin generates a `search_index.json` that the theme's Cmd+K search 
 The glightbox plugin adds lightbox functionality to images — clicking any image opens it in a fullscreen overlay. The plugin is installed automatically with the theme; just add `- glightbox` to your `plugins` list to enable it.
 
 !!! tip "Recommended plugins"
+
     Add `glightbox` to your plugins list for the best experience. The search modal, dark mode toggle, scroll spy, and mobile menu are all built into the theme itself.
 
 ## See also

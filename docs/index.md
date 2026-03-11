@@ -2,7 +2,7 @@
 
 A clean, fast, Nextra- and Fumadocs-inspired theme for MkDocs. Built with Tailwind CSS v4, Alpine.js, and the Geist font family.
 
----
+______________________________________________________________________
 
 ## Why Modern?
 
@@ -16,25 +16,25 @@ Most MkDocs themes are either dated in appearance or heavy with features you nev
 
 ## Features
 
-| Feature | Details |
-|---|---|
-| Dark / light / system mode | Three-way toggle, remembers preference in `localStorage` |
-| Geist font family | Variable-weight sans and mono fonts, bundled and self-hosted |
-| Color theme presets | 8 palettes — ocean, purple, rose, emerald, amber, slate, ruby, default |
-| Responsive sidebar | Collapsible on desktop and mobile, sticky, configurable depth |
-| Image lightbox | Click any image to open fullscreen (powered by glightbox) |
-| Table of contents | Scroll-spy highlights the current section, smooth-scroll on click |
-| Search modal | Cmd+K / Ctrl+K, keyboard-navigable results, lazy-loaded index |
-| Announcement bar | Dismissible banner for notices, accent-colored, hash-based persistence |
-| Breadcrumbs | Auto-generated from the nav tree |
-| Prev / Next navigation | Links at the bottom of every page |
-| Page feedback | "Was this page helpful?" with optional comment, GA4 integration |
-| Admonitions | Five color-coded types with SVG icons |
-| Tabbed content | Styled tab sets via `pymdownx.tabbed` |
-| Code highlighting | Light and dark Pygments themes tuned for readability |
-| Print styles | Header and sidebar hidden, links expanded |
-| i18n / Localization | Built-in translations for de, es, fr, ja, zh_CN; extensible via gettext |
-| Accessible | Focus rings, reduced-motion support, semantic HTML |
+| Feature                    | Details                                                                 |
+| -------------------------- | ----------------------------------------------------------------------- |
+| Dark / light / system mode | Three-way toggle, remembers preference in `localStorage`                |
+| Geist font family          | Variable-weight sans and mono fonts, bundled and self-hosted            |
+| Color theme presets        | 8 palettes — ocean, purple, rose, emerald, amber, slate, ruby, default  |
+| Responsive sidebar         | Collapsible on desktop and mobile, sticky, configurable depth           |
+| Image lightbox             | Click any image to open fullscreen (powered by glightbox)               |
+| Table of contents          | Scroll-spy highlights the current section, smooth-scroll on click       |
+| Search modal               | Cmd+K / Ctrl+K, keyboard-navigable results, lazy-loaded index           |
+| Announcement bar           | Dismissible banner for notices, accent-colored, hash-based persistence  |
+| Breadcrumbs                | Auto-generated from the nav tree                                        |
+| Prev / Next navigation     | Links at the bottom of every page                                       |
+| Page feedback              | "Was this page helpful?" with optional comment, GA4 integration         |
+| Admonitions                | Five color-coded types with SVG icons                                   |
+| Tabbed content             | Styled tab sets via `pymdownx.tabbed`                                   |
+| Code highlighting          | Light and dark Pygments themes tuned for readability                    |
+| Print styles               | Header and sidebar hidden, links expanded                               |
+| i18n / Localization        | Built-in translations for de, es, fr, ja, zh_CN; extensible via gettext |
+| Accessible                 | Focus rings, reduced-motion support, semantic HTML                      |
 
 ## Quick start
 

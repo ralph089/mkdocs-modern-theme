@@ -43,6 +43,13 @@ pnpm exec playwright test tests/e2e/mermaid.spec.ts --config tests/e2e/playwrigh
 make screenshots
 ```
 
+## Code Quality
+
+```bash
+make lint       # Run all linters (ruff, ty, djlint, mdformat)
+make format     # Auto-format all files (ruff, djlint, mdformat)
+```
+
 ## Documentation
 
 Always update the docs (`docs/`) when making changes. This is a documentation theme — almost every feature change, config addition, or behavioral update affects the user-facing docs. Key files:

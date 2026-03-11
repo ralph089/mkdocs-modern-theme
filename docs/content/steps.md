@@ -6,7 +6,7 @@ Steps display sequential instructions with numbered indicators and a connecting 
 
 Wrap an ordered list in a `<div class="steps">` container:
 
-```markdown
+````markdown
 <div class="steps" markdown>
 
 1. **Install the theme**
@@ -24,7 +24,7 @@ Wrap an ordered list in a `<div class="steps">` container:
     Run `mkdocs serve` and open your browser.
 
 </div>
-```
+````
 
 ## Example
 

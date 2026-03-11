@@ -73,6 +73,7 @@ Strong, high-contrast — red accent with neutral surfaces.
 Each preset provides light and dark mode variants automatically. The dark/light toggle continues to work as usual.
 
 !!! tip "Further customization"
+
     Presets override accent and surface colors. You can still use `extra_css` to fine-tune individual tokens on top of a preset.
 
 ## How color mode works
@@ -139,19 +140,20 @@ The accent color appears on links, active navigation items, the search highlight
 ```
 
 !!! tip "Pick accessible pairs"
+
     Make sure your accent color has sufficient contrast against `--modern-surface` in both modes. A good rule of thumb: light mode accents should be darker shades; dark mode accents should be lighter shades of the same hue.
 
 ## Admonition colors
 
 Each admonition type has its own color token. The color is used for the left border, the title text, and a 5% tinted background (via `color-mix`).
 
-| Token | Light | Dark | Used by |
-|---|---|---|---|
-| `--modern-note` | `#0070f3` | `#3b82f6` | `note`, `abstract`, `seealso` |
-| `--modern-tip` | `#16a34a` | `#22c55e` | `tip`, `hint`, `success`, `check`, `done` |
-| `--modern-warning` | `#f59e0b` | `#eab308` | `warning`, `caution`, `attention` |
-| `--modern-danger` | `#dc2626` | `#ef4444` | `danger`, `error`, `failure`, `fail`, `missing`, `bug` |
-| `--modern-info` | `#06b6d4` | `#22d3ee` | `info`, `todo`, `faq`, `question`, `help` |
+| Token              | Light     | Dark      | Used by                                                |
+| ------------------ | --------- | --------- | ------------------------------------------------------ |
+| `--modern-note`    | `#0070f3` | `#3b82f6` | `note`, `abstract`, `seealso`                          |
+| `--modern-tip`     | `#16a34a` | `#22c55e` | `tip`, `hint`, `success`, `check`, `done`              |
+| `--modern-warning` | `#f59e0b` | `#eab308` | `warning`, `caution`, `attention`                      |
+| `--modern-danger`  | `#dc2626` | `#ef4444` | `danger`, `error`, `failure`, `fail`, `missing`, `bug` |
+| `--modern-info`    | `#06b6d4` | `#22d3ee` | `info`, `todo`, `faq`, `question`, `help`              |
 
 Override them the same way:
 

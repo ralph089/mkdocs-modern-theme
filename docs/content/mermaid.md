@@ -19,12 +19,12 @@ markdown_extensions:
 
 Write mermaid diagrams using fenced code blocks with the `mermaid` language identifier:
 
-~~~markdown
+````markdown
 ```mermaid
 graph LR
     A[Start] --> B[End]
 ```
-~~~
+````
 
 ## Supported Diagram Types
 

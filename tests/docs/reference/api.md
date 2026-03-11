@@ -6,8 +6,8 @@
 
 Controls the color scheme of the theme.
 
-| Value | Type | Default |
-|-------|------|---------|
+| Value    | Type  | Default  |
+| -------- | ----- | -------- |
 | `system` | `str` | `system` |
 
 Possible values: `system`, `light`, `dark`
@@ -16,17 +16,17 @@ Possible values: `system`, `light`, `dark`
 
 Maximum depth for sidebar navigation tree expansion.
 
-| Value | Type | Default |
-|-------|------|---------|
-| `3` | `int` | `3` |
+| Value | Type  | Default |
+| ----- | ----- | ------- |
+| `3`   | `int` | `3`     |
 
 ### `show_toc`
 
 Toggle the table of contents panel.
 
-| Value | Type | Default |
-|-------|------|---------|
-| `true` | `bool` | `true` |
+| Value  | Type   | Default |
+| ------ | ------ | ------- |
+| `true` | `bool` | `true`  |
 
 ## CSS Custom Properties
 

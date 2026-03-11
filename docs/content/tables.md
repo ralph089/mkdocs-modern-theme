@@ -23,11 +23,11 @@ markdown_extensions:
 
 Renders as:
 
-| Name | Type | Default |
-|---|---|---|
-| `color_mode` | string | `"system"` |
-| `navigation_depth` | integer | `3` |
-| `show_toc` | boolean | `true` |
+| Name               | Type    | Default    |
+| ------------------ | ------- | ---------- |
+| `color_mode`       | string  | `"system"` |
+| `navigation_depth` | integer | `3`        |
+| `show_toc`         | boolean | `true`     |
 
 ## Column alignment
 
@@ -41,24 +41,24 @@ Use colons in the separator row to control alignment:
 ```
 
 | Left aligned | Center aligned | Right aligned |
-|:---|:---:|---:|
-| Text | Text | Text |
-| Longer text | Longer text | Longer text |
+| :----------- | :------------: | ------------: |
+| Text         |      Text      |          Text |
+| Longer text  |  Longer text   |   Longer text |
 
 ## CSS custom properties table
 
 Here is a larger example showing the theme's color tokens:
 
-| Variable | Light | Dark | Purpose |
-|---|---|---|---|
-| `--modern-accent` | `#0070f3` | `#3b82f6` | Brand color |
-| `--modern-accent-hover` | `#005cc5` | `#60a5fa` | Hover state |
-| `--modern-surface` | `#fafafa` | `#111111` | Page background |
-| `--modern-surface-alt` | `#f0f0f0` | `#1a1a1a` | Secondary background |
-| `--modern-border` | `rgba(0,0,0,0.08)` | `rgba(255,255,255,0.08)` | Subtle dividers |
-| `--modern-text-primary` | `#171717` | `#ededed` | Body text |
-| `--modern-text-secondary` | `#525252` | `#a3a3a3` | Supporting text |
-| `--modern-text-tertiary` | `#a3a3a3` | `#666666` | Muted text |
+| Variable                  | Light              | Dark                     | Purpose              |
+| ------------------------- | ------------------ | ------------------------ | -------------------- |
+| `--modern-accent`         | `#0070f3`          | `#3b82f6`                | Brand color          |
+| `--modern-accent-hover`   | `#005cc5`          | `#60a5fa`                | Hover state          |
+| `--modern-surface`        | `#fafafa`          | `#111111`                | Page background      |
+| `--modern-surface-alt`    | `#f0f0f0`          | `#1a1a1a`                | Secondary background |
+| `--modern-border`         | `rgba(0,0,0,0.08)` | `rgba(255,255,255,0.08)` | Subtle dividers      |
+| `--modern-text-primary`   | `#171717`          | `#ededed`                | Body text            |
+| `--modern-text-secondary` | `#525252`          | `#a3a3a3`                | Supporting text      |
+| `--modern-text-tertiary`  | `#a3a3a3`          | `#666666`                | Muted text           |
 
 ## Table styling details
 
@@ -77,20 +77,20 @@ Modern applies the following styles to tables:
 Tables with many columns may overflow the content area. The theme wraps tables in a horizontally scrollable container when needed, so wide tables remain usable on narrow screens.
 
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
-|---|---|---|---|---|---|
-| Data | Data | Data | Data | Data | Data |
-| Data | Data | Data | Data | Data | Data |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| Data     | Data     | Data     | Data     | Data     | Data     |
+| Data     | Data     | Data     | Data     | Data     | Data     |
 
 ## Tables with inline code
 
 Tables often contain code references. Inline code renders cleanly inside table cells:
 
-| Option | Type | Example |
-|---|---|---|
-| `color_mode` | `str` | `color_mode: dark` |
-| `navigation_depth` | `int` | `navigation_depth: 2` |
-| `show_toc` | `bool` | `show_toc: false` |
-| `logo` | `str \| null` | `logo: assets/logo.svg` |
+| Option             | Type          | Example                 |
+| ------------------ | ------------- | ----------------------- |
+| `color_mode`       | `str`         | `color_mode: dark`      |
+| `navigation_depth` | `int`         | `navigation_depth: 2`   |
+| `show_toc`         | `bool`        | `show_toc: false`       |
+| `logo`             | `str \| null` | `logo: assets/logo.svg` |
 
 ## Definition lists
 
