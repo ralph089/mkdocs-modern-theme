@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.7.0 (2026-03-11)
+
+### Features
+
+- Precision & density design overhaul with layered surfaces and refined typography
+  ([`da57b4b`](https://github.com/ralph089/mkdocs-modern-theme/commit/da57b4be3a60c61efe5e28968ecae4ed2265bdcc))
+
+
 ## v1.6.3 (2026-03-11)
 
 ### Bug Fixes
