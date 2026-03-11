@@ -2,6 +2,39 @@
 
 <!-- version list -->
 
+## v1.6.0 (2026-03-11)
+
+### Build System
+
+- Add code quality tooling and format all files
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+### Code Style
+
+- Apply mdformat to all Markdown files
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+- Apply ruff and djLint formatting to Python and HTML files
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+### Features
+
+- Add make lint and make format targets
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+- Add mdformat markdown formatter with MkDocs extension support
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+- Add ruff, ty, and djLint for Python and HTML formatting
+  ([#6](https://github.com/ralph089/mkdocs-modern-theme/pull/6),
+  [`1076ae4`](https://github.com/ralph089/mkdocs-modern-theme/commit/1076ae448736aeb3adb948604f6ced198f8aea42))
+
+
 ## v1.5.6 (2026-03-11)
 
 ### Bug Fixes
