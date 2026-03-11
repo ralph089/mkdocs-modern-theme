@@ -3,6 +3,7 @@
   {# Section with children #}
   <div x-data="{ open: {{ 'true' if nav_item.active else 'false' }} }" class="mb-1">
     <button @click="open = !open"
+            :aria-expanded="open.toString()"
             class="flex items-center justify-between w-full px-3 py-1.5 rounded-[var(--modern-radius-sm)] text-left font-medium text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150">
       <span>{{ nav_item.title }}</span>
       <svg class="w-4 h-4 shrink-0 transition-transform duration-200" :class="open && 'rotate-90'" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -7,7 +7,8 @@
       <li>
         <a href="#{{ toc_item.id }}"
            class="block py-0.5 transition-colors duration-150"
-           :class="activeId === '{{ toc_item.id }}' ? 'text-[var(--modern-accent)] font-medium' : 'text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-secondary)]'"
+           :class="activeId === '{{ toc_item.id }}' ? 'text-[var(--modern-accent)] font-medium border-l-2 border-[var(--modern-accent)] pl-2 -ml-2' : 'text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-secondary)]'"
+           :aria-current="activeId === '{{ toc_item.id }}' ? 'true' : undefined"
            @click.prevent="scrollTo('{{ toc_item.id }}')">
           {{ toc_item.title }}
         </a>
@@ -17,7 +18,8 @@
           <li>
             <a href="#{{ child.id }}"
                class="block py-0.5 transition-colors duration-150"
-               :class="activeId === '{{ child.id }}' ? 'text-[var(--modern-accent)] font-medium' : 'text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-secondary)]'"
+               :class="activeId === '{{ child.id }}' ? 'text-[var(--modern-accent)] font-medium border-l-2 border-[var(--modern-accent)] pl-2 -ml-2' : 'text-[var(--modern-text-tertiary)] hover:text-[var(--modern-text-secondary)]'"
+               :aria-current="activeId === '{{ child.id }}' ? 'true' : undefined"
                @click.prevent="scrollTo('{{ child.id }}')">
               {{ child.title }}
             </a>

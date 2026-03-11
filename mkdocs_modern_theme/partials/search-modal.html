@@ -3,6 +3,8 @@
   <div x-show="$store.search.isOpen"
        x-trap.noscroll="$store.search.isOpen"
        @keydown.escape.window="$store.search.close()"
+       role="dialog"
+       aria-label="{% trans %}Search documentation{% endtrans %}"
        class="fixed inset-0 z-50"
        x-cloak>
     {# Backdrop #}

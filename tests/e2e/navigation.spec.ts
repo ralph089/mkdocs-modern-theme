@@ -1,30 +1,51 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Navigation', () => {
-  test('sidebar shows nav items on desktop', async ({ page }) => {
+  test('sidebar shows nav items on desktop', async ({ page, isMobile }) => {
     await page.goto('/');
-    const sidebar = page.locator('aside nav[aria-label="Navigation"]');
-    await expect(sidebar).toBeVisible();
-    await expect(sidebar.locator('a', { hasText: 'Home' })).toBeVisible();
+    if (isMobile) {
+      await page.locator('button[aria-label="Toggle navigation"]').click();
+      const nav = page.locator('nav[aria-label="Mobile navigation"]');
+      await expect(nav).toBeVisible();
+      await expect(nav.locator('a', { hasText: 'Home' })).toBeVisible();
+    } else {
+      const sidebar = page.locator('aside nav[aria-label="Navigation"]');
+      await expect(sidebar).toBeVisible();
+      await expect(sidebar.locator('a', { hasText: 'Home' })).toBeVisible();
+    }
   });
 
-  test('active page is highlighted in sidebar', async ({ page }) => {
+  test('active page is highlighted in sidebar', async ({ page, isMobile }) => {
     await page.goto('/');
-    const activeLink = page.locator('aside nav a.font-medium', { hasText: 'Home' });
-    await expect(activeLink).toBeVisible();
+    if (isMobile) {
+      await page.locator('button[aria-label="Toggle navigation"]').click();
+      const activeLink = page.locator('nav[aria-label="Mobile navigation"] a.font-medium', { hasText: 'Home' });
+      await expect(activeLink).toBeVisible();
+    } else {
+      const activeLink = page.locator('aside nav a.font-medium', { hasText: 'Home' });
+      await expect(activeLink).toBeVisible();
+    }
   });
 
-  test('collapsible sections expand on click', async ({ page }) => {
+  test('collapsible sections expand on click', async ({ page, isMobile }) => {
     await page.goto('/');
+    let nav;
+    if (isMobile) {
+      await page.locator('button[aria-label="Toggle navigation"]').click();
+      nav = page.locator('nav[aria-label="Mobile navigation"]');
+    } else {
+      nav = page.locator('aside nav[aria-label="Navigation"]');
+    }
+
     // "Getting Started" section should be collapsed initially on home page
-    const section = page.locator('aside nav button', { hasText: 'Getting Started' });
+    const section = nav.locator('button', { hasText: 'Getting Started' });
     await expect(section).toBeVisible();
 
     // Click to expand
     await section.click();
 
     // Child links should now be visible
-    const installLink = page.locator('aside nav a', { hasText: 'Installation' });
+    const installLink = nav.locator('a', { hasText: 'Installation' });
     await expect(installLink).toBeVisible();
   });
 
@@ -44,11 +65,19 @@ test.describe('Navigation', () => {
     await expect(page).toHaveURL(/installation/);
   });
 
-  test('clicking sidebar link navigates to page', async ({ page }) => {
+  test('clicking sidebar link navigates to page', async ({ page, isMobile }) => {
     await page.goto('/');
+    let nav;
+    if (isMobile) {
+      await page.locator('button[aria-label="Toggle navigation"]').click();
+      nav = page.locator('nav[aria-label="Mobile navigation"]');
+    } else {
+      nav = page.locator('aside nav[aria-label="Navigation"]');
+    }
+
     // Expand Getting Started section
-    await page.locator('aside nav button', { hasText: 'Getting Started' }).click();
-    await page.locator('aside nav a', { hasText: 'Configuration' }).click();
+    await nav.locator('button', { hasText: 'Getting Started' }).click();
+    await nav.locator('a', { hasText: 'Configuration' }).click();
     await expect(page).toHaveURL(/configuration/);
   });
 });

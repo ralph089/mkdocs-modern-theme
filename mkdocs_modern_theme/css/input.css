@@ -292,12 +292,22 @@
   --modern-accent-hover: #b91c1c;
   --modern-accent-muted: rgba(220, 38, 38, 0.08);
   --modern-note: #dc2626;
+  --modern-surface: #fafafa;
+  --modern-surface-alt: #f0f0f0;
+  --modern-surface-raised: #ffffff;
+  --modern-code-bg: #f5f5f5;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.05);
 }
 .theme-ruby.dark {
   --modern-accent: #f87171;
   --modern-accent-hover: #fca5a5;
   --modern-accent-muted: rgba(248, 113, 113, 0.1);
   --modern-note: #f87171;
+  --modern-surface: #111111;
+  --modern-surface-alt: #1a1a1a;
+  --modern-surface-raised: #1e1e1e;
+  --modern-code-bg: #1a1a1a;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.08);
 }
 
 /* Search input background — slightly darker than modal surface */
@@ -310,11 +320,11 @@
    ============================================================ */
 .modern-announce {
   background: var(--modern-accent);
-  color: #fff;
+  color: var(--modern-announce-text, #fff);
 }
 
 .modern-announce a {
-  color: #fff;
+  color: var(--modern-announce-text, #fff);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -330,6 +340,7 @@
 /* ============================================================
    Base Layer
    ============================================================ */
+/* Duration tiers: 100ms (micro), 150ms (standard), 200ms (enter), 300ms (layout) */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -400,7 +411,7 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--modern-border);
     line-height: 1.3;
@@ -473,7 +484,7 @@
     display: inline-block;
     width: 0.75rem;
     height: 0.75rem;
-    margin-left: 0.15rem;
+    margin-left: 0.25rem;
     vertical-align: middle;
     background: currentColor;
     -webkit-mask-size: contain;
@@ -634,9 +645,9 @@
 
   /* Mark */
   .modern-content mark {
-    background: rgba(234, 179, 8, 0.3);
+    background: color-mix(in srgb, var(--modern-warning) 30%, transparent);
     padding: 0.1em 0.2em;
-    border-radius: 2px;
+    border-radius: var(--modern-radius-sm);
   }
 
   /* ========================================
@@ -1013,7 +1024,7 @@
   .modern-content .steps > ol > li::before {
     content: counter(step);
     position: absolute;
-    left: -0.875rem;
+    left: calc(-0.75rem - 1px);
     top: 0;
     width: 1.5rem;
     height: 1.5rem;
@@ -1106,7 +1117,7 @@
   }
   .modern-content .file-tree li {
     position: relative;
-    padding: 0.2rem 0;
+    padding: 0.25rem 0;
     color: var(--modern-text-secondary);
   }
   /* File icon (default for leaf items) */
@@ -1130,6 +1141,9 @@
     background: var(--modern-accent);
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z'/%3E%3C/svg%3E");
+  }
+  .modern-content .file-tree li:hover {
+    color: var(--modern-text-primary);
   }
   .modern-content .file-tree ul ul {
     border-left: 1px solid var(--modern-border);
@@ -1225,12 +1239,12 @@
     font-size: 0.8125rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .modern-feedback-btn svg {
     width: 0.875rem;
     height: 0.875rem;
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .modern-feedback-btn:hover {
     color: var(--modern-text-primary);
