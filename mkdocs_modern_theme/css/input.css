@@ -335,8 +335,8 @@
    Announcement Bar
    ============================================================ */
 .modern-announce {
-  background: var(--modern-announce-bg, var(--modern-accent-muted));
-  color: var(--modern-announce-text, var(--modern-accent));
+  background: var(--modern-announce-bg, var(--modern-surface-raised));
+  color: var(--modern-announce-text, var(--modern-text-secondary));
   border-bottom: 1px solid var(--modern-border);
 }
 
