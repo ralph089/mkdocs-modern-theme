@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.6.1 (2026-03-11)
+
+### Bug Fixes
+
+- Gate layout transitions behind Alpine readiness instead of blanket suppression
+  ([#7](https://github.com/ralph089/mkdocs-modern-theme/pull/7),
+  [`0db22bd`](https://github.com/ralph089/mkdocs-modern-theme/commit/0db22bdfb895901a6ba24a7b5c5926fe22467129))
+
+- Suppress transition animations on page load
+  ([#7](https://github.com/ralph089/mkdocs-modern-theme/pull/7),
+  [`0db22bd`](https://github.com/ralph089/mkdocs-modern-theme/commit/0db22bdfb895901a6ba24a7b5c5926fe22467129))
+
+### Chores
+
+- Rebuild theme.css and update uv.lock
+  ([#7](https://github.com/ralph089/mkdocs-modern-theme/pull/7),
+  [`0db22bd`](https://github.com/ralph089/mkdocs-modern-theme/commit/0db22bdfb895901a6ba24a7b5c5926fe22467129))
+
+
 ## v1.6.0 (2026-03-11)
 
 ### Build System
