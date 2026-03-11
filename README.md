@@ -11,6 +11,9 @@ A modern, fully-bundled MkDocs theme with a 3-column layout, dark mode, and buil
 
 **[Documentation](https://ralph089.github.io/mkdocs-modern-theme/)** | **[Getting Started](https://ralph089.github.io/mkdocs-modern-theme/getting-started/)** | **[Configuration](https://ralph089.github.io/mkdocs-modern-theme/configuration/)**
 
+![Light mode](docs/assets/themes/default-light.png)
+![Dark mode](docs/assets/themes/default-dark.png)
+
 ## Install
 
 ```bash
