@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.6 (2026-03-11)
+
+### Bug Fixes
+
+- Remove theme toggle crossfade that replayed on every page load
+  ([`780f56e`](https://github.com/ralph089/mkdocs-modern-theme/commit/780f56ebcdf4968e587a07dda5c088dc401c2b2b))
+
+
 ## v1.5.5 (2026-03-11)
 
 ### Bug Fixes
