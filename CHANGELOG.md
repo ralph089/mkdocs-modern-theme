@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v1.6.3 (2026-03-11)
+
+### Bug Fixes
+
+- Prevent header slide-down animation on page load/reload
+  ([#9](https://github.com/ralph089/mkdocs-modern-theme/pull/9),
+  [`44a0c55`](https://github.com/ralph089/mkdocs-modern-theme/commit/44a0c55a260dabc90d1b76b67196b5078b41f800))
+
+### Chores
+
+- Update uv.lock version to 1.6.2 ([#9](https://github.com/ralph089/mkdocs-modern-theme/pull/9),
+  [`44a0c55`](https://github.com/ralph089/mkdocs-modern-theme/commit/44a0c55a260dabc90d1b76b67196b5078b41f800))
+
+
 ## v1.6.2 (2026-03-11)
 
 ### Bug Fixes
