@@ -1,24 +1,24 @@
 {% if config.theme.announcement %}
-<div id="modern-announce"
-     class="modern-announce fixed top-0 left-0 right-0 z-50 py-2 text-sm text-center"
-     {% if config.theme.announcement_color %}style="background: {{ config.theme.announcement_color }}"{% endif %}
-     x-data
-     x-show="!$store.announce.dismissed"
-     x-cloak
-     x-transition:leave="transition ease-in duration-150"
-     x-transition:leave-start="opacity-100"
-     x-transition:leave-end="opacity-0">
-  <div class="mx-auto max-w-[var(--modern-content-max-width)] px-4 sm:px-6 flex items-center justify-center gap-3">
-    <span class="flex-1 text-center">{{ config.theme.announcement }}</span>
-    {% if config.theme.announcement_dismissible %}
-    <button @click="$store.announce.dismiss()"
-            class="modern-announce-dismiss shrink-0 p-0.5 rounded"
-            aria-label="{% trans %}Dismiss announcement{% endtrans %}">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    {% endif %}
+  <div id="modern-announce"
+       class="modern-announce fixed top-0 left-0 right-0 z-50 py-2 text-sm text-center"
+       {% if config.theme.announcement_color %}style="background: {{ config.theme.announcement_color }}"{% endif %}
+       x-data
+       x-show="!$store.announce.dismissed"
+       x-cloak
+       x-transition:leave="transition ease-in duration-150"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0">
+    <div class="mx-auto max-w-[var(--modern-content-max-width)] px-4 sm:px-6 flex items-center justify-center gap-3">
+      <span class="flex-1 text-center">{{ config.theme.announcement }}</span>
+      {% if config.theme.announcement_dismissible %}
+        <button @click="$store.announce.dismiss()"
+                class="modern-announce-dismiss shrink-0 p-0.5 rounded"
+                aria-label="{% trans %}Dismiss announcement{% endtrans %}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endif %}

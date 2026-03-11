@@ -19,11 +19,12 @@ DOCS_FILES = [
 
 PATTERNS = [
     # Git install URLs: ...mkdocs-modern-theme.git@v1.2.3 or v{version}
-    (re.compile(r"mkdocs-modern-theme\.git@v(?:[\d]+\.[\d]+\.[\d]+|\{version\})"),
-     "mkdocs-modern-theme.git@v{version}"),
+    (
+        re.compile(r"mkdocs-modern-theme\.git@v(?:[\d]+\.[\d]+\.[\d]+|\{version\})"),
+        "mkdocs-modern-theme.git@v{version}",
+    ),
     # Inline version references: `v1.2.3` or `v{version}`
-    (re.compile(r"Replace `v(?:[\d]+\.[\d]+\.[\d]+|\{version\})`"),
-     "Replace `v{version}`"),
+    (re.compile(r"Replace `v(?:[\d]+\.[\d]+\.[\d]+|\{version\})`"), "Replace `v{version}`"),
 ]
 
 

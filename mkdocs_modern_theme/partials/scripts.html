@@ -1,31 +1,26 @@
 {# Theme JS — must load before Alpine #}
 <script src="{{ 'js/theme.js' | url }}"></script>
-
 {# Mermaid — loaded only when diagrams are present #}
 <script>
-if (document.querySelector('.mermaid')) {
-  var s = document.createElement('script');
-  s.src = '{{ "js/mermaid.min.js" | url }}';
-  s.onload = function() { initMermaid(); };
-  document.head.appendChild(s);
-}
+    if (document.querySelector('.mermaid')) {
+        var s = document.createElement('script');
+        s.src = '{{ "js/mermaid.min.js" | url }}';
+        s.onload = function() {
+            initMermaid();
+        };
+        document.head.appendChild(s);
+    }
 </script>
-
 <script>
-  if (document.querySelector('pre > code')) {
-    var s = document.createElement('script');
-    s.src = '{{ "js/copy-code.js" | url }}';
-    document.head.appendChild(s);
-  }
+    if (document.querySelector('pre > code')) {
+        var s = document.createElement('script');
+        s.src = '{{ "js/copy-code.js" | url }}';
+        document.head.appendChild(s);
+    }
 </script>
-
 {# Lunr search engine #}
 <script src="{{ 'js/lunr.min.js' | url }}"></script>
-
 {# Alpine.js (core + collapse + focus plugins) — must be last #}
 <script src="{{ 'js/alpine.min.js' | url }}" defer></script>
-
 {# Extra JS from mkdocs.yml #}
-{% for js_file in config.extra_javascript %}
-<script src="{{ js_file | url }}"></script>
-{% endfor %}
+{% for js_file in config.extra_javascript %}<script src="{{ js_file | url }}"></script>{% endfor %}
