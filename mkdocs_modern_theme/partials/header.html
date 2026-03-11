@@ -1,4 +1,5 @@
-<header class="fixed top-[var(--modern-announce-height,0px)] left-0 right-0 z-40 h-[var(--modern-header-height)] border-b border-[var(--modern-border)] bg-[var(--modern-surface)]/70 backdrop-blur-xl shadow-[var(--modern-shadow-sm)] transition-[top] duration-150 ease-[cubic-bezier(0.25,1,0.5,1)]">
+<header class="fixed top-[var(--modern-announce-height,0px)] left-0 right-0 z-40 h-[var(--modern-header-height)] border-b border-[var(--modern-border)] bg-[var(--modern-surface)]/70 backdrop-blur-xl shadow-[var(--modern-shadow-sm)]"
+        :class="$store.ui.ready && 'transition-[top] duration-150 ease-[cubic-bezier(0.25,1,0.5,1)]'">
   <div class="mx-auto max-w-[var(--modern-content-max-width)] h-full px-4 sm:px-6 flex items-center gap-4">
     {# Mobile menu button #}
     <button @click="$store.mobile.toggle()"

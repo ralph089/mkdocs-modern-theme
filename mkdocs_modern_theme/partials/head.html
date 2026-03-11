@@ -28,12 +28,17 @@
 <link rel="stylesheet" href="{{ 'css/pymdownx.css' | url }}">
 {# Extra CSS from mkdocs.yml #}
 {% for css_file in config.extra_css %}<link rel="stylesheet" href="{{ css_file | url }}">{% endfor %}
-{# FOUC prevention: apply theme before paint #}
+{# FOUC prevention: apply critical state before first paint #}
 <script>
     (function() {
         var mode = localStorage.getItem('modern-theme-mode');
         if (mode === 'dark' || (!mode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
+        }
+        // Pre-apply sidebar collapsed state so it renders correctly
+        // without a transition flash when Alpine hydrates.
+        if (localStorage.getItem('modern-sidebar-collapsed') === 'true') {
+            document.documentElement.classList.add('sidebar-collapsed');
         }
     })();
 </script>

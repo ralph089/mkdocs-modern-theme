@@ -2,16 +2,28 @@
  * MkDocs Modern Theme — Alpine.js stores and components
  */
 
-// Enable transitions after Alpine has fully initialized and the browser
-// has painted the correct state. This prevents header/sidebar/theme-toggle
-// animations from replaying on every page navigation.
+// Enable layout transitions only after Alpine has hydrated all state
+// and the browser has painted the correct layout. This prevents
+// header/sidebar animations from replaying on every page navigation.
 document.addEventListener('alpine:initialized', () => {
   requestAnimationFrame(() => {
-    document.body.classList.remove('no-transitions');
+    // Remove the pre-Alpine sidebar class — Alpine's :class binding owns it now.
+    document.documentElement.classList.remove('sidebar-collapsed');
+    Alpine.store('ui').ready = true;
   });
 });
 
 document.addEventListener('alpine:init', () => {
+
+  // ================================================
+  // UI Store — gates layout transitions until after first paint
+  // ================================================
+  // Prevents header/sidebar transitions from replaying on every page
+  // navigation. Transitions are only enabled after Alpine has hydrated
+  // state and the browser has painted the correct layout.
+  Alpine.store('ui', {
+    ready: false
+  });
 
   // ================================================
   // Theme Store — dark/light/system toggle

@@ -381,13 +381,11 @@
     display: none !important;
   }
 
-  /* Suppress transitions on initial page load to prevent header/sidebar
-     animations when Alpine.js hydrates state from localStorage.
-     Removed automatically after Alpine finishes initializing. */
-  .no-transitions *,
-  .no-transitions *::before,
-  .no-transitions *::after {
-    transition-duration: 0s !important;
+  /* Pre-Alpine sidebar state — set by the blocking <head> script so the
+     sidebar renders at the correct width before Alpine hydrates, avoiding
+     a layout shift. Alpine's :class binding takes over once ready. */
+  html.sidebar-collapsed [data-sidebar] {
+    width: 0;
   }
 }
 
