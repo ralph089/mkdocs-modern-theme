@@ -6,7 +6,10 @@
         <a href="{{ page.previous_page.url | url }}"
            class="group flex-1 flex flex-col items-start p-4 rounded-[var(--modern-radius-lg)] border border-[var(--modern-border)] hover:border-[var(--modern-accent)] transition-colors duration-200">
           <span class="text-xs text-[var(--modern-text-tertiary)] mb-1 flex items-center gap-1">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-3 h-3 transition-transform duration-200 group-hover:-translate-x-0.5"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
             {% trans %}Previous{% endtrans %}
@@ -23,7 +26,10 @@
            class="group flex-1 flex flex-col items-end text-right p-4 rounded-[var(--modern-radius-lg)] border border-[var(--modern-border)] hover:border-[var(--modern-accent)] transition-colors duration-200">
           <span class="text-xs text-[var(--modern-text-tertiary)] mb-1 flex items-center gap-1">
             {% trans %}Next{% endtrans %}
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </span>

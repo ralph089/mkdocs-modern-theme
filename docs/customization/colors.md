@@ -91,17 +91,17 @@ Dark mode works by adding a `dark` class to the `<html>` element. All dark-mode 
 
 ```css
 :root {
-  --modern-accent: #0070f3;
-  --modern-accent-hover: #005cc5;
+  --modern-accent: #2563eb;
+  --modern-accent-hover: #1d4ed8;
   --modern-surface: #fafafa;
-  --modern-surface-alt: #f0f0f0;
+  --modern-surface-alt: #f2f2f3;
   --modern-border: rgba(0, 0, 0, 0.08);
   --modern-border-strong: rgba(0, 0, 0, 0.15);
   --modern-text-primary: #171717;
   --modern-text-secondary: #525252;
   --modern-text-tertiary: #a3a3a3;
-  --modern-code-bg: #f5f5f5;
-  --modern-code-inline-bg: rgba(0, 0, 0, 0.05);
+  --modern-code-bg: #f4f4f5;
+  --modern-code-inline-bg: rgba(0, 0, 0, 0.04);
 }
 ```
 
@@ -109,17 +109,17 @@ Dark mode works by adding a `dark` class to the `<html>` element. All dark-mode 
 
 ```css
 .dark {
-  --modern-accent: #3b82f6;
-  --modern-accent-hover: #60a5fa;
-  --modern-surface: #111111;
-  --modern-surface-alt: #1a1a1a;
+  --modern-accent: #60a5fa;
+  --modern-accent-hover: #93c5fd;
+  --modern-surface: #0c0c0d;
+  --modern-surface-alt: #161618;
   --modern-border: rgba(255, 255, 255, 0.08);
-  --modern-border-strong: rgba(255, 255, 255, 0.15);
+  --modern-border-strong: rgba(255, 255, 255, 0.14);
   --modern-text-primary: #ededed;
-  --modern-text-secondary: #a3a3a3;
-  --modern-text-tertiary: #666666;
-  --modern-code-bg: #1a1a1a;
-  --modern-code-inline-bg: rgba(255, 255, 255, 0.08);
+  --modern-text-secondary: #a0a0a5;
+  --modern-text-tertiary: #5c5c63;
+  --modern-code-bg: #161618;
+  --modern-code-inline-bg: rgba(255, 255, 255, 0.06);
 }
 ```
 
@@ -149,7 +149,7 @@ Each admonition type has its own color token. The color is used for the left bor
 
 | Token              | Light     | Dark      | Used by                                                |
 | ------------------ | --------- | --------- | ------------------------------------------------------ |
-| `--modern-note`    | `#0070f3` | `#3b82f6` | `note`, `abstract`, `seealso`                          |
+| `--modern-note`    | `#2563eb` | `#60a5fa` | `note`, `abstract`, `seealso`                          |
 | `--modern-tip`     | `#16a34a` | `#22c55e` | `tip`, `hint`, `success`, `check`, `done`              |
 | `--modern-warning` | `#f59e0b` | `#eab308` | `warning`, `caution`, `attention`                      |
 | `--modern-danger`  | `#dc2626` | `#ef4444` | `danger`, `error`, `failure`, `fail`, `missing`, `bug` |

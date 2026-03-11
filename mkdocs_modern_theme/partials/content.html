@@ -15,7 +15,9 @@
     {% if show_copy or show_edit %}
       <div class="mt-3 flex items-center gap-2">
         {% if show_copy %}
+          {# djlint:off #}
           <script type="application/json" x-ref="markdownSource">{{ page.markdown | tojson }}</script>
+          {# djlint:on #}
           <button @click="copy()" class="modern-copy-btn" :class="copied && 'copied'">
             <template x-if="!copied">
               <span class="inline-flex items-center gap-1.5">

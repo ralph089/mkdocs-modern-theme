@@ -1,10 +1,9 @@
 {% if config.theme.announcement %}
   <div id="modern-announce"
        class="modern-announce fixed top-0 left-0 right-0 z-50 py-2 text-sm text-center"
-       {% if config.theme.announcement_color %}style="background: {{ config.theme.announcement_color }}"{% endif %}
+       {% if config.theme.announcement_color %}style="--modern-announce-bg: {{ config.theme.announcement_color }}; --modern-announce-text: #fff"{% endif %}
        x-data
        x-show="!$store.announce.dismissed"
-       x-cloak
        x-transition:leave="transition ease-in duration-150"
        x-transition:leave-start="opacity-100"
        x-transition:leave-end="opacity-0">

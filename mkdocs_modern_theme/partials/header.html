@@ -11,7 +11,7 @@
     </button>
     {# Logo / Site name #}
     <a href="{{ config.site_url | default('/') }}"
-       class="flex items-center gap-2 font-semibold text-[var(--modern-text-primary)] hover:text-[var(--modern-text-primary)] no-underline shrink-0">
+       class="flex items-center gap-2 font-semibold text-[var(--modern-text-primary)] hover:opacity-80 no-underline shrink-0 transition-opacity duration-150">
       {% if config.theme.logo %}
         <img src="{{ config.theme.logo | url }}"
              alt="{{ config.site_name }}"
@@ -38,22 +38,17 @@
     <button @click="$store.theme.cycle()"
             class="p-1.5 rounded-[var(--modern-radius-sm)] text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150"
             :aria-label="'Switch to ' + $store.theme.nextLabel + ' mode'">
-      {# Sun icon (shown in dark mode) #}
-      <svg x-show="$store.theme.isDark"
-           x-cloak
-           class="w-5 h-5"
+      <svg class="w-5 h-5 theme-toggle-icon"
+           viewBox="0 0 24 24"
            fill="none"
-           stroke="currentColor"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-      {# Moon icon (shown in light mode) #}
-      <svg x-show="!$store.theme.isDark"
-           class="w-5 h-5"
-           fill="none"
-           stroke="currentColor"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+           stroke="currentColor">
+        <g class="icon-sun" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414" />
+        </g>
+        <g class="icon-moon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </g>
       </svg>
     </button>
     {# Repo link #}

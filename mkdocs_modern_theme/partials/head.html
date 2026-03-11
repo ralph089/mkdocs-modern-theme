@@ -40,5 +40,8 @@
         if (localStorage.getItem('modern-sidebar-collapsed') === 'true') {
             document.documentElement.classList.add('sidebar-collapsed');
         }
+        if (localStorage.getItem('modern-announce-dismissed')) {
+            document.documentElement.classList.add('announce-dismissed');
+        }
     })();
 </script>

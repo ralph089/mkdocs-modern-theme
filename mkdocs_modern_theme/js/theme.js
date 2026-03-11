@@ -7,15 +7,16 @@
 // header/sidebar animations from replaying on every page navigation.
 document.addEventListener('alpine:initialized', () => {
   requestAnimationFrame(() => {
-    // Remove the pre-Alpine sidebar class — Alpine's :class binding owns it now.
+    // Remove pre-Alpine classes — Alpine's reactive bindings own state now.
     document.documentElement.classList.remove('sidebar-collapsed');
+    document.documentElement.classList.remove('announce-dismissed');
     // Ensure announcement bar height is measured before enabling transitions.
-    // At this point x-cloak has been removed so the element is visible and
-    // measurable. Setting the height here prevents the header from animating
-    // its top position when ui.ready enables the transition class.
     var announce = Alpine.store('announce');
     if (announce && !announce.dismissed) announce._updateHeight();
-    Alpine.store('ui').ready = true;
+    // Second rAF ensures a paint happened with correct height BEFORE enabling transitions.
+    requestAnimationFrame(() => {
+      Alpine.store('ui').ready = true;
+    });
   });
 });
 
@@ -138,20 +139,39 @@ document.addEventListener('alpine:init', () => {
   // ================================================
   Alpine.store('sidebar', {
     collapsed: localStorage.getItem('modern-sidebar-collapsed') === 'true',
+    navVisible: true,
+    _collapseTimer: null,
+    _expandTimer: null,
 
-    toggle() {
-      this.collapsed = !this.collapsed;
-      localStorage.setItem('modern-sidebar-collapsed', this.collapsed);
-    },
-
-    expand() {
-      this.collapsed = false;
-      localStorage.setItem('modern-sidebar-collapsed', 'false');
+    init() {
+      // Derive navVisible from persisted collapsed state
+      this.navVisible = !this.collapsed;
     },
 
     collapse() {
-      this.collapsed = true;
-      localStorage.setItem('modern-sidebar-collapsed', 'true');
+      clearTimeout(this._expandTimer);
+      // Phase 1: fade out content
+      this.navVisible = false;
+      // Phase 2: collapse width after fade completes
+      this._collapseTimer = setTimeout(() => {
+        this.collapsed = true;
+        localStorage.setItem('modern-sidebar-collapsed', 'true');
+      }, 100);
+    },
+
+    expand() {
+      clearTimeout(this._collapseTimer);
+      // Phase 1: expand width
+      this.collapsed = false;
+      localStorage.setItem('modern-sidebar-collapsed', 'false');
+      // Phase 2: fade in content after width transition
+      this._expandTimer = setTimeout(() => {
+        this.navVisible = true;
+      }, 300);
+    },
+
+    toggle() {
+      this.collapsed ? this.expand() : this.collapse();
     }
   });
 
@@ -357,6 +377,7 @@ function tocSpy() {
   return {
     activeId: '',
     showScrollTop: false,
+    indicatorStyle: { opacity: 0 },
     _observer: null,
 
     init() {
@@ -365,6 +386,7 @@ function tocSpy() {
 
       // Set initial active to first heading
       this.activeId = headings[0].id;
+      requestAnimationFrame(() => this._updateIndicator());
 
       // IntersectionObserver for scroll spy
       this._observer = new IntersectionObserver(
@@ -372,6 +394,7 @@ function tocSpy() {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               this.activeId = entry.target.id;
+              this._updateIndicator();
             }
           });
         },
@@ -394,7 +417,33 @@ function tocSpy() {
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
         this.activeId = id;
+        this._updateIndicator();
       }
+    },
+
+    _updateIndicator() {
+      if (!this.activeId) {
+        this.indicatorStyle = { opacity: 0 };
+        return;
+      }
+      var tocList = this.$el.querySelector('ul');
+      var activeLink = tocList && tocList.querySelector('a[href="#' + CSS.escape(this.activeId) + '"]');
+      if (!activeLink || !tocList) {
+        this.indicatorStyle = { opacity: 0 };
+        return;
+      }
+      // Accumulate offsetTop through nested offsetParents up to the positioned <ul>
+      var top = 0;
+      var el = activeLink;
+      while (el && el !== tocList) {
+        top += el.offsetTop;
+        el = el.offsetParent;
+      }
+      this.indicatorStyle = {
+        top: top + 'px',
+        height: activeLink.offsetHeight + 'px',
+        opacity: 1
+      };
     },
 
     destroy() {

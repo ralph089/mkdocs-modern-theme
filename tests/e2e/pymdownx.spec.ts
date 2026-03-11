@@ -15,6 +15,9 @@ test.describe("pymdownx Extensions", () => {
     await expect(copyBtn).toBeAttached();
     await expect(copyBtn).toHaveCSS("opacity", "0");
 
+    // Wait for content entrance animation to complete (translateY shift)
+    await page.waitForTimeout(350);
+
     // Button becomes visible on hover
     await codeBlock.hover();
     await expect(copyBtn).toHaveCSS("opacity", "1");
@@ -42,6 +45,9 @@ test.describe("pymdownx Extensions", () => {
     const copyBtn = titledBlock.locator(".copy-code-btn");
 
     await expect(copyBtn).toBeAttached();
+
+    // Wait for content entrance animation to complete (translateY shift)
+    await page.waitForTimeout(350);
 
     // Button becomes visible on hover
     await titledBlock.hover();

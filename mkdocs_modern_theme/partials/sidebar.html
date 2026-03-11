@@ -23,7 +23,8 @@
 <aside data-sidebar
        class="hidden lg:block shrink-0 pt-[var(--modern-offset-top)] overflow-clip bg-[var(--modern-surface-sidebar)]"
        :class="[ $store.sidebar.collapsed ? 'w-0' : 'w-[var(--modern-sidebar-width)]', $store.ui.ready && 'transition-[width] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]' ]">
-  <nav class="sticky top-[var(--modern-offset-top)] h-[calc(100vh-var(--modern-offset-top))] overflow-y-auto py-6 pr-4 text-sm w-[var(--modern-sidebar-width)] flex flex-col"
+  <nav class="sticky top-[var(--modern-offset-top)] h-[calc(100vh-var(--modern-offset-top))] overflow-y-auto py-6 pr-4 text-sm w-[var(--modern-sidebar-width)] flex flex-col transition-opacity duration-100"
+       :class="$store.sidebar.navVisible ? 'opacity-100' : 'opacity-0'"
        aria-label="{% trans %}Navigation{% endtrans %}">
     <div class="flex-1 min-h-0 overflow-y-auto">
       {% for nav_item in nav %}

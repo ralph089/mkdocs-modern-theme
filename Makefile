@@ -33,7 +33,7 @@ install: ## Install all dependencies (uv + pnpm + vendored JS)
 dev: ## Start dev server with CSS watch (localhost:8000)
 	@printf "$(CYAN)$(BOLD)Starting dev server...$(RESET)\n"
 	@pnpm run css:watch &
-	@uv run mkdocs serve -f tests/mkdocs.yml
+	@uv run mkdocs serve -f tests/mkdocs.yml --watch-theme
 
 .PHONY: build
 build: ## Build CSS + MkDocs site
