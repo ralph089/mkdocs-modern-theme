@@ -98,6 +98,15 @@ make build      # build CSS + site
 make test       # build + Playwright E2E tests
 ```
 
+---
+
+<p align="center">
+  If you find this theme useful, please consider giving it a<br>
+  <a href="https://github.com/ralph089/mkdocs-modern-theme">
+    <img src="https://img.shields.io/github/stars/ralph089/mkdocs-modern-theme?style=social&label=Star%20on%20GitHub" alt="Star on GitHub">
+  </a>
+</p>
+
 ## License
 
 MIT
