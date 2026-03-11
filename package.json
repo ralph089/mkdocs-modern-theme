@@ -8,11 +8,18 @@
     "copy:mermaid": "cp node_modules/mermaid/dist/mermaid.min.js mkdocs_modern_theme/js/mermaid.min.js",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "format": "uv run mdformat docs/ tests/docs/ README.md CHANGELOG.md CLAUDE.md",
-    "format:check": "uv run mdformat --check docs/ tests/docs/ README.md CHANGELOG.md CLAUDE.md"
+    "format": "uv run mdformat docs/ tests/docs/ README.md CHANGELOG.md CLAUDE.md && uv run ruff format && uv run djlint --reformat mkdocs_modern_theme/ --extension=html",
+    "format:check": "uv run mdformat --check docs/ tests/docs/ README.md CHANGELOG.md CLAUDE.md && uv run ruff format --check && uv run djlint --check mkdocs_modern_theme/ --extension=html",
+    "lint": "uv run ruff check && uv run ty check",
+    "lint:fix": "uv run ruff check --fix"
   },
   "lint-staged": {
-    "*.md": "uv run mdformat"
+    "*.md": "uv run mdformat",
+    "*.py": [
+      "uv run ruff format",
+      "uv run ruff check --fix"
+    ],
+    "*.html": "uv run djlint --reformat"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.3",
