@@ -2,6 +2,15 @@
  * MkDocs Modern Theme — Alpine.js stores and components
  */
 
+// Enable transitions after Alpine has fully initialized and the browser
+// has painted the correct state. This prevents header/sidebar/theme-toggle
+// animations from replaying on every page navigation.
+document.addEventListener('alpine:initialized', () => {
+  requestAnimationFrame(() => {
+    document.body.classList.remove('no-transitions');
+  });
+});
+
 document.addEventListener('alpine:init', () => {
 
   // ================================================

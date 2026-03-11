@@ -380,6 +380,15 @@
   [x-cloak] {
     display: none !important;
   }
+
+  /* Suppress transitions on initial page load to prevent header/sidebar
+     animations when Alpine.js hydrates state from localStorage.
+     Removed automatically after Alpine finishes initializing. */
+  .no-transitions *,
+  .no-transitions *::before,
+  .no-transitions *::after {
+    transition-duration: 0s !important;
+  }
 }
 
 /* ============================================================
