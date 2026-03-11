@@ -6,11 +6,11 @@ Modern uses a three-column layout on desktop: a left sidebar for navigation, a c
 
 Four CSS custom properties control the major dimensions:
 
-| Variable | Default | Description |
-|---|---|---|
-| `--modern-header-height` | `64px` | Height of the fixed header |
-| `--modern-sidebar-width` | `256px` | Width of the left navigation sidebar |
-| `--modern-toc-width` | `224px` | Width of the right TOC panel |
+| Variable                     | Default | Description                               |
+| ---------------------------- | ------- | ----------------------------------------- |
+| `--modern-header-height`     | `64px`  | Height of the fixed header                |
+| `--modern-sidebar-width`     | `256px` | Width of the left navigation sidebar      |
+| `--modern-toc-width`         | `224px` | Width of the right TOC panel              |
 | `--modern-content-max-width` | `90rem` | Maximum width of the outer page container |
 
 Override them in your custom CSS:
@@ -143,13 +143,13 @@ On screens below 1024px:
 
 The theme follows Tailwind's default breakpoints:
 
-| Breakpoint | Width | Layout change |
-|---|---|---|
-| Default | < 640px | Single column, mobile menu |
-| `sm` | 640px | Minor spacing adjustments |
-| `md` | 768px | Minor spacing adjustments |
-| `lg` | 1024px | Sidebar appears, desktop layout |
-| `xl` | 1280px | TOC panel appears |
+| Breakpoint | Width   | Layout change                   |
+| ---------- | ------- | ------------------------------- |
+| Default    | < 640px | Single column, mobile menu      |
+| `sm`       | 640px   | Minor spacing adjustments       |
+| `md`       | 768px   | Minor spacing adjustments       |
+| `lg`       | 1024px  | Sidebar appears, desktop layout |
+| `xl`       | 1280px  | TOC panel appears               |
 
 ## Print styles
 

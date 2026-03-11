@@ -34,7 +34,7 @@ The theme provides styled callouts in five color groups with SVG icons. See [Adm
 
 **Package:** Built into Python-Markdown.
 
----
+______________________________________________________________________
 
 ### pymdownx.highlight
 
@@ -51,7 +51,7 @@ The theme includes custom Pygments color schemes for both light and dark modes. 
 
 **Package:** `pymdownx` (pymdown-extensions).
 
----
+______________________________________________________________________
 
 ### pymdownx.superfences
 
@@ -65,7 +65,7 @@ Without this extension, code blocks inside admonitions or tab content may not re
 
 **Package:** `pymdownx` (pymdown-extensions).
 
----
+______________________________________________________________________
 
 ### pymdownx.tabbed
 
@@ -80,7 +80,7 @@ The `alternate_style: true` option is required. It produces semantic HTML that t
 
 **Package:** `pymdownx` (pymdown-extensions).
 
----
+______________________________________________________________________
 
 ### pymdownx.details
 
@@ -102,7 +102,7 @@ Use `???` for collapsed and `???+` for initially expanded:
 
 **Package:** `pymdownx` (pymdown-extensions).
 
----
+______________________________________________________________________
 
 ### toc
 
@@ -119,7 +119,7 @@ The TOC sidebar panel (controlled by `show_toc` in the theme config) reads the s
 
 **Package:** Built into Python-Markdown.
 
----
+______________________________________________________________________
 
 ### tables
 
@@ -133,7 +133,7 @@ The theme provides styled tables with header highlighting, row hover effects, an
 
 **Package:** Built into Python-Markdown.
 
----
+______________________________________________________________________
 
 ### def_list
 
@@ -198,6 +198,7 @@ Use emoji shortcodes in your Markdown.
 ```
 
 !!! warning "Don't use Material paths"
+
     Some guides reference `material.extensions.emoji.twemoji` and `material.extensions.emoji.to_svg`. Those paths require `mkdocs-material` as a dependency. Use the `pymdownx.emoji` paths shown above instead.
 
 ### attr_list

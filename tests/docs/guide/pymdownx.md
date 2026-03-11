@@ -1,6 +1,6 @@
----
-title: pymdownx Extensions
----
+______________________________________________________________________
+
+## title: pymdownx Extensions
 
 # pymdownx Extensions
 
@@ -64,7 +64,7 @@ This {--is no longer relevant--} text was removed.
 
 Please {==review this section==} carefully.
 
-{>>This needs a second opinion.<<}
+{>>This needs a second opinion.\<<}
 
 The API changed from {~~XML~>JSON~~} format.
 

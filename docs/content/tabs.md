@@ -17,7 +17,7 @@ The `alternate_style: true` option is required. It uses the modern CSS-based tab
 
 ## Basic usage
 
-```markdown
+````markdown
 === "Python"
 
     ```python
@@ -35,7 +35,7 @@ The `alternate_style: true` option is required. It uses the modern CSS-based tab
     ```bash
     echo "Hello, world!"
     ```
-```
+````
 
 Renders as:
 
@@ -99,16 +99,17 @@ Tabs can contain any Markdown content, not just code blocks:
 
 === "Features"
 
-    | Feature | Status |
-    |---|---|
-    | Dark mode | Included |
-    | Search | Included |
-    | Responsive | Included |
+    | Feature      | Status   |
+    | ------------ | -------- |
+    | Dark mode    | Included |
+    | Search       | Included |
+    | Responsive   | Included |
     | Print styles | Included |
 
 === "Requirements"
 
     !!! note
+
         You need Python 3.9 or later.
 
     - MkDocs 1.5+
@@ -148,7 +149,7 @@ You can have multiple independent tab sets on the same page. Each set maintains 
     winget install Python.Python.3
     ```
 
----
+______________________________________________________________________
 
 === "Development"
 

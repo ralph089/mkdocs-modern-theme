@@ -98,7 +98,7 @@ make build      # build CSS + site
 make test       # build + Playwright E2E tests
 ```
 
----
+______________________________________________________________________
 
 <p align="center">
   If you find this theme useful, please consider giving it a<br>

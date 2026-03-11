@@ -37,6 +37,7 @@ Or to use a system font stack without any web fonts:
 ```
 
 !!! note "Geist still loads"
+
     The bundled Geist font files are declared with `@font-face` in the theme CSS. If you override `--modern-font-sans`, the browser will not download the Geist files since no element references them -- but the `@font-face` declarations remain. This has no performance impact.
 
 ## Switching the mono font
@@ -55,17 +56,17 @@ To use JetBrains Mono for code:
 
 The theme uses a consistent type scale across content:
 
-| Element | Size | Weight | Extra |
-|---|---|---|---|
-| `h1` | `2.25rem` (36px) | 700 | Letter-spacing: -0.025em |
-| `h2` | `1.5rem` (24px) | 600 | Letter-spacing: -0.02em, bottom border |
-| `h3` | `1.25rem` (20px) | 600 | -- |
-| `h4` | `1.125rem` (18px) | 600 | -- |
-| `h5`, `h6` | `1rem` (16px) | 600 | -- |
-| Body text | `1rem` (16px) | 400 | Line-height: 1.75 |
-| Inline code | `0.875em` | 400 | Relative to parent |
-| Code blocks | `0.875rem` (14px) | 400 | Line-height: 1.6 |
-| Table text | `0.875rem` (14px) | 400 | -- |
+| Element     | Size              | Weight | Extra                                  |
+| ----------- | ----------------- | ------ | -------------------------------------- |
+| `h1`        | `2.25rem` (36px)  | 700    | Letter-spacing: -0.025em               |
+| `h2`        | `1.5rem` (24px)   | 600    | Letter-spacing: -0.02em, bottom border |
+| `h3`        | `1.25rem` (20px)  | 600    | --                                     |
+| `h4`        | `1.125rem` (18px) | 600    | --                                     |
+| `h5`, `h6`  | `1rem` (16px)     | 600    | --                                     |
+| Body text   | `1rem` (16px)     | 400    | Line-height: 1.75                      |
+| Inline code | `0.875em`         | 400    | Relative to parent                     |
+| Code blocks | `0.875rem` (14px) | 400    | Line-height: 1.6                       |
+| Table text  | `0.875rem` (14px) | 400    | --                                     |
 
 ## Heading styles
 

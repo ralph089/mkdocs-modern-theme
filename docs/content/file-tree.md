@@ -25,17 +25,17 @@ Wrap a nested Markdown list in a `<div class="file-tree">` container:
 <div class="file-tree" markdown>
 
 - my-project/
-  - docs/
-    - index.md
-    - getting-started.md
-    - configuration.md
-    - content/
-      - admonitions.md
-      - code-blocks.md
-      - tabs.md
-  - mkdocs.yml
-  - pyproject.toml
-  - README.md
+    - docs/
+        - index.md
+        - getting-started.md
+        - configuration.md
+        - content/
+            - admonitions.md
+            - code-blocks.md
+            - tabs.md
+    - mkdocs.yml
+    - pyproject.toml
+    - README.md
 
 </div>
 
@@ -48,12 +48,12 @@ This works via the CSS `:has(> ul)` selector — no extra markup or classes need
 <div class="file-tree" markdown>
 
 - src/
-  - components/
-    - Header.tsx
-    - Sidebar.tsx
-  - styles/
-    - theme.css
-  - index.ts
+    - components/
+        - Header.tsx
+        - Sidebar.tsx
+    - styles/
+        - theme.css
+    - index.ts
 - package.json
 - tsconfig.json
 

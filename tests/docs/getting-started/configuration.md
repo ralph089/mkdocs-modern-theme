@@ -18,11 +18,11 @@ theme:
 
 ## Color Mode
 
-| Value | Description |
-|-------|-------------|
+| Value    | Description                     |
+| -------- | ------------------------------- |
 | `system` | Follow the user's OS preference |
-| `light` | Always use light mode |
-| `dark` | Always use dark mode |
+| `light`  | Always use light mode           |
+| `dark`   | Always use dark mode            |
 
 ## Navigation Depth
 

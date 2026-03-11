@@ -45,6 +45,7 @@ For a title-less admonition, use an empty string:
 ### Note
 
 !!! note
+
     Use `note` for general information that supplements the main content. Also triggered by `abstract` and `seealso`.
 
 ```markdown
@@ -55,6 +56,7 @@ For a title-less admonition, use an empty string:
 ### Tip
 
 !!! tip
+
     Use `tip` for helpful suggestions and best practices. Also triggered by `hint`, `success`, `check`, and `done`.
 
 ```markdown
@@ -65,6 +67,7 @@ For a title-less admonition, use an empty string:
 ### Warning
 
 !!! warning
+
     Use `warning` for information about potential pitfalls or non-obvious behavior. Also triggered by `caution` and `attention`.
 
 ```markdown
@@ -75,6 +78,7 @@ For a title-less admonition, use an empty string:
 ### Danger
 
 !!! danger
+
     Use `danger` for information about actions that could cause data loss or security issues. Also triggered by `error`, `failure`, `fail`, `missing`, and `bug`.
 
 ```markdown
@@ -85,6 +89,7 @@ For a title-less admonition, use an empty string:
 ### Info
 
 !!! info
+
     Use `info` for supplementary details and context. Also triggered by `todo`, `faq`, `question`, and `help`.
 
 ```markdown
@@ -96,19 +101,20 @@ For a title-less admonition, use an empty string:
 
 Each color group responds to multiple type keywords:
 
-| Color | Types |
-|---|---|
-| Blue (`--modern-note`) | `note`, `abstract`, `seealso` |
-| Green (`--modern-tip`) | `tip`, `hint`, `success`, `check`, `done` |
-| Amber (`--modern-warning`) | `warning`, `caution`, `attention` |
-| Red (`--modern-danger`) | `danger`, `error`, `failure`, `fail`, `missing`, `bug` |
-| Cyan (`--modern-info`) | `info`, `todo`, `faq`, `question`, `help` |
+| Color                      | Types                                                  |
+| -------------------------- | ------------------------------------------------------ |
+| Blue (`--modern-note`)     | `note`, `abstract`, `seealso`                          |
+| Green (`--modern-tip`)     | `tip`, `hint`, `success`, `check`, `done`              |
+| Amber (`--modern-warning`) | `warning`, `caution`, `attention`                      |
+| Red (`--modern-danger`)    | `danger`, `error`, `failure`, `fail`, `missing`, `bug` |
+| Cyan (`--modern-info`)     | `info`, `todo`, `faq`, `question`, `help`              |
 
 ## Collapsible admonitions
 
 With `pymdownx.details` enabled, use `???` for a collapsed block or `???+` for one that starts expanded:
 
 ???+ note "Click to collapse this"
+
     This admonition starts expanded but can be collapsed by clicking the title.
 
 ```markdown
@@ -117,6 +123,7 @@ With `pymdownx.details` enabled, use `???` for a collapsed block or `???+` for o
 ```
 
 ??? tip "Click to expand this"
+
     This admonition starts collapsed.
 
 ```markdown
@@ -129,6 +136,7 @@ With `pymdownx.details` enabled, use `???` for a collapsed block or `???+` for o
 Admonitions can contain any Markdown content -- lists, code blocks, tables, and even other admonitions:
 
 !!! note "Complex example"
+
     Here is a list inside an admonition:
 
     - First item
