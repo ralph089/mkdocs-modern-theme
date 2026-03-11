@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.8.1 (2026-03-11)
+
+### Bug Fixes
+
+- Use solid surface-raised background for announcement banner
+  ([`6564050`](https://github.com/ralph089/mkdocs-modern-theme/commit/6564050edd2cc43d0a19166a55ab0151f03c4f36))
+
+### Documentation
+
+- Add light and dark mode preview screenshots to README
+  ([`ea74d58`](https://github.com/ralph089/mkdocs-modern-theme/commit/ea74d5801f5a049ac02a56b8075d146889d8ad88))
+
+
 ## v1.8.0 (2026-03-11)
 
 ### Chores
