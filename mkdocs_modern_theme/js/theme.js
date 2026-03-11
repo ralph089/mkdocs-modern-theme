@@ -9,6 +9,12 @@ document.addEventListener('alpine:initialized', () => {
   requestAnimationFrame(() => {
     // Remove the pre-Alpine sidebar class — Alpine's :class binding owns it now.
     document.documentElement.classList.remove('sidebar-collapsed');
+    // Ensure announcement bar height is measured before enabling transitions.
+    // At this point x-cloak has been removed so the element is visible and
+    // measurable. Setting the height here prevents the header from animating
+    // its top position when ui.ready enables the transition class.
+    var announce = Alpine.store('announce');
+    if (announce && !announce.dismissed) announce._updateHeight();
     Alpine.store('ui').ready = true;
   });
 });
@@ -94,10 +100,10 @@ document.addEventListener('alpine:init', () => {
         this.dismissed = true;
         return;
       }
-      // Measure and set the height after render
-      requestAnimationFrame(() => {
-        this._updateHeight();
-      });
+      // Measure and set the height synchronously so the header's top
+      // position is correct before ui.ready enables transitions.
+      // This prevents the header from visibly sliding down on page load.
+      this._updateHeight();
       // Re-measure on resize
       window.addEventListener('resize', () => {
         if (!this.dismissed) this._updateHeight();
