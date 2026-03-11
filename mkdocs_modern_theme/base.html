@@ -12,18 +12,18 @@
       {% include "partials/head.html" %}
     {% endblock %}
   </head>
-  <body class="bg-[var(--modern-surface)] text-[var(--modern-text-primary)] font-[var(--modern-font-sans)] antialiased">
+  <body class="bg-[var(--modern-surface-sidebar)] text-[var(--modern-text-primary)] font-[var(--modern-font-sans)] antialiased">
     {% block announcement %}
       {% include "partials/announcement.html" %}
     {% endblock %}
     {% block header %}
       {% include "partials/header.html" %}
     {% endblock %}
-    <div class="mx-auto max-w-[var(--modern-content-max-width)] px-4 sm:px-6">
-      <div class="flex">
-        {% block sidebar %}
-          {% include "partials/sidebar.html" %}
-        {% endblock %}
+    <div class="mx-auto max-w-[var(--modern-content-max-width)] flex">
+      {% block sidebar %}
+        {% include "partials/sidebar.html" %}
+      {% endblock %}
+      <div class="flex flex-1 min-w-0 px-4 sm:px-6 bg-[var(--modern-surface)]">
         <main class="min-w-0 flex-1 pt-[var(--modern-offset-top)]">
           {% block breadcrumbs %}
             {% include "partials/breadcrumbs.html" %}

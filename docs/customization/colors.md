@@ -166,12 +166,13 @@ Override them the same way:
 
 ## Surface and background colors
 
-The theme uses two surface levels:
+The theme uses three surface levels:
 
 - `--modern-surface` -- the main page background
 - `--modern-surface-alt` -- used for table headers, tab bars, keyboard shortcuts, and other secondary surfaces
+- `--modern-surface-sidebar` -- sidebar background, a subtle tint that distinguishes navigation from content
 
-Keep sufficient contrast between the two. In light mode, `surface-alt` should be slightly darker than `surface`. In dark mode, `surface-alt` should be slightly lighter.
+Keep sufficient contrast between them. In light mode, `surface-alt` and `surface-sidebar` should be slightly darker than `surface`. In dark mode, `surface-sidebar` should be darker (recessed) while `surface-alt` should be slightly lighter. Each color preset includes a palette-matched sidebar surface.
 
 ## Border colors
 

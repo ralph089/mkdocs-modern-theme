@@ -5,7 +5,7 @@
        class="mb-1">
     <button @click="open = !open"
             :aria-expanded="open.toString()"
-            class="flex items-center justify-between w-full px-3 py-1.5 rounded-[var(--modern-radius-sm)] text-left font-medium text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150">
+            class="flex items-center justify-between w-full px-3 py-1 rounded-[var(--modern-radius-sm)] text-left font-medium text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] transition-colors duration-150">
       <span>{{ nav_item.title }}</span>
       <svg class="w-4 h-4 shrink-0 transition-transform duration-200"
            :class="open && 'rotate-90'"
@@ -26,7 +26,7 @@
 {% elif nav_item.is_page %}
   {# Page link #}
   <a href="{{ nav_item.url | url }}"
-     class="flex items-center px-3 py-1.5 rounded-[var(--modern-radius-sm)] transition-colors duration-150 mb-0.5 {% if nav_item.active %} bg-[var(--modern-accent)]/10 text-[var(--modern-accent)] font-medium {% else %} text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] {% endif %}">
+     class="flex items-center px-3 py-1 rounded-[var(--modern-radius-sm)] transition-colors duration-150 mb-0.5 {% if nav_item.active %} bg-[var(--modern-accent)]/10 text-[var(--modern-accent)] font-medium {% else %} text-[var(--modern-text-secondary)] hover:text-[var(--modern-text-primary)] hover:bg-[var(--modern-surface-alt)] {% endif %}">
     {{ nav_item.title }}
   </a>
 {% endif %}

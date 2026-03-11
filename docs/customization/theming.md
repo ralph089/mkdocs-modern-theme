@@ -36,17 +36,18 @@ Inside that file, override any `--modern-*` variable on `:root` (for light mode)
 
 ### Surface colors
 
-| Variable               | Default (light) | Default (dark) | Purpose                                        |
-| ---------------------- | --------------- | -------------- | ---------------------------------------------- |
-| `--modern-surface`     | `#fafafa`       | `#111111`      | Page background                                |
-| `--modern-surface-alt` | `#f0f0f0`       | `#1a1a1a`      | Alternate background (table headers, tab bars) |
+| Variable                   | Default (light) | Default (dark) | Purpose                                        |
+| -------------------------- | --------------- | -------------- | ---------------------------------------------- |
+| `--modern-surface`         | `#fafafa`       | `#111111`      | Page background                                |
+| `--modern-surface-alt`     | `#f0f0f0`       | `#191919`      | Alternate background (table headers, tab bars) |
+| `--modern-surface-sidebar` | `#f4f4f5`       | `#0a0a0a`      | Sidebar background                             |
 
 ### Border colors
 
 | Variable                 | Default (light)    | Default (dark)           | Purpose                           |
 | ------------------------ | ------------------ | ------------------------ | --------------------------------- |
-| `--modern-border`        | `rgba(0,0,0,0.08)` | `rgba(255,255,255,0.08)` | Subtle borders, dividers          |
-| `--modern-border-strong` | `rgba(0,0,0,0.15)` | `rgba(255,255,255,0.15)` | Emphasized borders, table headers |
+| `--modern-border`        | `rgba(0,0,0,0.10)` | `rgba(255,255,255,0.10)` | Subtle borders, dividers          |
+| `--modern-border-strong` | `rgba(0,0,0,0.18)` | `rgba(255,255,255,0.18)` | Emphasized borders, table headers |
 
 ### Text colors
 

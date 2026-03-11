@@ -3,7 +3,9 @@
          x-data="tocSpy()">
     <nav class="sticky top-[var(--modern-offset-top)] h-[calc(100vh-var(--modern-offset-top))] overflow-y-auto py-8 pl-4 text-sm"
          aria-label="{% trans %}Table of contents{% endtrans %}">
-      <h4 class="font-medium text-[var(--modern-text-primary)] mb-3">{% trans %}On this page{% endtrans %}</h4>
+      <h4 class="text-xs font-medium uppercase tracking-wider text-[var(--modern-text-tertiary)] mb-3">
+        {% trans %}On this page{% endtrans %}
+      </h4>
       <ul class="space-y-1.5">
         {% for toc_item in page.toc %}
           <li>
