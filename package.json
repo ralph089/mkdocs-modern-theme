@@ -22,7 +22,7 @@
     "*.html": "uv run djlint --reformat"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.3",
+    "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.4.3",
     "@playwright/test": "^1.48.0",
     "@tailwindcss/cli": "^4.0.0",
